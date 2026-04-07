@@ -140,7 +140,7 @@ Generate a complete personalized scam recovery plan for this US-based victim.`;
       return {
         statusCode: response.status,
         headers: CORS,
-        body: JSON.stringify({ error: err.error?.message || 'API error' })
+        body: JSON.stringify({ error: err.error?.message || 'Under Construction!' })
       };
     }
 
