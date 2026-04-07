@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCAMSOS — Free AI Scam Recovery Guide</title>
+<meta name="description" content="Got scammed? Get your free AI-powered recovery plan in minutes. Dispute letters, step-by-step actions, no signup needed. SCAMSOS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#040D1A;--bg2:#071020;
+  --surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --blue:#3B82F6;--blue-dark:#1D4ED8;--blue-glow:rgba(59,130,246,0.18);
+  --amber:#F59E0B;--amber-glow:rgba(245,158,11,0.12);
+  --green:#10B981;--red:#F87171;
+  --text:#F0F4FF;--text-muted:#8B9CC8;--text-dim:#4A5680;
+  --font-d:'Playfair Display',Georgia,serif;
+  --font-b:'DM Sans',system-ui,sans-serif;
+  --font-m:'JetBrains Mono',monospace;
+  --r:14px;--r-sm:10px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-b);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;line-height:1.6}
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px)}
+.orb-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(59,130,246,0.12),transparent 70%);animation:drift1 18s ease-in-out infinite}
+.orb-2{width:500px;height:500px;bottom:-150px;right:-100px;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);animation:drift2 22s ease-in-out infinite}
+.orb-3{width:300px;height:300px;top:40%;left:40%;background:radial-gradient(circle,rgba(16,185,129,0.05),transparent 70%);animation:drift3 28s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,60px)}}
+@keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-30px)}}
+@keyframes drift3{0%,100%{transform:translate(0,0)}33%{transform:translate(30px,-40px)}66%{transform:translate(-20px,50px)}}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 20px}
+.scr{display:none}
+.scr.on{display:block;animation:fadeUp 0.5s cubic-bezier(0.16,1,0.3,1)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:var(--r-sm);font-family:var(--font-b);font-weight:600;cursor:pointer;transition:all 0.2s;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff;padding:14px 28px;font-size:1rem;border-radius:var(--r);box-shadow:0 0 30px var(--blue-glow)}
+.btn-blue:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-ghost{background:var(--surface);border:1px solid var(--border2);color:var(--text-muted);padding:12px 24px;font-size:0.9rem}
+.btn-ghost:hover{background:var(--surface2);color:var(--text)}
+.btn-outline-blue{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.3);color:var(--blue);padding:10px 20px;font-size:0.85rem}
+.btn-outline-blue:hover{background:rgba(59,130,246,0.15)}
+/* FIX 4: Back button */
+.btn-back{background:transparent;border:none;color:var(--text-dim);font-size:0.82rem;cursor:pointer;display:flex;align-items:center;gap:5px;padding:0;margin-bottom:24px;font-family:var(--font-b)}
+.btn-back:hover{color:var(--text-muted)}
+.btn-big{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;border:none;border-radius:var(--r);padding:18px 44px;font-family:var(--font-b);font-size:1.1rem;font-weight:600;cursor:pointer;transition:all 0.3s;box-shadow:0 0 50px var(--blue-glow),0 4px 20px rgba(0,0,0,0.3)}
+.btn-big:hover{transform:translateY(-2px);box-shadow:0 0 70px rgba(59,130,246,0.3),0 8px 30px rgba(0,0,0,0.3)}
+
+/* Welcome */
+.welcome-badge{display:inline-flex;align-items:center;gap:6px;background:var(--amber-glow);border:1px solid rgba(245,158,11,0.25);color:var(--amber);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:28px}
+.logo{font-family:var(--font-d);font-size:clamp(3rem,9vw,5.5rem);font-weight:700;letter-spacing:-0.03em;line-height:1;margin-bottom:6px}
+.logo em{color:var(--blue);font-style:normal}
+.logo-sub{font-family:var(--font-b);font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:28px}
+.tagline{font-size:clamp(1rem,2.5vw,1.2rem);color:var(--text-muted);font-weight:300;max-width:500px;line-height:1.7;margin:0 auto 44px}
+.tagline strong{color:var(--text);font-weight:600}
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:44px}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 18px;text-align:left;transition:border-color 0.2s,background 0.2s}
+.feat-card:hover{border-color:var(--border2);background:var(--surface2)}
+.feat-icon{font-size:1.4rem;margin-bottom:10px;display:block}
+.feat-card p{font-size:0.8rem;color:var(--text-muted);line-height:1.6}
+.cta-group{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:56px}
+.free-tag{font-size:0.78rem;color:var(--text-dim)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin-bottom:40px}
+.stats-row{display:flex;justify-content:center;gap:clamp(24px,6vw,60px)}
+.stat .n{font-family:var(--font-d);font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;color:var(--blue);line-height:1;margin-bottom:6px}
+.stat .l{font-size:0.75rem;color:var(--text-dim)}
+
+/* Intake */
+.section-head{margin-bottom:40px}
+.section-head h2{font-family:var(--font-d);font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:10px;line-height:1.15}
+.section-head p{color:var(--text-muted);font-size:0.9rem}
+.qblock{margin-bottom:36px}
+.qlabel{font-size:0.85rem;font-weight:600;color:var(--text);margin-bottom:12px;letter-spacing:0.01em}
+.req{color:var(--amber)}
+.opt-lbl{color:var(--text-dim);font-weight:400}
+.opt-grid{display:grid;gap:9px}
+.opt-grid.c2{grid-template-columns:repeat(2,1fr)}
+.opt-card{display:flex;align-items:center;gap:10px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-sm);padding:13px 15px;cursor:pointer;transition:all 0.18s;font-size:0.83rem;font-family:var(--font-b);color:var(--text-muted);text-align:left}
+.opt-card:hover{border-color:rgba(59,130,246,0.4);background:var(--surface2);color:var(--text)}
+.opt-card.sel{border-color:var(--blue);background:rgba(59,130,246,0.1);color:var(--text);box-shadow:0 0 0 1px var(--blue) inset}
+.oc-icon{font-size:1.05rem;flex-shrink:0}
+.chk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.chk-item{display:flex;align-items:center;gap:10px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-sm);padding:11px 13px;cursor:pointer;transition:all 0.18s;font-size:0.82rem;color:var(--text-muted);user-select:none}
+.chk-item:hover{border-color:rgba(59,130,246,0.3);color:var(--text)}
+.chk-item.on{border-color:var(--blue);background:rgba(59,130,246,0.08);color:var(--text)}
+.chk-box{width:17px;height:17px;border:1.5px solid var(--border2);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.18s;font-size:10px}
+.chk-item.on .chk-box{background:var(--blue);border-color:var(--blue);color:#fff}
+.txt-in,.num-in{background:rgba(255,255,255,0.04);border:1.5px solid var(--border2);border-radius:var(--r-sm);padding:14px 16px;color:var(--text);font-family:var(--font-b);font-size:0.9rem;outline:none;transition:border-color 0.2s,box-shadow 0.2s}
+.txt-in:focus,.num-in:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-glow)}
+.txt-in::placeholder,.num-in::placeholder{color:var(--text-dim)}
+.txt-in{width:100%;resize:vertical;min-height:95px;line-height:1.7}
+.num-in{width:200px}
+.amt-row{display:flex;align-items:center;gap:10px}
+.amt-sym{font-size:1.2rem;color:var(--text-muted);font-weight:300}
+.submit-wrap{margin-top:44px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.privacy{font-size:0.75rem;color:var(--text-dim);text-align:center}
+.err{background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.25);border-radius:var(--r-sm);padding:14px 16px;color:var(--red);font-size:0.85rem;margin-top:14px;display:none}
+.err.show{display:block}
+
+/* FIX 1: Analyzing — ticks start invisible, JS replays animation each time */
+.ring{width:72px;height:72px;border-radius:50%;border:3px solid transparent;border-top-color:var(--blue);border-right-color:rgba(59,130,246,0.3);margin:0 auto 32px;animation:spin 1.2s linear infinite;box-shadow:0 0 30px var(--blue-glow)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ana-title{font-family:var(--font-d);font-size:1.9rem;margin-bottom:10px}
+.ana-ticks{display:flex;flex-direction:column;gap:10px;max-width:320px;margin:0 auto;text-align:left}
+.ana-tick{display:flex;align-items:center;gap:12px;font-size:0.83rem;color:var(--text-dim);opacity:0;transform:translateX(-8px);transition:opacity 0.4s ease,transform 0.4s ease}
+.ana-tick.show{opacity:1;transform:translateX(0)}
+.tick-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);flex-shrink:0;box-shadow:0 0 8px var(--blue)}
+
+/* Results */
+.sec-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:14px;margin-top:36px}
+.opening{background:rgba(59,130,246,0.05);border:1px solid rgba(59,130,246,0.15);border-left:3px solid var(--blue);border-radius:var(--r-sm);padding:20px 22px;color:var(--text-muted);font-size:0.92rem;line-height:1.75;margin-bottom:24px}
+.prob-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:100px;font-size:0.82rem;font-weight:700;letter-spacing:0.02em;margin-bottom:8px}
+.ph{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:var(--green)}
+.pm{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);color:var(--amber)}
+.pl{background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.3);color:var(--red)}
+.pvl{background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.25);color:var(--red)}
+.prob-exp{font-size:0.8rem;color:var(--text-dim)}
+.urgent-banner{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:var(--r-sm);padding:13px 18px;color:var(--amber);font-size:0.83rem;margin:20px 0;display:flex;align-items:center;gap:8px}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px;margin-bottom:10px;transition:border-color 0.2s}
+.step-card:hover{border-color:var(--border2)}
+.step-card.urg{border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.03)}
+.step-top{display:flex;gap:14px}
+.step-num{width:30px;height:30px;min-width:30px;border-radius:50%;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.25);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--blue);margin-top:2px}
+.step-card.urg .step-num{background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.3);color:var(--amber)}
+.step-body{flex:1;min-width:0}
+.step-hrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.step-title{font-weight:600;font-size:0.97rem}
+.urg-tag,.soon-tag{font-size:0.67rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:3px 8px;border-radius:4px}
+.urg-tag{background:rgba(245,158,11,0.15);color:var(--amber)}
+.soon-tag{background:rgba(59,130,246,0.15);color:var(--blue)}
+.step-act{color:var(--text-muted);font-size:0.86rem;margin-bottom:12px;line-height:1.6}
+.step-how{background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:13px 15px;font-size:0.82rem;color:var(--text-muted);line-height:1.8;margin-bottom:8px}
+.step-why{font-size:0.75rem;color:var(--text-dim);font-style:italic}
+.doc-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:10px}
+.doc-hd{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;transition:background 0.2s}
+.doc-hd:hover{background:rgba(255,255,255,0.02)}
+.doc-ht{font-weight:600;font-size:0.88rem}
+.doc-tog{color:var(--text-dim);font-size:0.78rem}
+.doc-bd{display:none;padding:0 20px 20px}
+.doc-bd.open{display:block}
+.doc-txt{font-family:var(--font-m);font-size:0.76rem;color:var(--text-muted);line-height:1.85;white-space:pre-wrap;background:rgba(0,0,0,0.35);border-radius:8px;padding:16px;margin-bottom:10px;overflow-x:auto}
+/* FIX 3: copy buttons now use unique IDs */
+.btn-copy{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.25);color:var(--blue);border-radius:6px;padding:8px 16px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:var(--font-b);transition:all 0.2s}
+.btn-copy:hover{background:rgba(59,130,246,0.15)}
+.btn-copy.done{background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);color:var(--green)}
+.warn-card{background:rgba(248,113,113,0.04);border:1px solid rgba(248,113,113,0.2);border-radius:var(--r);padding:22px;margin-bottom:20px}
+.warn-t{font-weight:700;color:var(--red);margin-bottom:8px;font-size:0.88rem}
+.warn-txt{color:var(--text-muted);font-size:0.85rem;line-height:1.75}
+.em-note{background:rgba(16,185,129,0.04);border:1px solid rgba(16,185,129,0.14);border-radius:var(--r-sm);padding:18px 22px;color:var(--text-muted);font-size:0.88rem;line-height:1.7;font-style:italic;margin-bottom:32px}
+.act-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.act-row .btn{flex:1;min-width:140px}
+
+/* Sponsors */
+.sponsors-section{margin-top:44px;margin-bottom:32px}
+.sponsors-label{display:flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:16px}
+.sponsors-label span{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:var(--blue);font-size:0.62rem;letter-spacing:0.1em;padding:2px 8px;border-radius:4px}
+.sponsor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.sponsor-card{display:flex;flex-direction:column;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.09);border-radius:var(--r);padding:18px;text-decoration:none;transition:all 0.2s;position:relative;overflow:hidden}
+.sponsor-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent);opacity:0;transition:opacity 0.2s}
+.sponsor-card:hover{border-color:rgba(59,130,246,0.3);background:rgba(59,130,246,0.05);transform:translateY(-1px)}
+.sponsor-card:hover::before{opacity:1}
+.sp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.sp-name{font-weight:700;font-size:0.9rem;color:var(--text)}
+.sp-tag-pill{font-size:0.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;padding:2px 7px;border-radius:3px}
+.sp-tag-free{background:rgba(16,185,129,0.12);color:var(--green);border:1px solid rgba(16,185,129,0.2)}
+.sp-tag-trial{background:rgba(59,130,246,0.12);color:var(--blue);border:1px solid rgba(59,130,246,0.2)}
+.sp-tag-deal{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
+.sp-desc{font-size:0.78rem;color:var(--text-muted);line-height:1.55;margin-bottom:10px;flex:1}
+.sp-why{font-size:0.72rem;font-style:italic;color:var(--blue);margin-bottom:10px;opacity:0.85}
+.sp-cta{display:inline-flex;align-items:center;gap:5px;font-size:0.76rem;font-weight:600;color:var(--blue);background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);border-radius:6px;padding:7px 14px;width:fit-content;transition:all 0.2s}
+.sponsor-card:hover .sp-cta{background:rgba(59,130,246,0.18)}
+.sp-disc{font-size:0.7rem;color:var(--text-dim);margin-top:10px;line-height:1.5}
+
+/* ── EMAIL STRIP (results screen) ── */
+.email-strip{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(29,78,216,0.06));
+  border:1px solid rgba(59,130,246,0.22);
+  border-radius:var(--r);
+  padding:18px 22px;
+  margin-top:32px;margin-bottom:14px;
+  flex-wrap:wrap;
+}
+.email-strip-left{display:flex;align-items:center;gap:14px}
+.email-strip-icon{font-size:1.5rem;flex-shrink:0}
+.email-strip-title{font-weight:700;font-size:0.92rem;color:var(--text);margin-bottom:2px}
+.email-strip-sub{font-size:0.77rem;color:var(--text-muted)}
+.btn-email-cta{
+  background:var(--blue);color:#fff;
+  border:none;border-radius:var(--r-sm);
+  padding:12px 22px;font-size:0.85rem;font-weight:600;
+  cursor:pointer;font-family:var(--font-b);
+  transition:all 0.2s;white-space:nowrap;
+  box-shadow:0 0 20px var(--blue-glow);
+}
+.btn-email-cta:hover{background:var(--blue-dark);transform:translateY(-1px)}
+
+/* ── EMAIL MODAL ── */
+.emodal-bg{
+  display:none;position:fixed;inset:0;z-index:300;
+  background:rgba(4,13,26,0.88);
+  backdrop-filter:blur(12px);
+  align-items:center;justify-content:center;
+  padding:20px;
+}
+.emodal-bg.open{display:flex;animation:fadeUp 0.35s ease}
+.emodal-box{
+  background:#0A1628;
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:var(--r);
+  padding:36px 32px;
+  max-width:440px;width:100%;
+  position:relative;
+}
+.emodal-close{
+  position:absolute;top:14px;right:16px;
+  background:none;border:none;color:var(--text-dim);
+  font-size:1.3rem;cursor:pointer;line-height:1;
+  transition:color 0.2s;
+}
+.emodal-close:hover{color:var(--text)}
+.emodal-icon{font-size:2rem;margin-bottom:12px}
+.emodal-title{
+  font-family:var(--font-d);font-size:1.45rem;
+  font-weight:700;margin-bottom:10px;line-height:1.2;
+}
+.emodal-sub{
+  color:var(--text-muted);font-size:0.85rem;
+  line-height:1.65;margin-bottom:22px;
+}
+.email-in{
+  width:100%;
+  background:rgba(255,255,255,0.05);
+  border:1.5px solid var(--border2);
+  border-radius:var(--r-sm);
+  padding:13px 15px;
+  color:var(--text);font-family:var(--font-b);font-size:0.9rem;
+  outline:none;margin-bottom:12px;
+  transition:border-color 0.2s,box-shadow 0.2s;
+}
+.email-in:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-glow)}
+.email-in::placeholder{color:var(--text-dim)}
+.consent-row{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:0.78rem;color:var(--text-muted);
+  line-height:1.55;cursor:pointer;margin-bottom:14px;
+}
+.consent-row input[type=checkbox]{
+  margin-top:2px;flex-shrink:0;
+  accent-color:var(--blue);
+  width:15px;height:15px;cursor:pointer;
+}
+.email-err{
+  font-size:0.8rem;color:var(--red);
+  margin-bottom:10px;min-height:18px;
+}
+.btn-email-submit{
+  width:100%;
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  color:#fff;border:none;border-radius:var(--r-sm);
+  padding:14px;font-size:0.95rem;font-weight:600;
+  cursor:pointer;font-family:var(--font-b);
+  transition:all 0.2s;
+  box-shadow:0 0 30px var(--blue-glow);
+}
+.btn-email-submit:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(59,130,246,0.35)}
+.btn-email-submit:disabled{opacity:0.55;cursor:not-allowed;transform:none}
+.email-fine{font-size:0.72rem;color:var(--text-dim);text-align:center;margin-top:12px}
+
+@media(max-width:600px){
+  .email-strip{flex-direction:column;align-items:flex-start}
+  .btn-email-cta{width:100%}
+  .emodal-box{padding:28px 20px}
+}
+
+@media print{
+  .orb,.cta-group,.act-row,.sponsors-section,.btn-back{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .step-card,.doc-card,.warn-card,.em-note,.opening{background:#f8f9fa!important;border-color:#ddd!important;color:#333!important}
+  .step-num{background:#e0e7ff!important;color:#3730a3!important}
+  .step-title,.doc-ht,.warn-t{color:#111!important}
+  .step-act,.step-how,.step-why,.warn-txt,.doc-txt,.prob-exp{color:#444!important}
+  .doc-bd{display:block!important}
+  .logo em{color:#2563eb!important}
+}
+@media(max-width:600px){
+  .cards-3,.sponsor-grid{grid-template-columns:1fr}
+  .opt-grid.c2,.chk-grid{grid-template-columns:1fr}
+  .stats-row{gap:20px}
+  .act-row{flex-direction:column}
+}
+
+/* ── SCENARIO SLIDESHOW ── */
+.scenarios-wrap{
+  margin:44px 0 0;
+  position:relative;
+}
+.scenarios-header{
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+}
+.scenarios-label{
+  font-size:0.7rem;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--text-dim);
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  padding:5px 14px;border-radius:100px;
+}
+.scenarios-track{
+  overflow:hidden;
+  border-radius:var(--r);
+}
+.scenario-card{
+  display:none;
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:24px 26px;
+  animation:scIn 0.45s cubic-bezier(0.16,1,0.3,1);
+}
+.scenario-card.active{display:block}
+@keyframes scIn{
+  from{opacity:0;transform:translateX(18px)}
+  to{opacity:1;transform:translateX(0)}
+}
+.sc-stars{
+  color:var(--amber);
+  font-size:0.85rem;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+.sc-quote{
+  font-size:0.9rem;
+  color:var(--text);
+  line-height:1.65;
+  font-style:italic;
+  margin-bottom:16px;
+}
+.sc-quote::before{content:'\201C';font-size:1.4rem;color:var(--blue);font-style:normal;line-height:0;vertical-align:-0.35em;margin-right:2px}
+.sc-quote::after{content:'\201D';font-size:1.4rem;color:var(--blue);font-style:normal;line-height:0;vertical-align:-0.35em;margin-left:2px}
+.sc-meta{
+  display:flex;align-items:center;gap:12px;
+}
+.sc-avatar{
+  width:36px;height:36px;min-width:36px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.68rem;font-weight:700;color:#fff;
+  letter-spacing:0.03em;
+}
+.sc-name{
+  font-size:0.82rem;font-weight:600;color:var(--text);
+}
+.sc-loc{color:var(--text-dim);font-weight:400}
+.sc-type{
+  font-size:0.72rem;color:var(--text-dim);margin-top:2px;
+}
+/* dots */
+.sc-dots{
+  display:flex;justify-content:center;gap:6px;
+  margin-top:14px;
+}
+.sc-dot{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--border2);
+  cursor:pointer;
+  transition:all 0.25s;
+  border:none;padding:0;
+}
+.sc-dot.on{
+  background:var(--blue);
+  width:18px;
+  border-radius:3px;
+}
+/* pause button */
+.sc-pause{
+  position:absolute;top:0;right:0;
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--text-dim);
+  font-size:0.7rem;
+  padding:4px 9px;
+  border-radius:6px;
+  cursor:pointer;
+  font-family:var(--font-b);
+  transition:all 0.2s;
+}
+.sc-pause:hover{border-color:var(--border2);color:var(--text-muted)}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+<style>
+/* ── TOP NAV ── */
+.top-nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(4,13,26,0.85);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.35rem;font-weight:700;
+  letter-spacing:-0.02em;color:var(--text);
+}
+.nav-logo em{color:var(--blue);font-style:normal}
+.nav-cta{
+  background:var(--blue);
+  color:#fff;
+  border:none;border-radius:8px;
+  padding:10px 22px;
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:0.85rem;font-weight:600;
+  cursor:pointer;
+  transition:all 0.2s;
+  box-shadow:0 0 20px var(--blue-glow);
+  white-space:nowrap;
+}
+.nav-cta:hover{background:var(--blue-dark);transform:translateY(-1px)}
+
+/* ── BOTTOM CTA BANNER ── */
+.bottom-cta-banner{
+  margin-top:48px;
+  background:rgba(59,130,246,0.06);
+  border:1px solid rgba(59,130,246,0.18);
+  border-radius:var(--r);
+  padding:36px 28px;
+  text-align:center;
+}
+.bottom-cta-banner h3{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.5rem;font-weight:700;
+  margin-bottom:8px;
+}
+.bottom-cta-banner p{
+  color:var(--text-muted);font-size:0.88rem;
+  margin-bottom:22px;line-height:1.6;
+}
+@media(max-width:600px){
+  .top-nav{padding:12px 16px}
+  .nav-logo{font-size:1.1rem}
+  .nav-cta{padding:9px 16px;font-size:0.8rem}
+  .bottom-cta-banner{padding:28px 18px}
+  .bottom-cta-banner h3{font-size:1.25rem}
+}
+</style>
+
+<div class="wrap">
+
+<!-- SCREEN 1: WELCOME -->
+<div class="scr on" id="scrWelcome">
+
+<!-- TOP NAV with CTA -->
+<nav class="top-nav">
+  <div class="nav-logo">SCAM<em>SOS</em></div>
+  <button class="nav-cta" onclick="go('scrIntake')">Get My Free Recovery Plan →</button>
+</nav>
+
+<div style="text-align:center;padding:80px 0 70px">
+  <div class="welcome-badge">⚡ Free AI Recovery Guide · No Signup</div>
+  <div class="logo">SCAM<em>SOS</em></div>
+  <div class="logo-sub">AI Scam Recovery · Free · United States</div>
+  <p class="tagline">You didn't fail. They are <strong>professionals</strong> at this.<br>Let's figure out exactly what to do — right now.</p>
+  <div class="cards-3">
+    <div class="feat-card"><span class="feat-icon">🧠</span><p>Personalized plan based on your exact scam type, payment method, and timing — not a generic checklist.</p></div>
+    <div class="feat-card"><span class="feat-icon">📄</span><p>Ready-to-use dispute letters and word-for-word phone scripts for your bank, FTC, and reporting agencies.</p></div>
+    <div class="feat-card"><span class="feat-icon">🔒</span><p>100% free. No account. No data stored. Your story stays private — we never log your answers.</p></div>
+  </div>
+  <div class="cta-group">
+    <button class="btn-big" onclick="go('scrIntake')">Get My Recovery Plan →</button>
+    <div class="free-tag">Free · No signup · Takes 3 minutes</div>
+  </div>
+  <div class="divider"></div>
+  <div class="stats-row">
+    <div class="stat"><div class="n">$12.5B</div><div class="l">Lost to scams in 2024</div></div>
+    <div class="stat"><div class="n">73M</div><div class="l">Americans scammed last year</div></div>
+    <div class="stat"><div class="n">~50%</div><div class="l">Get money back when they fight</div></div>
+  </div>
+
+  <!-- ── SCENARIO SLIDESHOW ── -->
+  <div class="scenarios-wrap">
+    <div class="scenarios-header">
+      <span class="scenarios-label">💬 Real Situations · Illustrative Examples</span>
+    </div>
+    <div class="scenarios-track" id="scenTrack">
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"I wired $3,200 to someone posing as my bank's fraud department. SCAMSOS had me call the wire recall line within 20 minutes — $2,800 came back."</p>
+        <div class="sc-meta"><span class="sc-avatar">RL</span><div><div class="sc-name">Rachel L. <span class="sc-loc">· Austin, TX</span></div><div class="sc-type">Bank impersonator scam</div></div></div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"My landscaping company almost lost everything. Someone forged a check and cleaned out our business account. The dispute letter SCAMSOS drafted got the bank to reverse it in 9 days."</p>
+        <div class="sc-meta"><span class="sc-avatar">DM</span><div><div class="sc-name">Derek M. <span class="sc-loc">· Phoenix, AZ</span></div><div class="sc-type">Check fraud · Small business owner</div></div></div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"A 'tech support' agent had remote access to my computer for two hours before I realized. SCAMSOS walked me through removing the software and freezing my credit before anything worse happened."</p>
+        <div class="sc-meta"><span class="sc-avatar">PT</span><div><div class="sc-name">Patricia T. <span class="sc-loc">· Columbus, OH</span></div><div class="sc-type">Tech support scam</div></div></div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"I run a boutique and paid a $1,400 deposit on an Airbnb rental for a team retreat that didn't exist. The chargeback script SCAMSOS gave me worked — credit card refunded everything."</p>
+        <div class="sc-meta"><span class="sc-avatar">JK</span><div><div class="sc-name">Jennifer K. <span class="sc-loc">· Nashville, TN</span></div><div class="sc-type">Rental scam · Boutique owner</div></div></div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"Sent $800 on Zelle to someone selling concert tickets on Facebook. SCAMSOS told me exactly what to say to my bank — 'authorized push payment fraud' — and I got a goodwill refund."</p>
+        <div class="sc-meta"><span class="sc-avatar">MR</span><div><div class="sc-name">Marcus R. <span class="sc-loc">· Atlanta, GA</span></div><div class="sc-type">Marketplace scam</div></div></div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"My catering business got hit with a fake check overpayment scam — $2,600 gone. I didn't know I had 60 days to dispute. SCAMSOS caught it in time and the bank reversed the charge."</p>
+        <div class="sc-meta"><span class="sc-avatar">AN</span><div><div class="sc-name">Angela N. <span class="sc-loc">· Chicago, IL</span></div><div class="sc-type">Overpayment check scam · Caterer</div></div></div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"Lost $5,000 in a crypto investment scam. Recovery wasn't possible, but SCAMSOS helped me file with IC3 and freeze my credit before they could open cards in my name. Saved me from worse."</p>
+        <div class="sc-meta"><span class="sc-avatar">TC</span><div><div class="sc-name">Thomas C. <span class="sc-loc">· Denver, CO</span></div><div class="sc-type">Crypto investment scam</div></div></div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"Someone called pretending to be the IRS and I gave them my SSN. I was panicking. SCAMSOS had me freeze all three credit bureaus in under 10 minutes. No fraudulent accounts were ever opened."</p>
+        <div class="sc-meta"><span class="sc-avatar">SW</span><div><div class="sc-name">Sandra W. <span class="sc-loc">· Seattle, WA</span></div><div class="sc-type">Government impersonator scam</div></div></div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"I own a photography studio and got a fake job inquiry — paid $450 for 'equipment insurance.' Credit card dispute was easy once I had the right language from SCAMSOS."</p>
+        <div class="sc-meta"><span class="sc-avatar">BF</span><div><div class="sc-name">Brittany F. <span class="sc-loc">· Portland, OR</span></div><div class="sc-type">Fake job scam · Studio owner</div></div></div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"My 74-year-old father sent $1,200 in gift cards to someone claiming to be me in jail. SCAMSOS found that two cards hadn't been redeemed yet — Google refunded both within 48 hours."</p>
+        <div class="sc-meta"><span class="sc-avatar">KH</span><div><div class="sc-name">Kevin H. <span class="sc-loc">· Tampa, FL</span></div><div class="sc-type">Grandparent / family emergency scam</div></div></div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"Ordered $340 of supplies from what looked like a legitimate wholesale site. Package never arrived, site vanished. PayPal Goods &amp; Services protected me — SCAMSOS showed me exactly where to file."</p>
+        <div class="sc-meta"><span class="sc-avatar">LG</span><div><div class="sc-name">Luis G. <span class="sc-loc">· Miami, FL</span></div><div class="sc-type">Fake online store · Restaurant owner</div></div></div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="sc-stars">★★★★★</div>
+        <p class="sc-quote">"Someone hacked my email and sent a fake invoice to my biggest client. Lost $4,800 via wire. SCAMSOS helped me file an FBI IC3 report and document everything for my insurance claim."</p>
+        <div class="sc-meta"><span class="sc-avatar">RP</span><div><div class="sc-name">Ryan P. <span class="sc-loc">· Boston, MA</span></div><div class="sc-type">Business email compromise</div></div></div>
+      </div>
+
+    </div><!-- /track -->
+
+    <!-- Dot indicators -->
+    <div class="sc-dots" id="scDots"></div>
+
+    <!-- Pause / resume -->
+    <button class="sc-pause" id="scPause" onclick="togglePause()" aria-label="Pause slideshow">⏸</button>
+  </div>
+
+  <!-- BOTTOM CTA BANNER -->
+  <div class="bottom-cta-banner">
+    <h3>Ready to fight back?</h3>
+    <p>Your personalized recovery plan takes 3 minutes.<br>Free, private, and built for your exact situation.</p>
+    <button class="btn-big" onclick="go('scrIntake')" style="margin:0 auto">
+      Get My Free Recovery Plan →
+    </button>
+    <div style="margin-top:12px;font-size:0.75rem;color:var(--text-dim)">No signup · No data stored · Completely free</div>
+  </div>
+
+</div><!-- /welcome inner -->
+</div>
+
+<!-- SCREEN 2: INTAKE -->
+<div class="scr" id="scrIntake">
+<div style="padding:60px 0 80px">
+  <!-- FIX 4: Back button added -->
+  <button class="btn-back" onclick="go('scrWelcome')">← Back to home</button>
+  <div class="section-head">
+    <h2>Tell us what happened</h2>
+    <p>Answer as much as you can. More detail = more specific recovery plan.</p>
+  </div>
+
+  <div class="qblock">
+    <div class="qlabel">What type of scam was it? <span class="req">*</span></div>
+    <div class="opt-grid c2" id="gScam">
+      <button class="opt-card" data-v="romance"      onclick="pick('scam',this)"><span class="oc-icon">💔</span>Romance or relationship</button>
+      <button class="opt-card" data-v="tech"         onclick="pick('scam',this)"><span class="oc-icon">🖥️</span>Tech support / virus warning</button>
+      <button class="opt-card" data-v="investment"   onclick="pick('scam',this)"><span class="oc-icon">📈</span>Investment or cryptocurrency</button>
+      <button class="opt-card" data-v="impersonator" onclick="pick('scam',this)"><span class="oc-icon">🏛️</span>Government / bank impersonator</button>
+      <button class="opt-card" data-v="shopping"     onclick="pick('scam',this)"><span class="oc-icon">🛍️</span>Fake online store or product</button>
+      <button class="opt-card" data-v="job"          onclick="pick('scam',this)"><span class="oc-icon">💼</span>Fake job offer</button>
+      <button class="opt-card" data-v="lottery"      onclick="pick('scam',this)"><span class="oc-icon">🎰</span>Lottery / prize / sweepstakes</button>
+      <button class="opt-card" data-v="rental"       onclick="pick('scam',this)"><span class="oc-icon">🏠</span>Rental or housing scam</button>
+      <button class="opt-card" data-v="family"       onclick="pick('scam',this)"><span class="oc-icon">👴</span>Family emergency / grandparent</button>
+      <button class="opt-card" data-v="phishing"     onclick="pick('scam',this)"><span class="oc-icon">🎣</span>Phishing email or fake website</button>
+      <button class="opt-card" data-v="marketplace"  onclick="pick('scam',this)"><span class="oc-icon">🏪</span>Marketplace (Craigslist, FB, etc.)</button>
+      <button class="opt-card" data-v="other"        onclick="pick('scam',this)"><span class="oc-icon">❓</span>Other / not sure</button>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qlabel">How did you pay or lose money? <span class="req">*</span></div>
+    <div class="opt-grid c2" id="gPay">
+      <button class="opt-card" data-v="credit"   onclick="pick('pay',this)"><span class="oc-icon">💳</span>Credit card</button>
+      <button class="opt-card" data-v="debit"    onclick="pick('pay',this)"><span class="oc-icon">💳</span>Debit card</button>
+      <button class="opt-card" data-v="wire"     onclick="pick('pay',this)"><span class="oc-icon">🏦</span>Bank / wire transfer</button>
+      <button class="opt-card" data-v="zelle"    onclick="pick('pay',this)"><span class="oc-icon">⚡</span>Zelle</button>
+      <button class="opt-card" data-v="p2p"      onclick="pick('pay',this)"><span class="oc-icon">📱</span>Venmo / Cash App / PayPal</button>
+      <button class="opt-card" data-v="crypto"   onclick="pick('pay',this)"><span class="oc-icon">₿</span>Cryptocurrency</button>
+      <button class="opt-card" data-v="giftcard" onclick="pick('pay',this)"><span class="oc-icon">🎁</span>Gift cards (Amazon, Google, etc.)</button>
+      <button class="opt-card" data-v="check"    onclick="pick('pay',this)"><span class="oc-icon">📝</span>Check or money order</button>
+      <button class="opt-card" data-v="nopay"    onclick="pick('pay',this)"><span class="oc-icon">🔐</span>No money — just personal info</button>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qlabel">When did this happen? <span class="req">*</span></div>
+    <div class="opt-grid c2" id="gWhen">
+      <button class="opt-card" data-v="hour"  onclick="pick('when',this)"><span class="oc-icon">⚡</span>Within the last hour</button>
+      <button class="opt-card" data-v="today" onclick="pick('when',this)"><span class="oc-icon">📅</span>Today (within 24 hours)</button>
+      <button class="opt-card" data-v="days3" onclick="pick('when',this)"><span class="oc-icon">📅</span>1–3 days ago</button>
+      <button class="opt-card" data-v="week"  onclick="pick('when',this)"><span class="oc-icon">📅</span>Within the past week</button>
+      <button class="opt-card" data-v="month" onclick="pick('when',this)"><span class="oc-icon">📅</span>Within the past month</button>
+      <button class="opt-card" data-v="old"   onclick="pick('when',this)"><span class="oc-icon">📅</span>More than a month ago</button>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qlabel">What personal information did you share? <span class="opt-lbl">(check all that apply)</span></div>
+    <div class="chk-grid">
+      <div class="chk-item" onclick="chk(this,'ssn')">    <div class="chk-box">✓</div>Social Security Number</div>
+      <div class="chk-item" onclick="chk(this,'bank')">   <div class="chk-box">✓</div>Bank account / routing numbers</div>
+      <div class="chk-item" onclick="chk(this,'cardnum')"><div class="chk-box">✓</div>Credit or debit card numbers</div>
+      <div class="chk-item" onclick="chk(this,'pwd')">    <div class="chk-box">✓</div>Account passwords / logins</div>
+      <div class="chk-item" onclick="chk(this,'addr')">   <div class="chk-box">✓</div>Home address</div>
+      <div class="chk-item" onclick="chk(this,'dob')">    <div class="chk-box">✓</div>Date of birth</div>
+      <div class="chk-item" onclick="chk(this,'id')">     <div class="chk-box">✓</div>Government ID (license, passport)</div>
+      <div class="chk-item" onclick="chk(this,'contact')"><div class="chk-box">✓</div>Phone / email only</div>
+      <div class="chk-item" onclick="chk(this,'none')">   <div class="chk-box">✓</div>Nothing — just lost money</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qlabel">How much did you lose? <span class="opt-lbl">(optional)</span></div>
+    <div class="amt-row">
+      <span class="amt-sym">$</span>
+      <!-- FIX 5: JS validates no negative on input -->
+      <input type="number" class="num-in" id="inAmt" placeholder="0.00" min="0" step="0.01"
+             oninput="if(parseFloat(this.value)<0||this.value==='-')this.value=''">
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qlabel">Briefly describe what happened <span class="opt-lbl">(optional — helps a lot)</span></div>
+    <textarea class="txt-in" id="inDesc" placeholder="e.g. Someone contacted me on Instagram pretending to be a crypto investment coach. They convinced me to send $2,000 via wire transfer to a 'trading platform' that disappeared the next day..."></textarea>
+  </div>
+
+  <div class="submit-wrap">
+    <button class="btn btn-blue" style="padding:18px 50px;font-size:1.05rem" onclick="analyze()">
+      Generate My Recovery Plan →
+    </button>
+    <div class="privacy">🔒 Private · Your answers are never stored or logged · No account needed</div>
+  </div>
+  <div class="err" id="errMsg">Please select your scam type, payment method, and when it happened.</div>
+</div>
+</div>
+
+<!-- SCREEN 3: ANALYZING -->
+<div class="scr" id="scrAnalyzing">
+<div style="padding:130px 0;text-align:center">
+  <div class="ring"></div>
+  <div class="ana-title">Analyzing your situation...</div>
+  <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:40px">Building your personalized recovery plan</p>
+  <!-- FIX 1: ticks start opacity:0, JS adds .show class with stagger each time -->
+  <div class="ana-ticks" id="anaTicks">
+    <div class="ana-tick"><div class="tick-dot"></div>Identifying recovery paths for your payment method</div>
+    <div class="ana-tick"><div class="tick-dot"></div>Calculating time-sensitive actions</div>
+    <div class="ana-tick"><div class="tick-dot"></div>Drafting your dispute letters and scripts</div>
+  </div>
+</div>
+</div>
+
+<!-- SCREEN 4: RESULTS -->
+<div class="scr" id="scrResults">
+<div style="padding:60px 0 90px">
+  <div style="margin-bottom:36px">
+    <h2 style="font-family:var(--font-d);font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:4px">Your Recovery Plan</h2>
+    <p style="color:var(--text-dim);font-size:0.8rem">Generated for your specific situation · Not legal advice · Free to use and print</p>
+  </div>
+  <div id="resContent"></div>
+  <!-- Email CTA strip — above the action buttons -->
+  <div class="email-strip">
+    <div class="email-strip-left">
+      <span class="email-strip-icon">📧</span>
+      <div>
+        <div class="email-strip-title">Get this plan in your inbox</div>
+        <div class="email-strip-sub">So you have it when you need it — plus 3 follow-up tips</div>
+      </div>
+    </div>
+    <button class="btn-email-cta" onclick="openEmailModal()">Send to my email →</button>
+  </div>
+
+  <div class="act-row">
+    <button class="btn btn-ghost" onclick="window.print()">🖨️ Print / Save PDF</button>
+    <button class="btn btn-outline-blue" onclick="restart()">Start New Case</button>
+  </div>
+</div>
+</div>
+
+<!-- EMAIL CAPTURE MODAL -->
+<div id="emailModal" class="emodal-bg" onclick="closeEmailModal(event)">
+  <div class="emodal-box">
+    <button class="emodal-close" onclick="closeEmailModal()">&times;</button>
+
+    <!-- Step 1: Form -->
+    <div id="emailStep1">
+      <div class="emodal-icon">📧</div>
+      <h3 class="emodal-title">Email me my recovery plan</h3>
+      <p class="emodal-sub">We'll send your full plan to your inbox so you have it when you call your bank or report to the FTC. No spam — just your plan and 3 follow-up tips.</p>
+      <input type="email" class="email-in" id="emailInput" placeholder="your@email.com" />
+      <label class="consent-row">
+        <input type="checkbox" id="emailConsent" />
+        <span>I agree to receive my recovery plan and follow-up tips from SCAMSOS. Unsubscribe anytime.</span>
+      </label>
+      <div class="email-err" id="emailErr"></div>
+      <button class="btn-email-submit" id="emailSubmitBtn" onclick="submitEmail()">
+        Send My Recovery Plan →
+      </button>
+      <p class="email-fine">🔒 Your email is never sold or shared. CAN-SPAM compliant.</p>
+    </div>
+
+    <!-- Step 2: Success -->
+    <div id="emailStep2" style="display:none;text-align:center">
+      <div style="font-size:2.8rem;margin-bottom:16px">✅</div>
+      <h3 class="emodal-title">On its way!</h3>
+      <p class="emodal-sub">Check your inbox — your recovery plan is being sent now.<br>Also check your spam folder if you don't see it in 5 minutes.</p>
+      <button class="btn-email-submit" onclick="closeEmailModal()" style="margin-top:20px">Done</button>
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+<script>
+// ══════════════════════════════════════════════════
+// SCENARIO SLIDESHOW
+// ══════════════════════════════════════════════════
+(function(){
+  const cards  = Array.from(document.querySelectorAll('.scenario-card'));
+  const dotsEl = document.getElementById('scDots');
+  const pauseBtn = document.getElementById('scPause');
+  let cur = 0, paused = false, timer = null;
+  const DELAY = 4200; // ms per slide
+
+  // Build dots
+  cards.forEach((_,i) => {
+    const d = document.createElement('button');
+    d.className = 'sc-dot' + (i===0?' on':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.onclick = () => { showSlide(i); resetTimer(); };
+    dotsEl.appendChild(d);
+  });
+
+  function showSlide(n){
+    cards.forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.sc-dot').forEach(d => d.classList.remove('on'));
+    cur = (n + cards.length) % cards.length;
+    cards[cur].classList.add('active');
+    document.querySelectorAll('.sc-dot')[cur].classList.add('on');
+  }
+
+  function next(){ showSlide(cur + 1); }
+
+  function resetTimer(){
+    clearInterval(timer);
+    if(!paused) timer = setInterval(next, DELAY);
+  }
+
+  function togglePause(){
+    paused = !paused;
+    pauseBtn.textContent = paused ? '▶' : '⏸';
+    pauseBtn.setAttribute('aria-label', paused ? 'Resume slideshow' : 'Pause slideshow');
+    resetTimer();
+  }
+  window.togglePause = togglePause;
+
+  // Touch / swipe support
+  let tx = 0;
+  const track = document.getElementById('scenTrack');
+  track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if(Math.abs(dx) > 40){ showSlide(dx < 0 ? cur+1 : cur-1); resetTimer(); }
+  }, {passive:true});
+
+  // Pause on hover
+  track.addEventListener('mouseenter', () => { clearInterval(timer); });
+  track.addEventListener('mouseleave', () => { if(!paused) timer = setInterval(next, DELAY); });
+
+  showSlide(0);
+  timer = setInterval(next, DELAY);
+})();
+
+// ═══ STATE ═══
+const S={scam:null,pay:null,when:null,info:[],amount:'',desc:''};
+
+// ═══ NAVIGATION — FIX 1: tick animation restarts fresh each visit ═══
+function go(id){
+  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='scrAnalyzing'){
+    // Reset all ticks then stagger-show them
+    const ticks=document.querySelectorAll('#anaTicks .ana-tick');
+    ticks.forEach(t=>t.classList.remove('show'));
+    ticks.forEach((t,i)=>setTimeout(()=>t.classList.add('show'),(i*800)+400));
+  }
+}
+
+// ═══ INPUTS ═══
+function pick(field,el){
+  el.closest('.opt-grid').querySelectorAll('.opt-card').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel');S[field]=el.dataset.v;
+}
+function chk(el,val){
+  el.classList.toggle('on');
+  if(el.classList.contains('on')){if(!S.info.includes(val))S.info.push(val);}
+  else S.info=S.info.filter(v=>v!==val);
+}
+
+// ═══ LABEL MAPS ═══
+const SCAM_LBL={romance:'Romance or relationship scam',tech:'Tech support / virus warning scam',investment:'Investment or cryptocurrency scam',impersonator:'Government or bank impersonator scam',shopping:'Fake online store or product scam',job:'Fake job offer scam',lottery:'Lottery, prize, or sweepstakes scam',rental:'Rental or housing scam',family:'Family emergency / grandparent scam',phishing:'Phishing email or fake website',marketplace:'Online marketplace scam (Craigslist, Facebook, etc.)',other:'Other / unknown scam type'};
+const PAY_LBL={credit:'Credit card',debit:'Debit card',wire:'Bank transfer or wire transfer',zelle:'Zelle',p2p:'Venmo, Cash App, or PayPal',crypto:'Cryptocurrency',giftcard:'Gift cards',check:'Check or money order',nopay:'No money paid — personal information only'};
+const WHEN_LBL={hour:'Within the last hour — EXTREMELY urgent',today:'Today, within the last 24 hours — urgent',days3:'1 to 3 days ago',week:'Within the past week',month:'Within the past month',old:'More than a month ago'};
+
+// ═══ SPONSOR DATABASE ═══
+// ─────────────────────────────────────────────────────────────
+// STEP: Replace each PASTE_YOUR_XXXXX_LINK_HERE with your
+// actual affiliate URL once approved by each program.
+// See the affiliate guide below for how to apply to each one.
+// ─────────────────────────────────────────────────────────────
+const SPONSOR_DB={
+  aura:{
+    name:'Aura Identity Protection',tag:'14-Day Free Trial',tagCls:'sp-tag-trial',
+    desc:'All-in-one protection: dark web monitoring, SSN alerts, credit monitoring, $1M identity theft insurance, and 24/7 fraud specialists.',
+    why:'Monitors whether your stolen data is already being used against you.',
+    cta:'Start Free 14-Day Trial',
+    href:'PASTE_YOUR_AURA_AFFILIATE_LINK_HERE'
+  },
+  lifelock:{
+    name:'LifeLock by Norton',tag:'30-Day Free Trial',tagCls:'sp-tag-trial',
+    desc:'Scans millions of data points for threats to your identity. Specialists help restore your identity if stolen — guaranteed.',
+    why:'SSN and government ID exposure requires ongoing monitoring across all three credit bureaus.',
+    cta:'Try Free for 30 Days',
+    href:'PASTE_YOUR_LIFELOCK_AFFILIATE_LINK_HERE'
+  },
+  experian:{
+    name:'Experian IdentityWorks',tag:'Free Plan Available',tagCls:'sp-tag-free',
+    desc:'Free credit monitoring from the largest US credit bureau. Instant alerts if anyone opens accounts in your name.',
+    why:'Essential first step to catch new fraudulent accounts being opened with your information.',
+    cta:'Get Free Credit Monitoring',
+    href:'PASTE_YOUR_EXPERIAN_AFFILIATE_LINK_HERE'
+  },
+  credit_freeze:{
+    name:'Freeze Your Credit (Free)',tag:'Free',tagCls:'sp-tag-free',
+    desc:'Freeze your credit at Equifax, Experian, and TransUnion for free. Stops anyone from opening new accounts in your name immediately.',
+    why:'The single most effective action after SSN or personal data exposure. Takes 5 minutes.',
+    cta:'How to Freeze Your Credit →',
+    href:'https://consumer.ftc.gov/articles/what-know-about-credit-freezes-fraud-alerts'
+  },
+  malwarebytes:{
+    name:'Malwarebytes Premium',tag:'Free Trial',tagCls:'sp-tag-trial',
+    desc:'Removes malware, spyware, and remote-access tools that tech support scammers commonly install. Real-time protection included.',
+    why:'Tech support scammers often leave software running after you hang up — scan your device now.',
+    cta:'Scan Your Device Free',
+    href:'PASTE_YOUR_MALWAREBYTES_AFFILIATE_LINK_HERE'
+  },
+  nordvpn:{
+    name:'NordVPN',tag:'68% Off Today',tagCls:'sp-tag-deal',
+    desc:'Encrypts your internet connection, masks your IP address, and blocks malicious sites before you land on them.',
+    why:'After phishing exposure, your browsing may be monitored — a VPN cuts that connection off.',
+    cta:'Get NordVPN Discount',
+    href:'PASTE_YOUR_NORDVPN_AFFILIATE_LINK_HERE'
+  },
+  onepassword:{
+    name:'1Password',tag:'14-Day Free Trial',tagCls:'sp-tag-trial',
+    desc:'Generates and stores unique strong passwords for every account. Alerts you if any saved passwords appear in known data breaches.',
+    why:'Stolen passwords are reused across accounts within hours — a manager stops this permanently.',
+    cta:'Try 1Password Free',
+    href:'PASTE_YOUR_1PASSWORD_AFFILIATE_LINK_HERE'
+  },
+  legalshield:{
+    name:'LegalShield',tag:'Low Monthly Fee',tagCls:'sp-tag-deal',
+    desc:'Access real attorneys for fraud consultations, demand letters, and legal options — flat monthly fee, no surprise hourly billing.',
+    why:'For significant losses, attorneys can pursue options your bank won\'t mention — including civil action.',
+    cta:'Talk to a Real Attorney',
+    href:'PASTE_YOUR_LEGALSHIELD_AFFILIATE_LINK_HERE'
+  }
+};
+
+// ═══ SPONSOR SELECTION — covers every scam + payment combo ═══
+// FIX 6+7: nopay and all previously uncovered combos now handled
+function getSponsors(scam,pay,info){
+  const p=new Set();
+
+  // Layer 1: Personal info shared
+  if(info.includes('ssn')||info.includes('id')||info.includes('dob')){p.add('credit_freeze');p.add('lifelock');p.add('aura');}
+  if(info.includes('bank')||info.includes('cardnum')){p.add('experian');p.add('aura');}
+  if(info.includes('pwd')){p.add('onepassword');p.add('aura');}
+  if(info.includes('addr')||info.includes('contact')){p.add('aura');p.add('experian');}
+
+  // Layer 2: Scam type — FULLY covered now
+  if(scam==='tech'){p.add('malwarebytes');p.add('nordvpn');p.add('onepassword');}
+  if(scam==='phishing'){p.add('nordvpn');p.add('onepassword');p.add('malwarebytes');}
+  if(scam==='investment'||scam==='romance'){p.add('legalshield');p.add('aura');}
+  if(scam==='impersonator'){p.add('credit_freeze');p.add('lifelock');p.add('aura');}
+  if(scam==='job'){p.add('credit_freeze');p.add('experian');p.add('onepassword');}
+  if(scam==='rental'){p.add('credit_freeze');p.add('aura');p.add('legalshield');}
+  if(scam==='family'||scam==='lottery'){p.add('aura');p.add('experian');}
+  if(scam==='shopping'||scam==='marketplace'){p.add('experian');p.add('aura');p.add('onepassword');}
+  if(scam==='other'){p.add('aura');p.add('experian');}
+
+  // Layer 3: Payment method — FULLY covered now
+  if(pay==='nopay'){p.add('credit_freeze');p.add('lifelock');p.add('aura');p.add('experian');}  // FIX 6
+  if(pay==='wire'||pay==='crypto'){p.add('legalshield');p.add('aura');}
+  if(pay==='debit'||pay==='check'){p.add('experian');p.add('aura');}
+  if(pay==='zelle'||pay==='p2p'){p.add('aura');p.add('experian');}
+  if(pay==='credit'){p.add('aura');}
+  if(pay==='giftcard'){p.add('aura');p.add('experian');}
+
+  // Universal minimum
+  p.add('aura');
+
+  // Priority order — max 4 shown
+  const ORDER=['credit_freeze','malwarebytes','onepassword','lifelock','aura','experian','nordvpn','legalshield'];
+  return ORDER.filter(k=>p.has(k)).slice(0,4);
+}
+
+function renderSponsors(scam,pay,info){
+  const keys=getSponsors(scam,pay,info);
+  if(!keys.length)return'';
+  const cards=keys.map(key=>{
+    const s=SPONSOR_DB[key];if(!s)return'';
+    return`<a class="sponsor-card" href="${s.href}" target="_blank" rel="noopener sponsored">
+      <div class="sp-top"><span class="sp-name">${s.name}</span><span class="sp-tag-pill ${s.tagCls}">${s.tag}</span></div>
+      <div class="sp-desc">${s.desc}</div>
+      <div class="sp-why">💡 ${s.why}</div>
+      <div class="sp-cta">${s.cta} →</div>
+    </a>`;
+  }).join('');
+  return`<div class="sponsors-section">
+    <div class="sponsors-label">Recommended Resources <span>Sponsored Partners</span></div>
+    <div class="sponsor-grid">${cards}</div>
+    <p class="sp-disc">Some links above are paid partner links. SCAMSOS only shows services relevant to your specific situation. We may receive a commission if you sign up — at no extra cost to you. This keeps SCAMSOS free for everyone.</p>
+  </div>`;
+}
+
+// ═══ ANALYZE ═══
+async function analyze(){
+  if(!S.scam||!S.pay||!S.when){
+    const e=document.getElementById('errMsg');
+    e.textContent='Please select your scam type, payment method, and when it happened.';
+    e.classList.add('show');e.scrollIntoView({behavior:'smooth',block:'nearest'});return;
+  }
+  document.getElementById('errMsg').classList.remove('show');
+  const rawAmt=document.getElementById('inAmt').value;
+  S.amount=(rawAmt&&parseFloat(rawAmt)>0)?parseFloat(rawAmt).toFixed(2):'';
+  S.desc=document.getElementById('inDesc').value.trim();
+  go('scrAnalyzing');
+  try{
+    const resp=await fetch('/.netlify/functions/analyze',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({scam:S.scam,pay:S.pay,when:S.when,info:S.info,amount:S.amount,desc:S.desc})
+    });
+    if(!resp.ok){const e=await resp.json().catch(()=>({}));throw new Error(e.error||`Server error ${resp.status}`);}
+    const plan=await resp.json();
+    if(!plan||!plan.steps)throw new Error('Recovery plan could not be generated. Please try again.');
+    render(plan);go('scrResults');
+  }catch(err){
+    go('scrIntake');
+    const e=document.getElementById('errMsg');
+    e.textContent='⚠️ '+(err.message||'Something went wrong. Please try again.');
+    e.classList.add('show');e.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+}
+
+// ═══ RENDER ═══
+function h(s){
+  if(s===null||s===undefined)return'';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/\n/g,'<br>');
+}
+
+// Build clean plain-text version of plan for email body
+function buildPlainText(plan){
+  const lines = [];
+  lines.push('YOUR SCAMSOS RECOVERY PLAN');
+  lines.push('==========================');
+  lines.push('');
+  if(plan.opening) lines.push(plan.opening, '');
+  if(plan.recovery_probability){
+    lines.push(`Recovery probability: ${plan.recovery_probability.level}`);
+    lines.push(plan.recovery_probability.explanation||'');
+    lines.push('');
+  }
+  lines.push('ACTION STEPS');
+  lines.push('------------');
+  (plan.steps||[]).forEach(s=>{
+    const urg = s.urgency==='urgent'?' [DO NOW]' : s.urgency==='soon'?' [THIS WEEK]':'';
+    lines.push(`${s.priority}. ${s.title}${urg}`);
+    lines.push(s.action||'');
+    lines.push(s.how||'');
+    lines.push('');
+  });
+  if(plan.draft_documents?.length){
+    lines.push('DRAFT LETTERS & SCRIPTS');
+    lines.push('-----------------------');
+    plan.draft_documents.forEach(d=>{
+      lines.push(d.title||'');
+      lines.push(d.content||'');
+      lines.push('');
+    });
+  }
+  if(plan.recovery_scam_warning){
+    lines.push('⚠ WARNING: RECOVERY SCAMS');
+    lines.push(plan.recovery_scam_warning);
+    lines.push('');
+  }
+  lines.push('---');
+  lines.push('Generated free by SCAMSOS.com');
+  return lines.join('\n');
+}
+
+function render(plan){
+  // Capture plain-text summary for email
+  _planText = buildPlainText(plan);
+
+  const lvl=plan.recovery_probability?.level||'Unknown';
+  const pcls={High:'ph',Medium:'pm',Low:'pl','Very Low':'pvl'}[lvl]||'pl';
+  const pico={High:'🟢',Medium:'🟡',Low:'🔴','Very Low':'🔴'}[lvl]||'⚪';
+  const hasUrgent=(plan.steps||[]).some(s=>s.urgency==='urgent');
+
+  const stepsHtml=(plan.steps||[]).map(step=>{
+    const urg=step.urgency==='urgent',soon=step.urgency==='soon';
+    return`<div class="step-card${urg?' urg':''}">
+      <div class="step-top">
+        <div class="step-num">${step.priority||''}</div>
+        <div class="step-body">
+          <div class="step-hrow">
+            <span class="step-title">${h(step.title)}</span>
+            ${urg?'<span class="urg-tag">⚡ Do Now</span>':''}
+            ${soon?'<span class="soon-tag">📅 This Week</span>':''}
+          </div>
+          <div class="step-act">${h(step.action)}</div>
+          <div class="step-how">${h(step.how)}</div>
+          ${step.why?`<div class="step-why">${h(step.why)}</div>`:''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // FIX 3: copy buttons use unique IDs — btn-copy-0, btn-copy-1 etc.
+  const docsHtml=(plan.draft_documents||[]).map((d,i)=>`
+  <div class="doc-card">
+    <div class="doc-hd" onclick="toggleDoc(${i})">
+      <span class="doc-ht">📄 ${h(d.title)}</span>
+      <span class="doc-tog" id="dt${i}">Show ▾</span>
+    </div>
+    <div class="doc-bd" id="db${i}">
+      <div class="doc-txt" id="dx${i}">${h(d.content)}</div>
+      <button class="btn-copy" id="btn-copy-${i}" onclick="copyDoc(${i})">Copy to Clipboard</button>
+    </div>
+  </div>`).join('');
+
+  document.getElementById('resContent').innerHTML=`
+    <div class="opening">${h(plan.opening)}</div>
+    <div style="margin-bottom:28px">
+      <div class="prob-pill ${pcls}">${pico} Recovery probability: ${h(lvl)}</div><br>
+      <span class="prob-exp">${h(plan.recovery_probability?.explanation)}</span>
+    </div>
+    ${hasUrgent?'<div class="urgent-banner">⚡ <strong>Time-sensitive steps below.</strong> Complete every "Do Now" step before anything else — every hour counts.</div>':''}
+    <div class="sec-label">Your Personalized Action Plan</div>
+    ${stepsHtml||'<p style="color:var(--text-muted)">No steps generated — please try again.</p>'}
+    ${docsHtml?`<div class="sec-label" style="margin-top:40px">Draft Letters &amp; Scripts</div>${docsHtml}`:''}
+    ${renderSponsors(S.scam,S.pay,S.info)}
+    <div style="margin-top:16px">
+      <div class="warn-card">
+        <div class="warn-t">⚠️ Critical: Watch Out for Recovery Scams</div>
+        <div class="warn-txt">${h(plan.recovery_scam_warning)}</div>
+      </div>
+      ${plan.emotional_note?`<div class="em-note">"${h(plan.emotional_note)}"</div>`:''}
+    </div>`;
+}
+
+function toggleDoc(i){
+  const bd=document.getElementById(`db${i}`);
+  const tg=document.getElementById(`dt${i}`);
+  tg.textContent=bd.classList.toggle('open')?'Hide ▴':'Show ▾';
+}
+
+// FIX 3: ID-based targeting, not querySelectorAll index
+async function copyDoc(i){
+  const txt=document.getElementById(`dx${i}`)?.innerText||'';
+  try{await navigator.clipboard.writeText(txt);}catch(e){}
+  const btn=document.getElementById(`btn-copy-${i}`);
+  if(!btn)return;
+  const orig=btn.textContent;
+  btn.textContent='✓ Copied!';btn.classList.add('done');
+  setTimeout(()=>{btn.textContent=orig;btn.classList.remove('done');},2200);
+}
+
+// FIX 2: restart resets error text AND state fully
+function restart(){
+  S.scam=null;S.pay=null;S.when=null;S.info=[];S.amount='';S.desc='';
+  _planText='';
+  document.querySelectorAll('.opt-card.sel').forEach(c=>c.classList.remove('sel'));
+  document.querySelectorAll('.chk-item.on').forEach(c=>c.classList.remove('on'));
+  document.getElementById('inAmt').value='';
+  document.getElementById('inDesc').value='';
+  const e=document.getElementById('errMsg');
+  e.classList.remove('show');
+  e.textContent='Please select your scam type, payment method, and when it happened.';
+  go('scrWelcome');
+}
+
+// ══════════════════════════════════════════════════
+// EMAIL CAPTURE — ConvertKit integration
+// ══════════════════════════════════════════════════
+
+let _planText = '';
+
+function openEmailModal(){
+  document.getElementById('emailModal').classList.add('open');
+  setTimeout(()=>document.getElementById('emailInput').focus(),100);
+}
+
+function closeEmailModal(e){
+  if(e && e.target!==document.getElementById('emailModal')) return;
+  document.getElementById('emailModal').classList.remove('open');
+  document.getElementById('emailStep1').style.display='';
+  document.getElementById('emailStep2').style.display='none';
+  document.getElementById('emailInput').value='';
+  document.getElementById('emailConsent').checked=false;
+  document.getElementById('emailErr').textContent='';
+  const btn=document.getElementById('emailSubmitBtn');
+  if(btn){btn.disabled=false;btn.textContent='Send My Recovery Plan →';}
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') document.getElementById('emailModal').classList.remove('open');
+});
+
+async function submitEmail(){
+  const email  = document.getElementById('emailInput').value.trim();
+  const consent= document.getElementById('emailConsent').checked;
+  const errEl  = document.getElementById('emailErr');
+  const btn    = document.getElementById('emailSubmitBtn');
+  errEl.textContent='';
+
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    errEl.textContent='Please enter a valid email address.';return;
+  }
+  if(!consent){
+    errEl.textContent='Please check the consent box to continue.';return;
+  }
+
+  btn.disabled=true;btn.textContent='Sending…';
+
+  try{
+    const resp=await fetch('/.netlify/functions/email-subscribe',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        email,
+        scam:S.scam||'unknown',
+        pay:S.pay||'unknown',
+        when:S.when||'unknown',
+        amount:S.amount||'',
+        plan:_planText
+      })
+    });
+    if(!resp.ok){
+      const er=await resp.json().catch(()=>({}));
+      throw new Error(er.error||'Could not send. Please try again.');
+    }
+    document.getElementById('emailStep1').style.display='none';
+    document.getElementById('emailStep2').style.display='';
+  }catch(err){
+    errEl.textContent='⚠️ '+(err.message||'Something went wrong. Please try again.');
+    btn.disabled=false;btn.textContent='Send My Recovery Plan →';
+  }
+}
+</script>
+</body>
+</html>
