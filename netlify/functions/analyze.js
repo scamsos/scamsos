@@ -159,7 +159,7 @@ Generate a complete personalized scam recovery plan for this US-based victim.`;
     return {
       statusCode: 500,
       headers: CORS,
-      body: JSON.stringify({ error: err.message || 'Internal error' })
+      body: JSON.stringify({ error: err.message || 'Under Construction!' })
     };
   }
 };
