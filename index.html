@@ -317,6 +317,62 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .nord-disc{font-size:0.68rem;color:var(--text-dim)}
 @media(max-width:600px){.nord-features{grid-template-columns:1fr}.nord-cta-row{flex-direction:column;align-items:flex-start}.nord-cta{width:100%;justify-content:center}}
 
+
+/* ── FOOTER ── */
+.site-footer{
+  position:relative;z-index:1;
+  border-top:1px solid var(--border);
+  padding:32px 20px 40px;
+  margin-top:60px;
+  text-align:center;
+}
+.footer-logo{
+  font-family:var(--font-d);
+  font-size:1.2rem;font-weight:700;
+  color:var(--text);margin-bottom:6px;
+}
+.footer-logo em{color:var(--blue);font-style:normal}
+.footer-tagline{font-size:0.78rem;color:var(--text-dim);margin-bottom:18px}
+.footer-links{
+  display:flex;justify-content:center;
+  gap:20px;flex-wrap:wrap;
+  margin-bottom:16px;
+}
+.footer-links a{
+  font-size:0.8rem;color:var(--text-muted);
+  text-decoration:none;transition:color 0.2s;
+}
+.footer-links a:hover{color:var(--blue)}
+.footer-disc{
+  font-size:0.72rem;color:var(--text-dim);
+  max-width:580px;margin:0 auto 10px;
+  line-height:1.6;
+}
+.footer-copy{font-size:0.7rem;color:var(--text-dim)}
+
+/* ── ABOUT / PRIVACY SCREENS ── */
+.page-wrap{padding:60px 0 80px;max-width:680px;margin:0 auto}
+.page-back{background:transparent;border:none;color:var(--text-dim);font-size:0.82rem;cursor:pointer;display:flex;align-items:center;gap:5px;padding:0;margin-bottom:28px;font-family:var(--font-b)}
+.page-back:hover{color:var(--text-muted)}
+.page-h1{font-family:var(--font-d);font-size:clamp(1.8rem,5vw,2.5rem);font-weight:700;margin-bottom:8px;line-height:1.15}
+.page-sub{font-size:0.85rem;color:var(--text-dim);margin-bottom:40px}
+.page-section{margin-bottom:32px}
+.page-h2{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.page-p{font-size:0.88rem;color:var(--text-muted);line-height:1.8;margin-bottom:12px}
+.page-p a{color:var(--blue);text-decoration:none}
+.page-p a:hover{text-decoration:underline}
+.page-ul{margin:8px 0 12px 18px}
+.page-ul li{font-size:0.88rem;color:var(--text-muted);line-height:1.8;margin-bottom:4px}
+.highlight-box{
+  background:rgba(59,130,246,0.05);
+  border:1px solid rgba(59,130,246,0.15);
+  border-left:3px solid var(--blue);
+  border-radius:var(--r-sm);
+  padding:16px 18px;
+  margin-bottom:20px;
+}
+.highlight-box p{font-size:0.86rem;color:var(--text-muted);line-height:1.7;margin:0}
+
 @media print{.orb,.cta-group,.act-row,.btn-back,.scenarios-wrap,.email-strip{display:none!important}body{background:#fff!important;color:#000!important}.step-card,.doc-card,.warn-card,.em-note,.opening{background:#f8f9fa!important;border-color:#ddd!important;color:#333!important}.step-num{background:#e0e7ff!important;color:#3730a3!important}.step-title,.doc-ht,.warn-t{color:#111!important}.step-act,.step-how,.step-why,.warn-txt,.doc-txt,.prob-exp{color:#444!important}.doc-bd{display:block!important}.logo em{color:#2563eb!important}}
 
 /* ── ANALYZING SCREEN ── */
@@ -540,6 +596,139 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </div>
 
 </div><!-- /wrap -->
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-logo">SCAM<em>SOS</em></div>
+  <div class="footer-tagline">Free scam recovery guidance for US consumers</div>
+  <div class="footer-links">
+    <a href="#" onclick="goPage('scrAbout');return false">About</a>
+    <a href="#" onclick="goPage('scrPrivacy');return false">Privacy Policy</a>
+    <a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener">FTC Report Fraud</a>
+    <a href="https://ic3.gov" target="_blank" rel="noopener">FBI IC3</a>
+    <a href="https://consumer.ftc.gov" target="_blank" rel="noopener">Consumer Protection</a>
+  </div>
+  <p class="footer-disc">
+    SCAMSOS contains affiliate links. If you click a link and make a purchase, we may earn a commission at no extra cost to you. We only recommend products we believe are genuinely useful for scam victims. This site does not provide legal or financial advice.
+  </p>
+  <p class="footer-copy">&copy; 2026 SCAMSOS &middot; All rights reserved</p>
+</footer>
+
+<!-- SCREEN: ABOUT -->
+<div class="scr" id="scrAbout">
+<div class="wrap">
+<div class="page-wrap">
+  <button class="page-back" onclick="history.back()">← Back</button>
+  <div class="page-h1">About SCAMSOS</div>
+  <div class="page-sub">Last updated: April 2026</div>
+
+  <div class="highlight-box">
+    <p>SCAMSOS is a free AI-powered scam recovery guide built to help Americans take immediate action after being scammed. We give you the exact steps, dispute letters, and phone scripts that actually work — at no charge, with no signup required.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Why We Built This</div>
+    <p class="page-p">Every year, Americans lose over $12 billion to scams. The people who get hurt most aren't careless — they're targeted by sophisticated criminal operations that study human psychology. When it happens, victims face a confusing maze of agencies, dispute processes, and legal deadlines, with no clear guide on what to do first.</p>
+    <p class="page-p">SCAMSOS exists to fix that. We researched every payment method's recovery process, every relevant federal agency, and the exact language that gets banks and card issuers to act. We put it all in one place, personalized to your specific situation, and made it free.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">What SCAMSOS Does</div>
+    <ul class="page-ul">
+      <li>Generates a personalized step-by-step recovery plan based on your scam type, payment method, and timing</li>
+      <li>Provides pre-written dispute letters with the exact legal language that works</li>
+      <li>Gives word-for-word phone scripts for calling your bank, Zelle, PayPal, or gift card issuers</li>
+      <li>Warns you about the recovery scam industry that preys on victims a second time</li>
+      <li>Connects you with ongoing protection resources relevant to your situation</li>
+    </ul>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">What SCAMSOS Is Not</div>
+    <p class="page-p">SCAMSOS is not a law firm and does not provide legal advice. We are not a government agency. We cannot recover your money directly, file reports on your behalf, or guarantee any outcome. Everything on this site is general guidance based on publicly available consumer protection information.</p>
+    <p class="page-p">If you need legal representation for a significant financial loss, we recommend consulting a licensed attorney in your state.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">How We Stay Free</div>
+    <p class="page-p">SCAMSOS is free to use with no signup required. We sustain operations through affiliate partnerships — if you click a link to a recommended product (like NordVPN) and make a purchase, we may earn a commission at no cost to you. These recommendations are always contextual and relevant to your specific situation. We never recommend products just for commission.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Contact</div>
+    <p class="page-p">Questions, feedback, or corrections: <a href="mailto:hello@scamsos.com">hello@scamsos.com</a></p>
+    <p class="page-p">We read every email. We are a small team and response times may vary.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- SCREEN: PRIVACY POLICY -->
+<div class="scr" id="scrPrivacy">
+<div class="wrap">
+<div class="page-wrap">
+  <button class="page-back" onclick="history.back()">← Back</button>
+  <div class="page-h1">Privacy Policy</div>
+  <div class="page-sub">Effective date: April 1, 2026 &middot; Last updated: April 2026</div>
+
+  <div class="highlight-box">
+    <p>Short version: We do not collect, store, or share your scam details. The only data we collect is your email address if you choose to request your recovery plan by email — and we tell you exactly what we do with it.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Who We Are</div>
+    <p class="page-p">SCAMSOS ("we," "us," "our") operates the website at scamsos.com. We provide free scam recovery guidance to US consumers.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Information We Do NOT Collect</div>
+    <p class="page-p">When you use SCAMSOS to generate a recovery plan, your answers — scam type, payment method, timing, personal information shared, and dollar amount — are processed entirely in your browser. They are never transmitted to our servers, never stored in any database, and never shared with any third party. Closing the tab erases them completely.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Information We DO Collect</div>
+    <p class="page-p"><strong>Email address</strong> — only if you voluntarily request your recovery plan by email using the "Send to my email" feature. By submitting your email, you consent to receive your recovery plan and up to 4 follow-up recovery tip emails from SCAMSOS. We use Brevo (brevo.com) to send these emails. Your email address is stored in Brevo's system and subject to their privacy policy. You can unsubscribe at any time using the link in any email we send.</p>
+    <p class="page-p"><strong>Analytics data</strong> — we may use analytics tools (such as Google Analytics or Microsoft Clarity) to understand how visitors use our site in aggregate. This data is anonymized and does not identify you personally. It includes pages visited, time on site, and general geographic region.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Cookies</div>
+    <p class="page-p">SCAMSOS does not use tracking cookies. Third-party services embedded on this site (analytics tools, affiliate links) may set their own cookies subject to their own privacy policies. You can disable cookies in your browser settings at any time.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Affiliate Disclosure</div>
+    <p class="page-p">SCAMSOS participates in affiliate programs. Some links on this site — clearly marked "Sponsored" — are affiliate links, meaning we may earn a commission if you click and make a purchase, at no extra cost to you. Our editorial recommendations are not influenced by affiliate relationships. We only recommend products we believe are genuinely useful for people who have been scammed.</p>
+    <p class="page-p">Current affiliate partners include NordVPN. This disclosure is made in compliance with the FTC's guidelines on endorsements and testimonials (16 CFR Part 255).</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Third-Party Links</div>
+    <p class="page-p">SCAMSOS contains links to external sites including government agencies (FTC, FBI IC3, CFPB) and commercial services. We are not responsible for the privacy practices or content of these external sites.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Children's Privacy</div>
+    <p class="page-p">SCAMSOS is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has submitted their email to us, contact us at <a href="mailto:hello@scamsos.com">hello@scamsos.com</a> and we will remove it promptly.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Your Rights</div>
+    <p class="page-p">If you have subscribed to our email list and wish to have your data removed, email <a href="mailto:hello@scamsos.com">hello@scamsos.com</a> with the subject "Delete my data" and we will remove your email from all systems within 30 days.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Changes to This Policy</div>
+    <p class="page-p">We may update this policy from time to time. Material changes will be reflected in the "Last updated" date at the top. Continued use of SCAMSOS after changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <div class="page-section">
+    <div class="page-h2">Contact</div>
+    <p class="page-p">Privacy questions or data requests: <a href="mailto:hello@scamsos.com">hello@scamsos.com</a></p>
+  </div>
+</div>
+</div>
+</div>
 
 <!-- EMAIL MODAL -->
 <div id="emailModal" class="emodal-bg" onclick="closeEmailModal(event)">
@@ -1723,6 +1912,20 @@ function renderNordCard(scam){
   showSlide(0);
   timer=setInterval(()=>showSlide(cur+1),DELAY);
 })();
+
+function goPage(id){
+  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+  history.pushState({screen:id},'',window.location.pathname);
+}
+window.addEventListener('popstate',function(e){
+  var scr = e.state && e.state.screen ? e.state.screen : 'scrWelcome';
+  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
+  document.getElementById(scr).classList.add('on');
+  window.scrollTo({top:0});
+});
+
 </script>
 </body>
 </html>
