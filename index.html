@@ -181,26 +181,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .btn-email-submit:disabled{opacity:0.55;cursor:not-allowed;transform:none}
 .email-fine{font-size:0.72rem;color:var(--text-dim);text-align:center;margin-top:12px}
 
-/* SPONSORS */
-.sponsors-section{margin-top:44px;margin-bottom:32px}
-.sponsors-label{display:flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:16px}
-.sponsors-label span{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:var(--blue);font-size:0.62rem;letter-spacing:0.1em;padding:2px 8px;border-radius:4px}
-.sponsor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.sponsor-card{display:flex;flex-direction:column;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.09);border-radius:var(--r);padding:18px;text-decoration:none;transition:all 0.2s;position:relative;overflow:hidden}
-.sponsor-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent);opacity:0;transition:opacity 0.2s}
-.sponsor-card:hover{border-color:rgba(59,130,246,0.3);background:rgba(59,130,246,0.05);transform:translateY(-1px)}
-.sponsor-card:hover::before{opacity:1}
-.sp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-.sp-name{font-weight:700;font-size:0.9rem;color:var(--text)}
-.sp-tag-pill{font-size:0.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;padding:2px 7px;border-radius:3px}
-.sp-tag-free{background:rgba(16,185,129,0.12);color:var(--green);border:1px solid rgba(16,185,129,0.2)}
-.sp-tag-trial{background:rgba(59,130,246,0.12);color:var(--blue);border:1px solid rgba(59,130,246,0.2)}
-.sp-tag-deal{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
-.sp-desc{font-size:0.78rem;color:var(--text-muted);line-height:1.55;margin-bottom:10px;flex:1}
-.sp-why{font-size:0.72rem;font-style:italic;color:var(--blue);margin-bottom:10px;opacity:0.85}
-.sp-cta{display:inline-flex;align-items:center;gap:5px;font-size:0.76rem;font-weight:600;color:var(--blue);background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);border-radius:6px;padding:7px 14px;width:fit-content;transition:all 0.2s}
-.sponsor-card:hover .sp-cta{background:rgba(59,130,246,0.18)}
-.sp-disc{font-size:0.7rem;color:var(--text-dim);margin-top:10px;line-height:1.5}
+
 
 /* SLIDESHOW */
 .scenarios-wrap{margin:44px 0 0;position:relative}
@@ -251,26 +232,92 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 }
 
 
-/* Inline sponsored step links — FTC-compliant small disclosure */
-.step-spon{
-  display:inline-flex;align-items:center;gap:6px;
-  margin-top:8px;font-size:0.72rem;
-  color:var(--text-dim);flex-wrap:wrap;
+
+
+
+
+
+/* ── NORDVPN AFFILIATE CARD ── */
+.nord-card{
+  margin-top:36px;margin-bottom:8px;
+  background:linear-gradient(135deg,rgba(15,23,42,0.9),rgba(4,13,26,0.95));
+  border:1px solid rgba(59,130,246,0.25);
+  border-radius:var(--r);
+  padding:24px;
+  position:relative;overflow:hidden;
 }
-.step-spon a{
-  color:var(--blue);text-decoration:none;font-weight:600;
-  padding:2px 7px;border-radius:4px;
-  background:rgba(59,130,246,0.08);
-  border:1px solid rgba(59,130,246,0.2);
-  transition:background 0.2s;
+.nord-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,#3B82F6,#60a5fa,#3B82F6);
 }
-.step-spon a:hover{background:rgba(59,130,246,0.16)}
-.step-spon .spon-tag{
-  font-size:0.65rem;font-weight:700;
-  color:var(--text-dim);letter-spacing:0.06em;
-  text-transform:uppercase;
+.nord-top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.nord-logo{
+  width:42px;height:42px;min-width:42px;
+  background:linear-gradient(135deg,#3B82F6,#1D4ED8);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;
 }
-@media print{.orb,.cta-group,.act-row,.sponsors-section,.btn-back,.scenarios-wrap,.email-strip{display:none!important}body{background:#fff!important;color:#000!important}.step-card,.doc-card,.warn-card,.em-note,.opening{background:#f8f9fa!important;border-color:#ddd!important;color:#333!important}.step-num{background:#e0e7ff!important;color:#3730a3!important}.step-title,.doc-ht,.warn-t{color:#111!important}.step-act,.step-how,.step-why,.warn-txt,.doc-txt,.prob-exp{color:#444!important}.doc-bd{display:block!important}.logo em{color:#2563eb!important}}
+.nord-brand{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:2px}
+.nord-title{font-weight:700;font-size:1rem;color:var(--text);line-height:1.2}
+.nord-why{
+  background:rgba(59,130,246,0.07);
+  border-left:3px solid var(--blue);
+  border-radius:0 6px 6px 0;
+  padding:12px 14px;
+  font-size:0.84rem;color:var(--text-muted);
+  line-height:1.65;margin-bottom:16px;
+}
+.nord-why strong{color:var(--text)}
+.nord-features{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:7px;margin-bottom:18px;
+}
+.nord-feat{
+  display:flex;align-items:flex-start;gap:7px;
+  font-size:0.78rem;color:var(--text-muted);line-height:1.4;
+}
+.nord-feat-icon{font-size:0.85rem;flex-shrink:0;margin-top:1px}
+.nord-cta-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.nord-cta{
+  display:inline-flex;align-items:center;gap:7px;
+  background:linear-gradient(135deg,#3B82F6,#1D4ED8);
+  color:#fff;text-decoration:none;
+  border-radius:9px;padding:12px 24px;
+  font-size:0.88rem;font-weight:700;
+  font-family:var(--font-b);
+  transition:all 0.2s;
+  box-shadow:0 0 24px rgba(59,130,246,0.35);
+}
+.nord-cta:hover{background:linear-gradient(135deg,#2563EB,#1e3a8a);transform:translateY(-1px);box-shadow:0 4px 20px rgba(59,130,246,0.45)}
+.nord-disc{font-size:0.68rem;color:var(--text-dim)}
+@media(max-width:600px){
+  .nord-features{grid-template-columns:1fr}
+  .nord-cta-row{flex-direction:column;align-items:flex-start}
+  .nord-cta{width:100%;justify-content:center}
+}
+
+
+/* NORDVPN CARD */
+.nord-card{margin-top:36px;margin-bottom:8px;background:linear-gradient(135deg,rgba(15,23,42,0.9),rgba(4,13,26,0.95));border:1px solid rgba(59,130,246,0.25);border-radius:var(--r);padding:24px;position:relative;overflow:hidden}
+.nord-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3B82F6,#60a5fa,#3B82F6)}
+.nord-top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.nord-logo{width:42px;height:42px;min-width:42px;background:linear-gradient(135deg,#3B82F6,#1D4ED8);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.nord-brand{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:2px}
+.nord-title{font-weight:700;font-size:1rem;color:var(--text);line-height:1.2}
+.nord-why{background:rgba(59,130,246,0.07);border-left:3px solid var(--blue);border-radius:0 6px 6px 0;padding:12px 14px;font-size:0.84rem;color:var(--text-muted);line-height:1.65;margin-bottom:16px}
+.nord-why strong{color:var(--text)}
+.nord-features{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:18px}
+.nord-feat{display:flex;align-items:flex-start;gap:7px;font-size:0.78rem;color:var(--text-muted);line-height:1.4}
+.nord-feat-icon{font-size:0.85rem;flex-shrink:0;margin-top:1px}
+.nord-cta-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.nord-cta{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,#3B82F6,#1D4ED8);color:#fff;text-decoration:none;border-radius:9px;padding:12px 24px;font-size:0.88rem;font-weight:700;font-family:var(--font-b);transition:all 0.2s;box-shadow:0 0 24px rgba(59,130,246,0.35)}
+.nord-cta:hover{background:linear-gradient(135deg,#2563EB,#1e3a8a);transform:translateY(-1px)}
+.nord-disc{font-size:0.68rem;color:var(--text-dim)}
+@media(max-width:600px){.nord-features{grid-template-columns:1fr}.nord-cta-row{flex-direction:column;align-items:flex-start}.nord-cta{width:100%;justify-content:center}}
+
+@media print{.orb,.cta-group,.act-row,.btn-back,.scenarios-wrap,.email-strip{display:none!important}body{background:#fff!important;color:#000!important}.step-card,.doc-card,.warn-card,.em-note,.opening{background:#f8f9fa!important;border-color:#ddd!important;color:#333!important}.step-num{background:#e0e7ff!important;color:#3730a3!important}.step-title,.doc-ht,.warn-t{color:#111!important}.step-act,.step-how,.step-why,.warn-txt,.doc-txt,.prob-exp{color:#444!important}.doc-bd{display:block!important}.logo em{color:#2563eb!important}}
 
 /* ── ANALYZING SCREEN ── */
 .ring{width:72px;height:72px;border-radius:50%;border:3px solid transparent;border-top-color:var(--blue);border-right-color:rgba(59,130,246,0.3);margin:0 auto 32px;animation:spin 1.2s linear infinite;box-shadow:0 0 30px var(--blue-glow)}
@@ -295,7 +342,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .step-card{opacity:0;transform:translateY(10px)}
 .step-card.revealed{opacity:1;transform:translateY(0);transition:opacity 0.35s ease,transform 0.35s ease}
 
-@media(max-width:480px){.cards-3,.sponsor-grid{grid-template-columns:1fr}.opt-grid.c2,.chk-grid{grid-template-columns:1fr}.stats-row{gap:20px}.act-row,.email-strip{flex-direction:column}.email-strip{align-items:flex-start}.btn-email-cta{width:100%}.emodal-box{padding:28px 20px}.top-nav{padding:12px 16px}.nav-logo{font-size:1.35rem}.nav-cta{font-size:0.82rem;padding:10px 16px}.nav-cta-full{display:none!important}.nav-cta-short{display:inline!important}}
+@media(max-width:480px){.cards-3{grid-template-columns:1fr}.opt-grid.c2,.chk-grid{grid-template-columns:1fr}.stats-row{gap:20px}.act-row,.email-strip{flex-direction:column}.email-strip{align-items:flex-start}.btn-email-cta{width:100%}.emodal-box{padding:28px 20px}.top-nav{padding:12px 16px}.nav-logo{font-size:1.35rem}.nav-cta{font-size:0.82rem;padding:10px 16px}.nav-cta-full{display:none!important}.nav-cta-short{display:inline!important}}
 </style>
 </head>
 <body>
@@ -475,8 +522,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     <h2 style="font-family:var(--font-d);font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:4px">Your Recovery Plan</h2>
     <p style="color:var(--text-dim);font-size:0.8rem">Matched to your specific situation · Not legal advice · Free to use and print</p>
   </div>
-  <div id="resContent"></div>
-  <div class="email-strip">
+  <div id="resContent"></div>  <div class="email-strip">
     <div class="email-strip-left">
       <span class="email-strip-icon">📧</span>
       <div>
@@ -660,7 +706,7 @@ const STEPS = {
      w:'CFPB complaints have resulted in wire refunds even when banks initially refused.'},
     {u:'soon', t:'Consult an attorney for significant losses',
      a:'For losses over $5,000, a consultation with a fraud attorney can reveal options your bank won\'t mention.',
-     h:'Wire fraud attorneys can pursue civil action against scammers, negotiate directly with banks, and identify third-party liability (such as platforms that facilitated the scam). Many work on contingency for large cases.',sp:{name:'LegalShield',url:'https://www.legalshield.com',label:'Attorney access, flat monthly fee — no hourly billing'},
+     h:'Wire fraud attorneys can pursue civil action against scammers, negotiate directly with banks, and identify third-party liability (such as platforms that facilitated the scam). Many work on contingency for large cases.',
      w:'Banks and insurers respond differently when an attorney is involved on your behalf.'}
   ],
   zelle: [
@@ -718,7 +764,7 @@ const STEPS = {
      w:'Scam platforms often disappear within days. Evidence captured now may be the only record.'},
     {u:'soon', t:'Consult a crypto fraud attorney for large losses',
      a:'For losses over $10,000, an attorney who specializes in crypto fraud can identify recovery options.',
-     h:'Blockchain forensics firms can trace crypto movement and sometimes identify where funds landed — including exchanges that can be compelled to cooperate. Attorneys can also pursue civil suits against platforms that facilitated the scam.',sp:{name:'LegalShield',url:'https://www.legalshield.com',label:'Attorney consultations, flat monthly fee'},
+     h:'Blockchain forensics firms can trace crypto movement and sometimes identify where funds landed — including exchanges that can be compelled to cooperate. Attorneys can also pursue civil suits against platforms that facilitated the scam.',
      w:'Blockchain is pseudonymous — not anonymous. Funds can sometimes be traced even after multiple wallet transfers.'}
   ],
   giftcard: [
@@ -776,7 +822,7 @@ const STEPS = {
      w:'Dual filing ensures your case is tracked in both enforcement and victim support systems.'},
     {u:'soon', t:'Monitor your credit for new accounts',
      a:'Pull your free credit report at annualcreditreport.com and look for any accounts or inquiries you don\'t recognize.',
-     h:'You\'re entitled to a free report from each bureau weekly at annualcreditreport.com. Look for: new accounts you didn\'t open, hard inquiries from lenders you didn\'t approach, changes to personal information like address. If you see anything unfamiliar, file a dispute with that bureau immediately.',sp:{name:'Experian IdentityWorks',url:'https://www.experian.com/consumer-products/identity-theft-protection.html',label:'Automatic alerts when new accounts are opened — free plan'},
+     h:'You\'re entitled to a free report from each bureau weekly at annualcreditreport.com. Look for: new accounts you didn\'t open, hard inquiries from lenders you didn\'t approach, changes to personal information like address. If you see anything unfamiliar, file a dispute with that bureau immediately.',
      w:'New fraudulent accounts often appear within 1–4 weeks of data theft. Early detection prevents credit damage.'}
   ]
 };
@@ -785,7 +831,7 @@ const STEPS = {
 const INFO_STEPS = {
   ssn: {u:'urgent', t:'Freeze your credit — SSN was exposed',
     a:'Freeze your credit at all three bureaus immediately at equifax.com, experian.com/freeze, and transunion.com/credit-freeze.',
-    h:'A credit freeze is free, instant, and the single most effective protection against identity theft. It blocks any new credit applications in your name. Do all three bureaus — freezing one does not automatically freeze the others. Also file at IdentityTheft.gov for an official FTC Identity Theft Report.',sp:{name:'Experian IdentityWorks',url:'https://www.experian.com/consumer-products/identity-theft-protection.html',label:'Free credit monitoring — catch new accounts instantly'},
+    h:'A credit freeze is free, instant, and the single most effective protection against identity theft. It blocks any new credit applications in your name. Do all three bureaus — freezing one does not automatically freeze the others. Also file at IdentityTheft.gov for an official FTC Identity Theft Report.',
     w:'SSN exposure is the most serious identity risk. Fraudsters can open credit cards, take out loans, and file fraudulent tax returns using your SSN. A freeze stops most of this.'},
   bank: {u:'urgent', t:'Contact your bank to secure your accounts',
     a:'Call your bank\'s fraud line and ask them to monitor your account for unusual activity and consider issuing new account numbers.',
@@ -797,7 +843,7 @@ const INFO_STEPS = {
     w:'Card numbers start being tested with small charges within hours of theft. A new number closes this window completely.'},
   pwd: {u:'urgent', t:'Change compromised passwords across all accounts',
     a:'Change your password immediately on every account that used the exposed password or is linked to the exposed email.',
-    h:'Priority order: 1) Email account (controls password resets for everything else). 2) Banking and financial accounts. 3) Social media and shopping accounts. Use a unique password for every account — never reuse passwords. Enable two-factor authentication using an authenticator app, not SMS.',sp:{name:'1Password',url:'https://1password.com',label:'Password manager — free 14-day trial'},
+    h:'Priority order: 1) Email account (controls password resets for everything else). 2) Banking and financial accounts. 3) Social media and shopping accounts. Use a unique password for every account — never reuse passwords. Enable two-factor authentication using an authenticator app, not SMS.',
     w:'A single exposed password can compromise dozens of accounts. Email access is the master key — secure it first.'},
   id: {u:'urgent', t:'File an identity theft report — government ID was exposed',
     a:'File at IdentityTheft.gov immediately. If a passport was involved, contact the State Department\'s passport fraud line.',
@@ -1295,7 +1341,6 @@ function render({opening, prob, steps, letter, warning, urgent, amtText}){
           <div class="step-act stream-section" id="sact-${step._n}"></div>
           <div class="step-how stream-section" id="show-${step._n}"></div>
           ${step.w?`<div class="step-why stream-section" id="swhy-${step._n}"></div>`:''}
-          ${step.sp?`<div class="step-spon stream-section" id="sspon-${step._n}"><span class="spon-tag">Sponsored ·</span> <a href="${step.sp.url}" target="_blank" rel="noopener sponsored">${step.sp.name}</a> <span>· ${step.sp.label}</span></div>`:''}
         </div>
       </div>
     </div>`;
@@ -1314,7 +1359,6 @@ function render({opening, prob, steps, letter, warning, urgent, amtText}){
     </div>
   </div>` : '';
 
-  const sponsorsHtml = renderSponsors(S.scam, S.pay, S.info);
 
   document.getElementById('resContent').innerHTML = `
     <div class="opening stream-section" id="sec-opening"></div>
@@ -1329,9 +1373,10 @@ function render({opening, prob, steps, letter, warning, urgent, amtText}){
     <div class="sec-label stream-section" id="sec-steps-label">Your Personalized Action Plan</div>
     ${stepsHtml}
     ${letterHtml}
-    <div class="stream-section" id="sec-sponsors">${sponsorsHtml}</div>
+
 
     <div style="margin-top:16px">
+      <div class="stream-section" id="sec-nord"></div>
       <div class="warn-card stream-section" id="sec-warn">
         <div class="warn-t">⚠️ Critical: Watch Out for Recovery Scams</div>
         <div class="warn-txt" id="warn-txt"></div>
@@ -1344,6 +1389,7 @@ function render({opening, prob, steps, letter, warning, urgent, amtText}){
   // Store plan data for streaming engine
   window._streamPlan = {opening, prob, steps, letter, warning, urgent, amtText};
   _planText = buildPlainText({opening, prob, steps, letter, warning});
+  var nordEl=document.getElementById('sec-nord');if(nordEl)nordEl.innerHTML=renderNordCard(S.scam);
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -1401,9 +1447,7 @@ function startStreaming(){
       qReveal(`swhy-${n}`);
       qText(`swhy-${n}`, step.w, 18);
     }
-    if(step.sp && document.getElementById(`sspon-${n}`)){
-      qReveal(`sspon-${n}`);
-    }
+
     qWait(100);
   });
 
@@ -1414,14 +1458,14 @@ function startStreaming(){
     qWait(100);
   }
 
-  // Sponsors
-  qReveal('sec-sponsors');
-  qWait(120);
-
   // Warning
   qReveal('sec-warn');
   qText('warn-txt', plan.warning, 16);
   qWait(120);
+
+  // NordVPN card
+  qReveal('sec-nord');
+  qWait(80);
 
   // Emotional note
   qReveal('sec-emnote');
@@ -1508,49 +1552,7 @@ async function copyDoc(){
 // ═══════════════════════════════════════════════════════════
 // SPONSORS
 // ═══════════════════════════════════════════════════════════
-const SPONSOR_DB={
-  aura:{name:'Aura Identity Protection',tag:'14-Day Free Trial',tagCls:'sp-tag-trial',desc:'All-in-one protection: dark web monitoring, SSN alerts, credit monitoring, $1M identity theft insurance, and 24/7 fraud specialists.',why:'Monitors whether your stolen data is already being used against you.',cta:'Start Free 14-Day Trial',href:'https://www.aura.com'},
-  lifelock:{name:'LifeLock by Norton',tag:'30-Day Free Trial',tagCls:'sp-tag-trial',desc:'Scans millions of data points for threats to your identity. Specialists help restore your identity if stolen.',why:'SSN and government ID exposure requires ongoing monitoring across all three credit bureaus.',cta:'Try Free for 30 Days',href:'https://www.lifelock.com'},
-  experian:{name:'Experian IdentityWorks',tag:'Free Plan Available',tagCls:'sp-tag-free',desc:'Free credit monitoring from the largest US credit bureau. Instant alerts if anyone opens accounts in your name.',why:'Essential first step to catch fraudulent accounts being opened with your information.',cta:'Get Free Credit Monitoring',href:'https://www.experian.com/consumer-products/identity-theft-protection.html'},
-  credit_freeze:{name:'Freeze Your Credit (Free)',tag:'Free',tagCls:'sp-tag-free',desc:'Freeze your credit at Equifax, Experian, and TransUnion for free. Stops anyone from opening accounts in your name.',why:'The single most effective action after SSN or personal data exposure. Takes 5 minutes.',cta:'How to Freeze Your Credit →',href:'https://consumer.ftc.gov/articles/what-know-about-credit-freezes-fraud-alerts'},
-  malwarebytes:{name:'Malwarebytes Premium',tag:'Free Trial',tagCls:'sp-tag-trial',desc:'Removes malware, spyware, and remote-access tools that tech support scammers commonly install. Real-time protection included.',why:'Tech support scammers often leave software running after you hang up — scan your device now.',cta:'Scan Your Device Free',href:'https://www.malwarebytes.com'},
-  nordvpn:{name:'NordVPN',tag:'68% Off Today',tagCls:'sp-tag-deal',desc:'Encrypts your internet connection, masks your IP address, and blocks malicious sites before you land on them.',why:'After phishing exposure, your browsing may be monitored — a VPN cuts that connection off.',cta:'Get NordVPN Discount',href:'https://nordvpn.com'},
-  onepassword:{name:'1Password',tag:'14-Day Free Trial',tagCls:'sp-tag-trial',desc:'Generates and stores unique strong passwords for every account. Alerts you if any saved passwords appear in known data breaches.',why:'Stolen passwords are reused across accounts within hours — a manager stops this permanently.',cta:'Try 1Password Free',href:'https://1password.com'},
-  legalshield:{name:'LegalShield',tag:'Low Monthly Fee',tagCls:'sp-tag-deal',desc:'Access real attorneys for fraud consultations, demand letters, and legal options — flat monthly fee, no surprise hourly billing.',why:'For significant losses, attorneys can pursue options your bank won\'t mention — including civil action.',cta:'Talk to a Real Attorney',href:'https://www.legalshield.com'}
-};
 
-function getSponsors(scam,pay,info){
-  const p=new Set();
-  if(info.includes('ssn')||info.includes('id')||info.includes('dob')){p.add('credit_freeze');p.add('lifelock');p.add('aura');}
-  if(info.includes('bank')||info.includes('cardnum')){p.add('experian');p.add('aura');}
-  if(info.includes('pwd')){p.add('onepassword');p.add('aura');}
-  if(info.includes('addr')||info.includes('contact')){p.add('aura');p.add('experian');}
-  if(scam==='tech'){p.add('malwarebytes');p.add('nordvpn');p.add('onepassword');}
-  if(scam==='phishing'){p.add('nordvpn');p.add('onepassword');p.add('malwarebytes');}
-  if(scam==='investment'||scam==='romance'){p.add('legalshield');p.add('aura');}
-  if(scam==='impersonator'){p.add('credit_freeze');p.add('lifelock');p.add('aura');}
-  if(scam==='job'){p.add('credit_freeze');p.add('experian');p.add('onepassword');}
-  if(scam==='rental'){p.add('credit_freeze');p.add('aura');p.add('legalshield');}
-  if(scam==='family'||scam==='lottery'){p.add('aura');p.add('experian');}
-  if(scam==='shopping'||scam==='marketplace'){p.add('experian');p.add('aura');p.add('onepassword');}
-  if(pay==='nopay'){p.add('credit_freeze');p.add('lifelock');p.add('aura');p.add('experian');}
-  if(pay==='wire'||pay==='crypto'){p.add('legalshield');p.add('aura');}
-  if(pay==='debit'||pay==='check'){p.add('experian');p.add('aura');}
-  if(pay==='zelle'||pay==='p2p'){p.add('aura');p.add('experian');}
-  p.add('aura');
-  const ORDER=['credit_freeze','malwarebytes','onepassword','lifelock','aura','experian','nordvpn','legalshield'];
-  return ORDER.filter(k=>p.has(k)).slice(0,4);
-}
-
-function renderSponsors(scam,pay,info){
-  const keys=getSponsors(scam,pay,info);
-  if(!keys.length)return'';
-  const cards=keys.map(key=>{
-    const s=SPONSOR_DB[key];if(!s)return'';
-    return`<a class="sponsor-card" href="${s.href}" target="_blank" rel="noopener sponsored"><div class="sp-top"><span class="sp-name">${s.name}</span><span class="sp-tag-pill ${s.tagCls}">${s.tag}</span></div><div class="sp-desc">${s.desc}</div><div class="sp-why">💡 ${s.why}</div><div class="sp-cta">${s.cta} →</div></a>`;
-  }).join('');
-  return`<div class="sponsors-section"><div class="sponsors-label">Recommended Resources <span>Sponsored Partners</span></div><div class="sponsor-grid">${cards}</div><p class="sp-disc">Some links are paid partner links. SCAMSOS only shows services relevant to your specific situation. We may receive a commission if you sign up — at no extra cost to you. This keeps SCAMSOS free for everyone.</p></div>`;
-}
 
 // ═══════════════════════════════════════════════════════════
 // PLAIN TEXT FOR EMAIL
@@ -1620,6 +1622,48 @@ async function submitEmail(){
 }
 
 // ═══════════════════════════════════════════════════════════
+// NORDVPN CONTEXTUAL CARD
+const NORD_URL = 'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=145247&url_id=902';
+const NORD_WHY = {
+  romance:     '<strong>Romance scam victims are re-targeted by the same criminal networks.</strong> NordVPN Scam Call Protection blocks fraudulent callbacks automatically. Dark Web Monitor Pro alerts you if your personal data surfaces in underground marketplaces.',
+  tech:        '<strong>Tech support scammers almost certainly installed tracking tools on your device.</strong> NordVPN Threat Protection Pro scans and removes malware in real time, works even without a VPN connection, and blocked 92% of phishing sites in independent tests.',
+  investment:  '<strong>Your financial details may already be circulating on the dark web.</strong> NordVPN Dark Web Monitor Pro watches your email, credit card numbers, and SSN around the clock and alerts you the moment your data surfaces in a breach.',
+  impersonator:'<strong>Government impersonators call repeatedly from spoofed numbers.</strong> NordVPN Scam Call Protection identifies and blocks fraudulent calls before you answer. Dark Web Monitor Pro tracks your SSN if it was shared.',
+  shopping:    '<strong>Your payment card details from this fake store may already be for sale.</strong> NordVPN Dark Web Monitor Pro watches your credit card numbers in breach databases and underground markets and alerts you instantly.',
+  job:         '<strong>Fake job scams collect SSNs, bank details, and passwords for identity fraud.</strong> NordVPN Dark Web Monitor Pro monitors all of these continuously. Threat Protection Pro blocks the phishing sites scammers use to harvest more data.',
+  lottery:     '<strong>Lottery scams harvest personal data to sell on the dark web.</strong> NordVPN Dark Web Monitor Pro watches your email, SSN, and credit card numbers continuously and alerts you before fraudsters can act on stolen information.',
+  rental:      '<strong>Rental scams collect your address, ID, and financial details for identity theft.</strong> NordVPN Dark Web Monitor Pro monitors your exposed information 24/7. Threat Protection Pro blocks fake listing sites so it cannot happen again.',
+  family:      '<strong>Grandparent scam networks make repeat calls from spoofed numbers.</strong> NordVPN Scam Call Protection warns you before you answer and can automatically block scam and telemarketing calls entirely on Android.',
+  phishing:    '<strong>Phishing attacks expose your passwords to credential stuffing attacks.</strong> NordVPN Threat Protection Pro blocked 92% of phishing sites in independent tests. Hijacked Session Alert notifies you if your browser cookies appear on the dark web.',
+  marketplace: '<strong>Marketplace scammers harvest card and account data for immediate resale.</strong> NordVPN Dark Web Monitor Pro watches your credit card numbers in breach databases. Threat Protection Pro blocks fraudulent marketplace sites in real time.',
+  other:       '<strong>Scam victims are prime targets for follow-on attacks.</strong> NordVPN Threat Protection Pro, Dark Web Monitor Pro, and Scam Call Protection form a protective layer against the most common second-wave threats scam victims face.'
+};
+const NORD_FEATS = [
+  ['shield','Threat Protection Pro - blocks phishing and malware (92% detection rate)'],
+  ['moon','Dark Web Monitor Pro - monitors email, cards, SSN and phone 24/7'],
+  ['phone','Scam Call Protection - blocks fraudulent calls before you answer'],
+  ['cookie','Hijacked Session Alert - detects stolen browser cookies in real time'],
+  ['search','AI Scam Checker - scans suspicious messages and emails for fraud'],
+  ['lock','VPN encryption - hides your IP and encrypts all internet traffic']
+];
+const NORD_ICONS = {shield:'🛡️',moon:'🌑',phone:'📞',cookie:'🍪',search:'🔍',lock:'🔒'};
+function renderNordCard(scam){
+  var why = NORD_WHY[scam] || NORD_WHY['other'];
+  var feats = NORD_FEATS.map(function(f){
+    return '<div class="nord-feat"><span class="nord-feat-icon">'+(NORD_ICONS[f[0]]||f[0])+'</span><span>'+f[1]+'</span></div>';
+  }).join('');
+  return '<div class="nord-card">'
+    +'<div class="nord-top"><div class="nord-logo">🛡️</div>'
+    +'<div><div class="nord-brand">Recommended Protection &middot; Sponsored</div>'
+    +'<div class="nord-title">NordVPN &mdash; Complete Online Protection</div></div></div>'
+    +'<div class="nord-why">'+why+'</div>'
+    +'<div class="nord-features">'+feats+'</div>'
+    +'<div class="nord-cta-row">'
+    +'<a class="nord-cta" href="' + NORD_URL + '" target="_blank" rel="noopener sponsored">🛡️ Get NordVPN Protection &rarr;</a>'
+    +'<span class="nord-disc">Sponsored link &middot; 30-day money-back guarantee</span>'
+    +'</div></div>';
+}
+
 // SLIDESHOW
 // ═══════════════════════════════════════════════════════════
 (function(){
