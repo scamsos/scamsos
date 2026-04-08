@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCAMSOS — Free Scam Recovery Guide</title>
+<meta name="description" content="Got scammed? Get a free personalized recovery plan instantly. Dispute letters, exact scripts, step-by-step actions. No signup needed. SCAMSOS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#040D1A;--surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --blue:#3B82F6;--blue-dark:#1D4ED8;--blue-glow:rgba(59,130,246,0.18);
+  --amber:#F59E0B;--amber-glow:rgba(245,158,11,0.12);
+  --green:#10B981;--red:#F87171;
+  --text:#F0F4FF;--text-muted:#8B9CC8;--text-dim:#4A5680;
+  --font-d:'Playfair Display',Georgia,serif;
+  --font-b:'DM Sans',system-ui,sans-serif;
+  --font-m:'JetBrains Mono',monospace;
+  --r:14px;--r-sm:10px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-b);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;line-height:1.6}
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px)}
+.orb-1{width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(59,130,246,0.12),transparent 70%);animation:drift1 18s ease-in-out infinite}
+.orb-2{width:500px;height:500px;bottom:-150px;right:-100px;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);animation:drift2 22s ease-in-out infinite}
+.orb-3{width:300px;height:300px;top:40%;left:40%;background:radial-gradient(circle,rgba(16,185,129,0.05),transparent 70%);animation:drift3 28s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,60px)}}
+@keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-30px)}}
+@keyframes drift3{0%,100%{transform:translate(0,0)}33%{transform:translate(30px,-40px)}66%{transform:translate(-20px,50px)}}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 20px}
+.scr{display:none}.scr.on{display:block;animation:fadeUp 0.45s cubic-bezier(0.16,1,0.3,1)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* TOP NAV */
+.top-nav{position:sticky;top:0;z-index:50;background:rgba(4,13,26,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--font-d);font-size:1.35rem;font-weight:700;letter-spacing:-0.02em;color:var(--text)}
+.nav-logo em{color:var(--blue);font-style:normal}
+.nav-cta{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:10px 22px;font-family:var(--font-b);font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.2s;box-shadow:0 0 20px var(--blue-glow);white-space:nowrap}
+.nav-cta:hover{background:var(--blue-dark);transform:translateY(-1px)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:var(--r-sm);font-family:var(--font-b);font-weight:600;cursor:pointer;transition:all 0.2s;text-decoration:none}
+.btn-ghost{background:var(--surface);border:1px solid var(--border2);color:var(--text-muted);padding:12px 24px;font-size:0.9rem}
+.btn-ghost:hover{background:var(--surface2);color:var(--text)}
+.btn-outline-blue{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.3);color:var(--blue);padding:10px 20px;font-size:0.85rem}
+.btn-outline-blue:hover{background:rgba(59,130,246,0.15)}
+.btn-back{background:transparent;border:none;color:var(--text-dim);font-size:0.82rem;cursor:pointer;display:flex;align-items:center;gap:5px;padding:0;margin-bottom:24px;font-family:var(--font-b)}
+.btn-back:hover{color:var(--text-muted)}
+.btn-big{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#3B82F6,#1D4ED8);color:#fff;border:none;border-radius:var(--r);padding:18px 44px;font-family:var(--font-b);font-size:1.1rem;font-weight:600;cursor:pointer;transition:all 0.25s;box-shadow:0 0 40px rgba(59,130,246,0.4),0 4px 16px rgba(0,0,0,0.3)}
+.btn-big:hover{background:linear-gradient(135deg,#2563EB,#1e3a8a);transform:translateY(-2px);box-shadow:0 0 56px rgba(59,130,246,0.45),0 8px 24px rgba(0,0,0,0.35)}
+
+/* WELCOME */
+.welcome-badge{display:inline-flex;align-items:center;gap:6px;background:var(--amber-glow);border:1px solid rgba(245,158,11,0.25);color:var(--amber);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:28px}
+.logo{font-family:var(--font-d);font-size:clamp(3rem,9vw,5.5rem);font-weight:700;letter-spacing:-0.03em;line-height:1;margin-bottom:6px}
+.logo em{color:var(--blue);font-style:normal}
+.logo-sub{font-family:var(--font-b);font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:28px}
+.tagline{font-size:clamp(1rem,2.5vw,1.2rem);color:var(--text-muted);font-weight:300;max-width:500px;line-height:1.7;margin:0 auto 44px}
+.tagline strong{color:var(--text);font-weight:600}
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:44px}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 18px;text-align:left;transition:border-color 0.2s,background 0.2s}
+.feat-card:hover{border-color:var(--border2);background:var(--surface2)}
+.feat-icon{font-size:1.4rem;margin-bottom:10px;display:block}
+.feat-card p{font-size:0.8rem;color:var(--text-muted);line-height:1.6}
+.cta-group{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:56px}
+.free-tag{font-size:0.78rem;color:var(--text-dim)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin-bottom:40px}
+.stats-row{display:flex;justify-content:center;gap:clamp(24px,6vw,60px)}
+.stat .n{font-family:var(--font-d);font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;color:var(--blue);line-height:1;margin-bottom:6px}
+.stat .l{font-size:0.75rem;color:var(--text-dim)}
+.bottom-cta-banner{margin-top:48px;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.18);border-radius:var(--r);padding:36px 28px;text-align:center}
+.bottom-cta-banner h3{font-family:var(--font-d);font-size:1.5rem;font-weight:700;margin-bottom:8px}
+.bottom-cta-banner p{color:var(--text-muted);font-size:0.88rem;margin-bottom:22px;line-height:1.6}
+
+/* INTAKE */
+.section-head{margin-bottom:40px}
+.section-head h2{font-family:var(--font-d);font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:10px;line-height:1.15}
+.section-head p{color:var(--text-muted);font-size:0.9rem}
+.qblock{margin-bottom:36px}
+.qlabel{font-size:0.85rem;font-weight:600;color:var(--text);margin-bottom:12px;letter-spacing:0.01em}
+.req{color:var(--amber)}.opt-lbl{color:var(--text-dim);font-weight:400}
+.opt-grid{display:grid;gap:9px}.opt-grid.c2{grid-template-columns:repeat(2,1fr)}
+.opt-card{display:flex;align-items:center;gap:10px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-sm);padding:13px 15px;cursor:pointer;transition:all 0.18s;font-size:0.83rem;font-family:var(--font-b);color:var(--text-muted);text-align:left}
+.opt-card:hover{border-color:rgba(59,130,246,0.4);background:var(--surface2);color:var(--text)}
+.opt-card.sel{border-color:var(--blue);background:rgba(59,130,246,0.1);color:var(--text);box-shadow:0 0 0 1px var(--blue) inset}
+.oc-icon{font-size:1.05rem;flex-shrink:0}
+.chk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.chk-item{display:flex;align-items:center;gap:10px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-sm);padding:11px 13px;cursor:pointer;transition:all 0.18s;font-size:0.82rem;color:var(--text-muted);user-select:none}
+.chk-item:hover{border-color:rgba(59,130,246,0.3);color:var(--text)}
+.chk-item.on{border-color:var(--blue);background:rgba(59,130,246,0.08);color:var(--text)}
+.chk-box{width:17px;height:17px;border:1.5px solid var(--border2);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.18s;font-size:10px}
+.chk-item.on .chk-box{background:var(--blue);border-color:var(--blue);color:#fff}
+.amt-row{display:flex;align-items:center;gap:10px}
+.amt-sym{font-size:1.2rem;color:var(--text-muted);font-weight:300}
+.num-in{background:rgba(255,255,255,0.04);border:1.5px solid var(--border2);border-radius:var(--r-sm);padding:14px 16px;color:var(--text);font-family:var(--font-b);font-size:0.9rem;outline:none;width:200px;transition:border-color 0.2s}
+.num-in:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-glow)}
+.num-in::placeholder{color:var(--text-dim)}
+.submit-wrap{margin-top:44px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.privacy{font-size:0.75rem;color:var(--text-dim);text-align:center}
+.err{background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.25);border-radius:var(--r-sm);padding:14px 16px;color:var(--red);font-size:0.85rem;margin-top:14px;display:none}
+.err.show{display:block}
+
+/* RESULTS */
+.sec-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:14px;margin-top:36px}
+.opening{background:rgba(59,130,246,0.05);border:1px solid rgba(59,130,246,0.15);border-left:3px solid var(--blue);border-radius:var(--r-sm);padding:20px 22px;color:var(--text-muted);font-size:0.92rem;line-height:1.75;margin-bottom:24px}
+.prob-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:100px;font-size:0.82rem;font-weight:700;letter-spacing:0.02em;margin-bottom:8px}
+.ph{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:var(--green)}
+.pm{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);color:var(--amber)}
+.pl{background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.3);color:var(--red)}
+.pvl{background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.25);color:var(--red)}
+.prob-exp{font-size:0.8rem;color:var(--text-dim)}
+.urgent-banner{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:var(--r-sm);padding:13px 18px;color:var(--amber);font-size:0.83rem;margin:20px 0;display:flex;align-items:center;gap:8px}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px;margin-bottom:10px;transition:border-color 0.2s,opacity 0.35s ease,transform 0.35s ease}
+.step-card:hover{border-color:var(--border2)}
+.step-card.urg{border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.03)}
+.step-top{display:flex;gap:14px}
+.step-num{width:30px;height:30px;min-width:30px;border-radius:50%;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.25);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--blue);margin-top:2px}
+.step-card.urg .step-num{background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.3);color:var(--amber)}
+.step-body{flex:1;min-width:0}
+.step-hrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.step-title{font-weight:600;font-size:0.97rem}
+.urg-tag,.soon-tag{font-size:0.67rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:3px 8px;border-radius:4px}
+.urg-tag{background:rgba(245,158,11,0.15);color:var(--amber)}
+.soon-tag{background:rgba(59,130,246,0.15);color:var(--blue)}
+.step-act{color:var(--text-muted);font-size:0.86rem;margin-bottom:12px;line-height:1.6}
+.step-how{background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:13px 15px;font-size:0.82rem;color:var(--text-muted);line-height:1.8;margin-bottom:8px}
+.step-why{font-size:0.75rem;color:var(--text-dim);font-style:italic}
+.doc-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:10px}
+.doc-hd{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;transition:background 0.2s}
+.doc-hd:hover{background:rgba(255,255,255,0.02)}
+.doc-ht{font-weight:600;font-size:0.88rem}
+.doc-tog{color:var(--text-dim);font-size:0.78rem}
+.doc-bd{display:none;padding:0 20px 20px}.doc-bd.open{display:block}
+.doc-txt{font-family:var(--font-m);font-size:0.76rem;color:var(--text-muted);line-height:1.85;white-space:pre-wrap;background:rgba(0,0,0,0.35);border-radius:8px;padding:16px;margin-bottom:10px;overflow-x:auto}
+.btn-copy{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.25);color:var(--blue);border-radius:6px;padding:8px 16px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:var(--font-b);transition:all 0.2s}
+.btn-copy:hover{background:rgba(59,130,246,0.15)}
+.btn-copy.done{background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);color:var(--green)}
+.warn-card{background:rgba(248,113,113,0.04);border:1px solid rgba(248,113,113,0.2);border-radius:var(--r);padding:22px;margin-bottom:20px}
+.warn-t{font-weight:700;color:var(--red);margin-bottom:8px;font-size:0.88rem}
+.warn-txt{color:var(--text-muted);font-size:0.85rem;line-height:1.75}
+.em-note{background:rgba(16,185,129,0.04);border:1px solid rgba(16,185,129,0.14);border-radius:var(--r-sm);padding:18px 22px;color:var(--text-muted);font-size:0.88rem;line-height:1.7;font-style:italic;margin-bottom:32px}
+.act-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.act-row .btn{flex:1;min-width:140px}
+
+/* EMAIL STRIP */
+.email-strip{display:flex;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(29,78,216,0.06));border:1px solid rgba(59,130,246,0.22);border-radius:var(--r);padding:18px 22px;margin-top:32px;margin-bottom:14px;flex-wrap:wrap}
+.email-strip-left{display:flex;align-items:center;gap:14px}
+.email-strip-icon{font-size:1.5rem;flex-shrink:0}
+.email-strip-title{font-weight:700;font-size:0.92rem;color:var(--text);margin-bottom:2px}
+.email-strip-sub{font-size:0.77rem;color:var(--text-muted)}
+.btn-email-cta{background:var(--blue);color:#fff;border:none;border-radius:var(--r-sm);padding:12px 22px;font-size:0.85rem;font-weight:600;cursor:pointer;font-family:var(--font-b);transition:all 0.2s;white-space:nowrap;box-shadow:0 0 20px var(--blue-glow)}
+.btn-email-cta:hover{background:var(--blue-dark);transform:translateY(-1px)}
+
+/* EMAIL MODAL */
+.emodal-bg{display:none;position:fixed;inset:0;z-index:300;background:rgba(4,13,26,0.88);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px}
+.emodal-bg.open{display:flex;animation:fadeUp 0.35s ease}
+.emodal-box{background:#0A1628;border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:36px 32px;max-width:440px;width:100%;position:relative}
+.emodal-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text-dim);font-size:1.3rem;cursor:pointer;line-height:1;transition:color 0.2s}
+.emodal-close:hover{color:var(--text)}
+.emodal-icon{font-size:2rem;margin-bottom:12px}
+.emodal-title{font-family:var(--font-d);font-size:1.45rem;font-weight:700;margin-bottom:10px;line-height:1.2}
+.emodal-sub{color:var(--text-muted);font-size:0.85rem;line-height:1.65;margin-bottom:22px}
+.email-in{width:100%;background:rgba(255,255,255,0.05);border:1.5px solid var(--border2);border-radius:var(--r-sm);padding:13px 15px;color:var(--text);font-family:var(--font-b);font-size:0.9rem;outline:none;margin-bottom:12px;transition:border-color 0.2s}
+.email-in:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-glow)}
+.email-in::placeholder{color:var(--text-dim)}
+.consent-row{display:flex;align-items:flex-start;gap:10px;font-size:0.78rem;color:var(--text-muted);line-height:1.55;cursor:pointer;margin-bottom:14px}
+.consent-row input[type=checkbox]{margin-top:2px;flex-shrink:0;accent-color:var(--blue);width:15px;height:15px;cursor:pointer}
+.email-err{font-size:0.8rem;color:var(--red);margin-bottom:10px;min-height:18px}
+.btn-email-submit{width:100%;background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;border:none;border-radius:var(--r-sm);padding:14px;font-size:0.95rem;font-weight:600;cursor:pointer;font-family:var(--font-b);transition:all 0.2s;box-shadow:0 0 30px var(--blue-glow)}
+.btn-email-submit:hover{transform:translateY(-1px)}
+.btn-email-submit:disabled{opacity:0.55;cursor:not-allowed;transform:none}
+.email-fine{font-size:0.72rem;color:var(--text-dim);text-align:center;margin-top:12px}
+
+/* SPONSORS */
+.sponsors-section{margin-top:44px;margin-bottom:32px}
+.sponsors-label{display:flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:16px}
+.sponsors-label span{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:var(--blue);font-size:0.62rem;letter-spacing:0.1em;padding:2px 8px;border-radius:4px}
+.sponsor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.sponsor-card{display:flex;flex-direction:column;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.09);border-radius:var(--r);padding:18px;text-decoration:none;transition:all 0.2s;position:relative;overflow:hidden}
+.sponsor-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent);opacity:0;transition:opacity 0.2s}
+.sponsor-card:hover{border-color:rgba(59,130,246,0.3);background:rgba(59,130,246,0.05);transform:translateY(-1px)}
+.sponsor-card:hover::before{opacity:1}
+.sp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.sp-name{font-weight:700;font-size:0.9rem;color:var(--text)}
+.sp-tag-pill{font-size:0.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;padding:2px 7px;border-radius:3px}
+.sp-tag-free{background:rgba(16,185,129,0.12);color:var(--green);border:1px solid rgba(16,185,129,0.2)}
+.sp-tag-trial{background:rgba(59,130,246,0.12);color:var(--blue);border:1px solid rgba(59,130,246,0.2)}
+.sp-tag-deal{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
+.sp-desc{font-size:0.78rem;color:var(--text-muted);line-height:1.55;margin-bottom:10px;flex:1}
+.sp-why{font-size:0.72rem;font-style:italic;color:var(--blue);margin-bottom:10px;opacity:0.85}
+.sp-cta{display:inline-flex;align-items:center;gap:5px;font-size:0.76rem;font-weight:600;color:var(--blue);background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);border-radius:6px;padding:7px 14px;width:fit-content;transition:all 0.2s}
+.sponsor-card:hover .sp-cta{background:rgba(59,130,246,0.18)}
+.sp-disc{font-size:0.7rem;color:var(--text-dim);margin-top:10px;line-height:1.5}
+
+/* SLIDESHOW */
+.scenarios-wrap{margin:44px 0 0;position:relative}
+.sc-controls{display:flex;flex-direction:column;align-items:center;gap:0}
+.scenarios-header{display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.scenarios-label{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);background:rgba(255,255,255,0.04);border:1px solid var(--border);padding:5px 14px;border-radius:100px}
+.scenarios-track{overflow:hidden;border-radius:var(--r)}
+.scenario-card{display:none;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--r);padding:24px 26px;animation:scIn 0.45s cubic-bezier(0.16,1,0.3,1)}
+.scenario-card.active{display:block}
+@keyframes scIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:translateX(0)}}
+.sc-stars{color:var(--amber);font-size:0.85rem;letter-spacing:2px;margin-bottom:10px}
+.sc-quote{font-size:0.9rem;color:var(--text);line-height:1.65;font-style:italic;margin-bottom:16px}
+.sc-quote::before{content:'\201C';font-size:1.4rem;color:var(--blue);font-style:normal;line-height:0;vertical-align:-0.35em;margin-right:2px}
+.sc-quote::after{content:'\201D';font-size:1.4rem;color:var(--blue);font-style:normal;line-height:0;vertical-align:-0.35em;margin-left:2px}
+.sc-meta{display:flex;align-items:center;gap:12px}
+.sc-avatar{width:36px;height:36px;min-width:36px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-dark));display:flex;align-items:center;justify-content:center;font-size:0.68rem;font-weight:700;color:#fff;letter-spacing:0.03em}
+.sc-name{font-size:0.82rem;font-weight:600;color:var(--text)}
+.sc-loc{color:var(--text-dim);font-weight:400}
+.sc-type{font-size:0.72rem;color:var(--text-dim);margin-top:2px}
+.sc-dots{display:flex;align-items:center;gap:6px;}
+.sc-dot{width:6px;height:6px;border-radius:50%;background:var(--border2);cursor:pointer;transition:all 0.25s;border:none;padding:0}
+.sc-dot.on{background:var(--blue);width:18px;border-radius:3px}
+/* Pause/play row sits below dots, always visible, never overlaps */
+.sc-controls{
+  display:flex;align-items:center;justify-content:center;
+  gap:16px;margin-top:16px;
+}
+.sc-pause{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  background:rgba(59,130,246,0.12);
+  border:1.5px solid rgba(59,130,246,0.35);
+  color:var(--blue);
+  font-size:0.8rem;font-weight:700;
+  padding:8px 18px;border-radius:8px;
+  cursor:pointer;font-family:var(--font-b);
+  transition:all 0.2s;
+  min-width:110px;
+}
+.sc-pause:hover{background:rgba(59,130,246,0.22);border-color:var(--blue);transform:translateY(-1px)}
+.sc-pause:active{transform:translateY(0)}
+.sc-pause.paused{
+  background:rgba(16,185,129,0.12);
+  border-color:rgba(16,185,129,0.4);
+  color:var(--green);
+}
+@media(max-width:600px){
+  .sc-pause{min-width:90px;font-size:0.78rem;padding:7px 14px}
+}
+
+
+/* Inline sponsored step links — FTC-compliant small disclosure */
+.step-spon{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:8px;font-size:0.72rem;
+  color:var(--text-dim);flex-wrap:wrap;
+}
+.step-spon a{
+  color:var(--blue);text-decoration:none;font-weight:600;
+  padding:2px 7px;border-radius:4px;
+  background:rgba(59,130,246,0.08);
+  border:1px solid rgba(59,130,246,0.2);
+  transition:background 0.2s;
+}
+.step-spon a:hover{background:rgba(59,130,246,0.16)}
+.step-spon .spon-tag{
+  font-size:0.65rem;font-weight:700;
+  color:var(--text-dim);letter-spacing:0.06em;
+  text-transform:uppercase;
+}
+@media print{.orb,.cta-group,.act-row,.sponsors-section,.btn-back,.scenarios-wrap,.email-strip{display:none!important}body{background:#fff!important;color:#000!important}.step-card,.doc-card,.warn-card,.em-note,.opening{background:#f8f9fa!important;border-color:#ddd!important;color:#333!important}.step-num{background:#e0e7ff!important;color:#3730a3!important}.step-title,.doc-ht,.warn-t{color:#111!important}.step-act,.step-how,.step-why,.warn-txt,.doc-txt,.prob-exp{color:#444!important}.doc-bd{display:block!important}.logo em{color:#2563eb!important}}
+
+/* ── ANALYZING SCREEN ── */
+.ring{width:72px;height:72px;border-radius:50%;border:3px solid transparent;border-top-color:var(--blue);border-right-color:rgba(59,130,246,0.3);margin:0 auto 32px;animation:spin 1.2s linear infinite;box-shadow:0 0 30px var(--blue-glow)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ana-title{font-family:var(--font-d);font-size:clamp(1.5rem,4vw,1.9rem);margin-bottom:10px;font-weight:700}
+.ana-ticks{display:flex;flex-direction:column;gap:12px;max-width:360px;margin:0 auto;text-align:left}
+.ana-tick{display:flex;align-items:center;gap:12px;font-size:0.86rem;color:var(--text-dim);opacity:0;transform:translateX(-10px);transition:opacity 0.4s ease,transform 0.4s ease}
+.ana-tick.show{opacity:1;transform:translateX(0)}
+.ana-tick.done .tick-dot{background:var(--green);box-shadow:0 0 8px var(--green)}
+.tick-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;box-shadow:0 0 8px var(--blue);transition:background 0.3s,box-shadow 0.3s}
+
+/* ── STREAMING TEXT ENGINE ── */
+/* Sections hidden until streamed in */
+.stream-section{opacity:0;transform:translateY(8px);transition:opacity 0.4s ease,transform 0.4s ease}
+.stream-section.revealed{opacity:1;transform:translateY(0)}
+
+/* Blinking cursor that travels with streaming text */
+.stream-cursor{display:inline-block;width:2px;height:1.1em;background:var(--blue);margin-left:1px;vertical-align:text-bottom;animation:blink 0.7s step-end infinite;border-radius:1px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* Step cards hidden at first, cascade in */
+.step-card{opacity:0;transform:translateY(10px)}
+.step-card.revealed{opacity:1;transform:translateY(0);transition:opacity 0.35s ease,transform 0.35s ease}
+
+@media(max-width:600px){.cards-3,.sponsor-grid{grid-template-columns:1fr}.opt-grid.c2,.chk-grid{grid-template-columns:1fr}.stats-row{gap:20px}.act-row,.email-strip{flex-direction:column}.email-strip{align-items:flex-start}.btn-email-cta{width:100%}.emodal-box{padding:28px 20px}}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+<div class="wrap">
+
+<!-- SCREEN 1: WELCOME -->
+<div class="scr on" id="scrWelcome">
+<nav class="top-nav">
+  <div class="nav-logo">SCAM<em>SOS</em></div>
+  <button class="nav-cta" onclick="go('scrIntake')">Get My Free Recovery Plan →</button>
+</nav>
+<div style="text-align:center;padding:80px 0 70px">
+  <div class="welcome-badge">⚡ Free Recovery Guide · Instant Results · No Signup</div>
+  <div class="logo">SCAM<em>SOS</em></div>
+  <div class="logo-sub">Scam Recovery · Free · United States</div>
+  <p class="tagline">You didn't fail. They are <strong>professionals</strong> at this.<br>Let's figure out exactly what to do — right now.</p>
+  <div class="cards-3">
+    <div class="feat-card"><span class="feat-icon">⚡</span><p>Instant results — no waiting, no API calls. Your personalized plan appears the moment you select your situation.</p></div>
+    <div class="feat-card"><span class="feat-icon">📄</span><p>Ready-to-use dispute letters and word-for-word phone scripts tailored to your exact scam type and payment method.</p></div>
+    <div class="feat-card"><span class="feat-icon">🔒</span><p>100% free. No account. Nothing stored. Your answers stay in your browser — never sent to any server.</p></div>
+  </div>
+  <div class="cta-group">
+    <button class="btn-big" onclick="go('scrIntake')">Get My Recovery Plan →</button>
+    <div class="free-tag">Free · No signup · Instant results</div>
+  </div>
+  <div class="divider"></div>
+  <div class="stats-row">
+    <div class="stat"><div class="n">$12.5B</div><div class="l">Lost to scams in 2024</div></div>
+    <div class="stat"><div class="n">73M</div><div class="l">Americans scammed last year</div></div>
+    <div class="stat"><div class="n">~50%</div><div class="l">Get money back when they fight</div></div>
+  </div>
+
+  <!-- SLIDESHOW -->
+  <div class="scenarios-wrap">
+    <div class="scenarios-header"><span class="scenarios-label">💬 Real Situations · Illustrative Examples</span></div>
+    <div class="scenarios-track" id="scenTrack">
+      <div class="scenario-card"><div class="sc-stars">★★★★★</div><p class="sc-quote">I wired $3,200 to someone posing as my bank's fraud department. SCAMSOS had me call the wire recall line within 20 minutes — $2,800 came back.</p><div class="sc-meta"><span class="sc-avatar">RL</span><div><div class="sc-name">Rachel L. <span class="sc-loc">· Austin, TX</span></div><div class="sc-type">Bank impersonator scam</div></div></div></div>
+      <div class="scenario-card"><div class="sc-stars">★★★★★</div><p class="sc-quote">My landscaping company almost lost everything. Someone forged a check and cleaned out our business account. The dispute letter SCAMSOS drafted got the bank to reverse it in 9 days.</p><div class="sc-meta"><span class="sc-avatar">DM</span><div><div class="sc-name">Derek M. <span class="sc-loc">· Phoenix, AZ</span></div><div class="sc-type">Check fraud · Small business owner</div></div></div></div>
+      <div class="scenario-card"><div class="sc-stars">★★★★★</div><p class="sc-quote">A "tech support" agent had remote access to my computer for two hours before I realized. SCAMSOS walked me through removing the software and freezing my credit before anything worse happened.</p><div class="sc-meta"><span class="sc-avatar">PT</span><div><div class="sc-name">Patricia T. <span class="sc-loc">· Columbus, OH</span></div><div class="sc-type">Tech support scam</div></div></div></div>
+      <div class="scenario-card"><div class="sc-stars">★★★★★</div><p class="sc-quote">I run a boutique and paid a $1,400 deposit on an Airbnb rental for a team retreat that didn't exist. The chargeback script SCAMSOS gave me worked — credit card refunded everything.</p><div class="sc-meta"><span class="sc-avatar">JK</span><div><div class="sc-name">Jennifer K. <span class="sc-loc">· Nashville, TN</span></div><div class="sc-type">Rental scam · Boutique owner</div></div></div></div>
+      <div class="scenario-card"><div class="sc-stars">★★★★★</div><p class="sc-quote">Sent $800 on Zelle to someone selling concert tickets on Facebook. SCAMSOS told me exactly what to say to my bank — "authorized push payment fraud" — and I got a goodwill refund.</p><div class="sc-meta"><span class="sc-avatar">MR</span><div><div class="sc-name">Marcus R. <span class="sc-loc">· Atlanta, GA</span></div><div class="sc-type">Marketplace scam</div></div></div></div>
+      <div class="scenario-card"><div class="sc-stars">★★★★★</div><p class="sc-quote">My catering business got hit with a fake check overpayment scam — $2,600 gone. I didn't know I had 60 days to dispute. SCAMSOS caught it in time and the bank reversed the charge.</p><div class="sc-meta"><span class="sc-avatar">AN</span><div><div class="sc-name">Angela N. <span class="sc-loc">· Chicago, IL</span></div><div class="sc-type">Overpayment scam · Caterer</div></div></div></div>
+      <div class="scenario-card"><div class="sc-stars">★★★★★</div><p class="sc-quote">Lost $5,000 in a crypto investment scam. Recovery wasn't possible, but SCAMSOS helped me file with IC3 and freeze my credit before they could open cards in my name. Saved me from worse.</p><div class="sc-meta"><span class="sc-avatar">TC</span><div><div class="sc-name">Thomas C. <span class="sc-loc">· Denver, CO</span></div><div class="sc-type">Crypto investment scam</div></div></div></div>
+      <div class="scenario-card"><div class="sc-stars">★★★★★</div><p class="sc-quote">Someone called pretending to be the IRS and I gave them my SSN. I was panicking. SCAMSOS had me freeze all three credit bureaus in under 10 minutes. No fraudulent accounts were ever opened.</p><div class="sc-meta"><span class="sc-avatar">SW</span><div><div class="sc-name">Sandra W. <span class="sc-loc">· Seattle, WA</span></div><div class="sc-type">Government impersonator scam</div></div></div></div>
+      <div class="scenario-card"><div class="sc-stars">★★★★★</div><p class="sc-quote">My 74-year-old father sent $1,200 in gift cards to someone claiming to be me in jail. SCAMSOS found that two cards hadn't been redeemed yet — Google refunded both within 48 hours.</p><div class="sc-meta"><span class="sc-avatar">KH</span><div><div class="sc-name">Kevin H. <span class="sc-loc">· Tampa, FL</span></div><div class="sc-type">Grandparent emergency scam</div></div></div></div>
+      <div class="scenario-card"><div class="sc-stars">★★★★★</div><p class="sc-quote">Someone hacked my email and sent a fake invoice to my biggest client. Lost $4,800 via wire. SCAMSOS helped me file an FBI IC3 report and document everything for my insurance claim.</p><div class="sc-meta"><span class="sc-avatar">RP</span><div><div class="sc-name">Ryan P. <span class="sc-loc">· Boston, MA</span></div><div class="sc-type">Business email compromise</div></div></div></div>
+    </div>
+    <div class="sc-controls">
+      <div class="sc-controls">
+        <div class="sc-dots" id="scDots"></div>
+        <button class="sc-pause" id="scPause" onclick="togglePause()" aria-label="Pause slideshow">⏸&nbsp;Pause</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-cta-banner">
+    <h3>Ready to fight back?</h3>
+    <p>Your personalized recovery plan appears instantly.<br>Free, private, and built for your exact situation.</p>
+    <button class="btn-big" onclick="go('scrIntake')" style="margin:0 auto">Get My Free Recovery Plan →</button>
+    <div style="margin-top:12px;font-size:0.75rem;color:var(--text-dim)">No signup · Nothing stored · Completely free</div>
+  </div>
+</div>
+</div>
+
+<!-- SCREEN 2: INTAKE -->
+<div class="scr" id="scrIntake">
+<div style="padding:60px 0 80px">
+  <button class="btn-back" onclick="go('scrWelcome')">← Back to home</button>
+  <div class="section-head">
+    <h2>Tell us what happened</h2>
+    <p>Select your situation below — your recovery plan appears instantly.</p>
+  </div>
+
+  <div class="qblock">
+    <div class="qlabel">What type of scam was it? <span class="req">*</span></div>
+    <div class="opt-grid c2" id="gScam">
+      <button class="opt-card" data-v="romance"      onclick="pick('scam',this)"><span class="oc-icon">💔</span>Romance or relationship</button>
+      <button class="opt-card" data-v="tech"         onclick="pick('scam',this)"><span class="oc-icon">🖥️</span>Tech support / virus warning</button>
+      <button class="opt-card" data-v="investment"   onclick="pick('scam',this)"><span class="oc-icon">📈</span>Investment or cryptocurrency</button>
+      <button class="opt-card" data-v="impersonator" onclick="pick('scam',this)"><span class="oc-icon">🏛️</span>Government / bank impersonator</button>
+      <button class="opt-card" data-v="shopping"     onclick="pick('scam',this)"><span class="oc-icon">🛍️</span>Fake online store or product</button>
+      <button class="opt-card" data-v="job"          onclick="pick('scam',this)"><span class="oc-icon">💼</span>Fake job offer</button>
+      <button class="opt-card" data-v="lottery"      onclick="pick('scam',this)"><span class="oc-icon">🎰</span>Lottery / prize / sweepstakes</button>
+      <button class="opt-card" data-v="rental"       onclick="pick('scam',this)"><span class="oc-icon">🏠</span>Rental or housing scam</button>
+      <button class="opt-card" data-v="family"       onclick="pick('scam',this)"><span class="oc-icon">👴</span>Family emergency / grandparent</button>
+      <button class="opt-card" data-v="phishing"     onclick="pick('scam',this)"><span class="oc-icon">🎣</span>Phishing email or fake website</button>
+      <button class="opt-card" data-v="marketplace"  onclick="pick('scam',this)"><span class="oc-icon">🏪</span>Marketplace (Craigslist, FB, etc.)</button>
+      <button class="opt-card" data-v="other"        onclick="pick('scam',this)"><span class="oc-icon">❓</span>Other / not sure</button>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qlabel">How did you pay or lose money? <span class="req">*</span></div>
+    <div class="opt-grid c2" id="gPay">
+      <button class="opt-card" data-v="credit"   onclick="pick('pay',this)"><span class="oc-icon">💳</span>Credit card</button>
+      <button class="opt-card" data-v="debit"    onclick="pick('pay',this)"><span class="oc-icon">💳</span>Debit card</button>
+      <button class="opt-card" data-v="wire"     onclick="pick('pay',this)"><span class="oc-icon">🏦</span>Bank / wire transfer</button>
+      <button class="opt-card" data-v="zelle"    onclick="pick('pay',this)"><span class="oc-icon">⚡</span>Zelle</button>
+      <button class="opt-card" data-v="p2p"      onclick="pick('pay',this)"><span class="oc-icon">📱</span>Venmo / Cash App / PayPal</button>
+      <button class="opt-card" data-v="crypto"   onclick="pick('pay',this)"><span class="oc-icon">₿</span>Cryptocurrency</button>
+      <button class="opt-card" data-v="giftcard" onclick="pick('pay',this)"><span class="oc-icon">🎁</span>Gift cards (Amazon, Google, etc.)</button>
+      <button class="opt-card" data-v="check"    onclick="pick('pay',this)"><span class="oc-icon">📝</span>Check or money order</button>
+      <button class="opt-card" data-v="nopay"    onclick="pick('pay',this)"><span class="oc-icon">🔐</span>No money — just personal info</button>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qlabel">When did this happen? <span class="req">*</span></div>
+    <div class="opt-grid c2" id="gWhen">
+      <button class="opt-card" data-v="hour"  onclick="pick('when',this)"><span class="oc-icon">⚡</span>Within the last hour</button>
+      <button class="opt-card" data-v="today" onclick="pick('when',this)"><span class="oc-icon">📅</span>Today (within 24 hours)</button>
+      <button class="opt-card" data-v="days3" onclick="pick('when',this)"><span class="oc-icon">📅</span>1–3 days ago</button>
+      <button class="opt-card" data-v="week"  onclick="pick('when',this)"><span class="oc-icon">📅</span>Within the past week</button>
+      <button class="opt-card" data-v="month" onclick="pick('when',this)"><span class="oc-icon">📅</span>Within the past month</button>
+      <button class="opt-card" data-v="old"   onclick="pick('when',this)"><span class="oc-icon">📅</span>More than a month ago</button>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qlabel">What personal information did you share? <span class="opt-lbl">(check all that apply)</span></div>
+    <div class="chk-grid">
+      <div class="chk-item" onclick="chk(this,'ssn')">    <div class="chk-box">✓</div>Social Security Number</div>
+      <div class="chk-item" onclick="chk(this,'bank')">   <div class="chk-box">✓</div>Bank account / routing numbers</div>
+      <div class="chk-item" onclick="chk(this,'cardnum')"><div class="chk-box">✓</div>Credit or debit card numbers</div>
+      <div class="chk-item" onclick="chk(this,'pwd')">    <div class="chk-box">✓</div>Account passwords / logins</div>
+      <div class="chk-item" onclick="chk(this,'addr')">   <div class="chk-box">✓</div>Home address</div>
+      <div class="chk-item" onclick="chk(this,'dob')">    <div class="chk-box">✓</div>Date of birth</div>
+      <div class="chk-item" onclick="chk(this,'id')">     <div class="chk-box">✓</div>Government ID (license, passport)</div>
+      <div class="chk-item" onclick="chk(this,'contact')"><div class="chk-box">✓</div>Phone / email only</div>
+      <div class="chk-item" onclick="chk(this,'none')">   <div class="chk-box">✓</div>Nothing — just lost money</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qlabel">How much did you lose? <span class="opt-lbl">(optional)</span></div>
+    <div class="amt-row">
+      <span class="amt-sym">$</span>
+      <input type="number" class="num-in" id="inAmt" placeholder="0.00" min="0" step="0.01"
+             oninput="if(parseFloat(this.value)<0||this.value==='-')this.value=''">
+    </div>
+  </div>
+
+  <div class="submit-wrap">
+    <button class="btn btn-blue" style="padding:18px 50px;font-size:1.05rem;border-radius:var(--r)" onclick="generate()">
+      Get My Recovery Plan →
+    </button>
+    <div class="privacy">🔒 Nothing sent to any server · Answers stay in your browser · No account needed</div>
+  </div>
+  <div class="err" id="errMsg">Please select your scam type, payment method, and when it happened.</div>
+</div>
+</div>
+
+<!-- SCREEN 3: ANALYZING -->
+<div class="scr" id="scrAnalyzing">
+<div style="padding:110px 0;text-align:center">
+  <div class="ring"></div>
+  <div class="ana-title">Analyzing your situation...</div>
+  <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:44px">Building your personalized recovery plan</p>
+  <div class="ana-ticks" id="anaTicks">
+    <div class="ana-tick"><div class="tick-dot"></div>Identifying your payment recovery options</div>
+    <div class="ana-tick"><div class="tick-dot"></div>Matching your scam type to specific actions</div>
+    <div class="ana-tick"><div class="tick-dot"></div>Calculating time-sensitive steps</div>
+    <div class="ana-tick"><div class="tick-dot"></div>Drafting your dispute letters and call scripts</div>
+  </div>
+</div>
+</div>
+
+<!-- SCREEN 4: RESULTS -->
+<div class="scr" id="scrResults">
+<div style="padding:60px 0 90px">
+  <button class="btn-back" onclick="go('scrWelcome')" style="margin-bottom:20px">← Back to Home</button>
+  <div style="margin-bottom:36px">
+    <h2 style="font-family:var(--font-d);font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:4px">Your Recovery Plan</h2>
+    <p style="color:var(--text-dim);font-size:0.8rem">Matched to your specific situation · Not legal advice · Free to use and print</p>
+  </div>
+  <div id="resContent"></div>
+  <div class="email-strip">
+    <div class="email-strip-left">
+      <span class="email-strip-icon">📧</span>
+      <div>
+        <div class="email-strip-title">Get this plan in your inbox</div>
+        <div class="email-strip-sub">So you have it when you need it — plus 3 follow-up recovery tips</div>
+      </div>
+    </div>
+    <button class="btn-email-cta" onclick="openEmailModal()">Send to my email →</button>
+  </div>
+  <div class="act-row">
+    <button class="btn btn-ghost" onclick="window.print()">🖨️ Print / Save PDF</button>
+    <button class="btn btn-outline-blue" onclick="restart()">Start New Case</button>
+  </div>
+</div>
+</div>
+
+</div><!-- /wrap -->
+
+<!-- EMAIL MODAL -->
+<div id="emailModal" class="emodal-bg" onclick="closeEmailModal(event)">
+  <div class="emodal-box">
+    <button class="emodal-close" onclick="closeEmailModal()">&times;</button>
+    <div id="emailStep1">
+      <div class="emodal-icon">📧</div>
+      <h3 class="emodal-title">Email me my recovery plan</h3>
+      <p class="emodal-sub">We'll send your full plan so you have it when you call your bank or file your FTC report. No spam — just your plan and 3 follow-up tips.</p>
+      <input type="email" class="email-in" id="emailInput" placeholder="your@email.com" />
+      <label class="consent-row">
+        <input type="checkbox" id="emailConsent" />
+        <span>I agree to receive my recovery plan and follow-up tips from SCAMSOS. Unsubscribe anytime.</span>
+      </label>
+      <div class="email-err" id="emailErr"></div>
+      <button class="btn-email-submit" id="emailSubmitBtn" onclick="submitEmail()">Send My Recovery Plan →</button>
+      <p class="email-fine">🔒 Your email is never sold or shared. CAN-SPAM compliant.</p>
+    </div>
+    <div id="emailStep2" style="display:none;text-align:center">
+      <div style="font-size:2.8rem;margin-bottom:16px">✅</div>
+      <h3 class="emodal-title">On its way!</h3>
+      <p class="emodal-sub">Check your inbox — your recovery plan is being sent now.<br>Also check your spam folder if you don't see it within 5 minutes.</p>
+      <button class="btn-email-submit" onclick="closeEmailModal()" style="margin-top:20px">Done</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════
+const S = {scam:null, pay:null, when:null, info:[], amount:''};
+let _planText = '';
+
+// ═══════════════════════════════════════════════════════════
+// NAV
+// ═══════════════════════════════════════════════════════════
+function go(id){
+  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function pick(field,el){
+  el.closest('.opt-grid').querySelectorAll('.opt-card').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel'); S[field]=el.dataset.v;
+}
+function chk(el,val){
+  el.classList.toggle('on');
+  if(el.classList.contains('on')){if(!S.info.includes(val))S.info.push(val);}
+  else S.info=S.info.filter(v=>v!==val);
+}
+
+// ═══════════════════════════════════════════════════════════
+// CONTENT ENGINE — all pre-written, no API needed
+// ═══════════════════════════════════════════════════════════
+
+// ── OPENINGS — per scam type ──────────────────────────────
+const OPENINGS = {
+  romance:     "What happened to you was a carefully engineered deception — these operations run like businesses, with scripts, fake identities, and months of psychological planning. The feelings were real; the person wasn't. Let's focus on protecting you right now.",
+  tech:        "Tech support scammers pose as trusted companies like Microsoft, Apple, or your antivirus provider. They create urgency and fear to get access to your device or your money. You are not the first careful person this has happened to — and there are concrete steps we can take right now.",
+  investment:  "Investment and cryptocurrency scams are among the most sophisticated financial crimes operating today. They use real-looking platforms, fake profits, and social proof to build trust over weeks. What matters most now is stopping further loss and documenting everything.",
+  impersonator:"Government and bank impersonation scams are specifically designed to trigger fear and bypass your judgment. The IRS, Social Security Administration, and your bank will never call you demanding immediate payment. You did not do anything wrong by taking the threat seriously.",
+  shopping:    "Fake online stores have become nearly indistinguishable from legitimate retailers. They steal credit card data and either ship nothing or send cheap knockoffs. You have real legal protections here — especially if you paid by credit card.",
+  job:         "Fake job offers are one of the fastest-growing scam categories, and they specifically target people in vulnerable financial moments. These operations collect personal data and upfront payments under the guise of equipment, training, or background checks. Let's recover what we can.",
+  lottery:     "Lottery and prize scams exploit a universal human hope. The required 'fees' to claim winnings are the actual theft mechanism. There is no prize — but there are recovery steps depending on how you paid.",
+  rental:      "Rental scams are devastating because they compound financial loss with housing insecurity. Scammers lift legitimate listings from Zillow or Craigslist, create fake contact, and collect deposits. Your payment method determines what's recoverable.",
+  family:      "Family emergency scams are designed to short-circuit rational thinking by triggering parental or family instinct. They work precisely because caring about your family is a strength, not a weakness. Let's figure out what can be done.",
+  phishing:    "Phishing attacks are engineered to look identical to real communications. The links, logos, and language are often copied pixel-for-pixel from legitimate sources. Falling for one does not mean you weren't paying attention — it means the attackers were skilled.",
+  marketplace: "Marketplace scams exploit the trust built into platforms like Facebook, Craigslist, and OfferUp. Whether buying or selling, the tactics are designed to move payment off-platform and disappear before you can act. Here's exactly what to do.",
+  other:       "Whatever form this scam took, what matters now is acting quickly. The steps below are ordered by urgency — your payment method determines which ones apply most directly to your situation."
+};
+
+// ── RECOVERY PROBABILITY — per payment method + timing ────
+const PROB = {
+  credit:   {high:['hour','today','days3'],med:['week','month'],low:['old'],
+    high_txt:"Credit cards have the strongest consumer protection of any payment method. The Fair Credit Billing Act entitles you to dispute fraudulent charges — and card issuers must investigate.",
+    med_txt: "Credit card chargebacks are still available to you. Success rates are high when you use the right language and documentation.",
+    low_txt: "Credit card disputes can still be filed after a month, though your window is narrowing. Act today — most issuers allow disputes up to 60 days from the statement date."},
+  debit:    {high:['hour','today'],med:['days3','week'],low:['month','old'],
+    high_txt:"Acting within the first 24–48 hours gives you full protection under the Electronic Fund Transfer Act. Your bank is legally required to investigate.",
+    med_txt: "You still have a case, but debit card protection weakens significantly after 2 business days. File immediately and use specific legal language.",
+    low_txt: "Debit card recovery after a month is difficult but not impossible. A CFPB complaint often triggers a second bank review."},
+  wire:     {high:['hour'],med:['today'],low:['days3','week','month','old'],
+    high_txt:"You may still be within the wire recall window. Call your bank immediately and ask for a SWIFT recall — every minute matters.",
+    med_txt: "Wire recalls become very difficult after 24 hours, but your bank can still attempt a return request. File a CFPB complaint regardless of outcome.",
+    low_txt: "Wire transfer recovery after several days is very difficult. Focus on FBI IC3 documentation, CFPB complaint, and legal options if the amount was significant."},
+  zelle:    {high:['hour','today'],med:['days3','week'],low:['month','old'],
+    high_txt:"Call your bank directly — not Zelle. If you were deceived into sending, major banks now recognize this as 'authorized push payment fraud' and may reverse it.",
+    med_txt: "Zelle recovery is harder after a few days but CFPB complaints have pressured major banks to create refund policies. Use exact legal language when calling.",
+    low_txt: "Zelle recovery after a month is unlikely through the bank, but a CFPB complaint and state Attorney General filing can still produce results."},
+  p2p:      {high:['hour','today'],med:['days3','week'],low:['month','old'],
+    high_txt:"PayPal Goods & Services has purchase protection — open a dispute immediately. Cash App and Venmo have fraud teams that can investigate if you act quickly.",
+    med_txt: "Dispute windows are still open. PayPal Purchase Protection covers Goods & Services payments up to 180 days. File now.",
+    low_txt: "File disputes with the platform regardless — even if recovery is unlikely, it helps their fraud teams track patterns and may result in refunds."},
+  crypto:   {high:['hour','today','days3','week','month','old'],med:[],low:[],
+    high_txt:"Cryptocurrency transactions are generally irreversible. However, if you used a US-based exchange (Coinbase, Kraken, Gemini), they can sometimes freeze scammer accounts. Report immediately.",
+    med_txt: "",
+    low_txt: ""},
+  giftcard: {high:['hour','today'],med:['days3'],low:['week','month','old'],
+    high_txt:"If the gift cards haven't been redeemed yet, issuers can sometimes freeze and refund them. Call each issuer immediately — time is critical.",
+    med_txt: "Cards may still be unredeemed. It's worth calling each issuer — they have fraud teams specifically for this. Success rate drops daily.",
+    low_txt: "Gift card recovery after a week is rare, but filing with the FTC and your state AG creates an official record and occasionally produces results."},
+  check:    {high:['hour','today'],med:['days3','week'],low:['month','old'],
+    high_txt:"If the check hasn't cleared, your bank can place a stop payment. Call immediately and explain it was obtained by fraud.",
+    med_txt: "Even if the check cleared, banks have fraud investigation processes. File a police report — it's required for most bank fraud investigations.",
+    low_txt: "Check fraud after a month is harder to reverse through the bank. Focus on police report, FTC filing, and your state's AG consumer protection office."},
+  nopay:    {high:['hour','today','days3','week','month','old'],med:[],low:[],
+    high_txt:"No money was taken, but your personal information is the real risk here. The priority is protecting your identity before the stolen data gets used against you.",
+    med_txt: "",
+    low_txt: ""}
+};
+
+// ── ACTION STEPS — per payment method ─────────────────────
+const STEPS = {
+  credit: [
+    {u:'urgent', t:'Call your card issuer right now',
+     a:'Call the number on the back of your card and say: "I need to dispute a fraudulent charge and request a chargeback."',
+     h:'Tell them you were deceived into making a purchase — do not say you authorized it willingly. Request a provisional credit while they investigate. Under the Fair Credit Billing Act, you have up to 60 days from the statement date. Ask for a confirmation number for your dispute.',
+     w:'Card issuers must investigate disputes under federal law. Provisional credits are issued while investigations are open — you may see your money back within days.'},
+    {u:'urgent', t:'Report to the FTC',
+     a:'File a report at reportfraud.ftc.gov — this takes about 10 minutes and creates an official federal record.',
+     h:'Go to reportfraud.ftc.gov. Select your scam category, fill in the details, and save your confirmation number. The FTC uses these reports to track patterns and build cases against scam operations. Your report may directly help shut down the operation that hit you.',
+     w:'An FTC report number strengthens your bank dispute and is required for some insurance claims.'},
+    {u:'soon', t:'Report to your state Attorney General',
+     a:'Find your state AG at naag.org/find-my-ag and file a consumer complaint.',
+     h:'State AGs have enforcement power that the FTC does not always exercise individually. Many states have consumer protection divisions that actively pursue online scams. Your complaint adds to the pattern they need to take action.',
+     w:'State AGs have sued and shut down scam operations based on accumulated consumer complaints.'},
+    {u:'standard', t:'Monitor your card statements closely',
+     a:'Scammers who have your card number often make small test charges first — watch for any unfamiliar transactions.',
+     h:'Set up transaction alerts in your banking app for any amount, even $1. If you shared your card number on a fake site, request a new card number from your issuer even if the dispute is resolved — the number is still compromised.',
+     w:'Secondary charges are common after initial scams. Early detection prevents additional losses.'}
+  ],
+  debit: [
+    {u:'urgent', t:'Call your bank immediately',
+     a:'Call your bank\'s fraud line and say: "I need to report an unauthorized debit card transaction obtained through fraud."',
+     h:'Under the Electronic Fund Transfer Act, you have full protection if you report within 2 business days, limited protection up to 60 days, and very little protection after 60 days. Use these exact words: "I was induced by fraud to authorize this transaction." Ask for a provisional credit while they investigate. Get a case number.',
+     w:'Every hour matters with debit cards. The legal protection window is much narrower than credit cards.'},
+    {u:'urgent', t:'File a CFPB complaint',
+     a:'Go to consumerfinance.gov/complaint and file a complaint against your bank if they refuse to help.',
+     h:'The Consumer Financial Protection Bureau has enforcement authority over banks. A CFPB complaint triggers a mandatory response from your bank within 15 days. Many victims who were initially refused received refunds after filing CFPB complaints. Banks take these seriously because CFPB tracks their complaint patterns.',
+     w:'Banks that receive CFPB complaints must respond formally — this often unlocks a second review.'},
+    {u:'urgent', t:'Report to the FTC',
+     a:'File at reportfraud.ftc.gov to create a federal record of the fraud.',
+     h:'Go to reportfraud.ftc.gov, select your scam type, and complete the report. Print or save the confirmation. This creates the official federal paper trail that supports insurance claims, police reports, and bank disputes.',
+     w:'An FTC report is required documentation for many bank fraud investigations.'},
+    {u:'soon', t:'Request a new account number',
+     a:'Even after the dispute is resolved, ask your bank to issue a new account number — your old one is compromised.',
+     h:'If scammers have your debit card or account number, they may attempt additional charges. A new account number closes that door completely. This is different from a new card — it\'s a new account number. Some banks call this a "number change" or "account reissue."',
+     w:'A resolved dispute does not protect you from future unauthorized charges on the same account number.'}
+  ],
+  wire: [
+    {u:'urgent', t:'Call your bank right now — every minute counts',
+     a:'Call your bank\'s wire transfer department and say: "I need to report a fraudulent wire transfer and request an immediate recall."',
+     h:'Ask specifically for the wire transfer department or fraud line — not general customer service. Tell them the exact amount, the destination bank, and the date. Ask them to initiate a SWIFT recall message immediately. Wire recalls are possible if the funds haven\'t been withdrawn from the receiving account. Domestic wires: call within hours. International: the window is even shorter.',
+     w:'Wire transfers can sometimes be recalled if the destination bank cooperates — but this window closes fast. Every hour reduces the chance significantly.'},
+    {u:'urgent', t:'File with the FBI at ic3.gov',
+     a:'Go to ic3.gov and file an Internet Crime Complaint — the FBI has a specialized team for wire fraud.',
+     h:'The FBI\'s Internet Crime Complaint Center (IC3) has the authority to issue emergency freeze requests to financial institutions. For wire fraud over $50,000, they may take direct action. File immediately with as much detail as possible: the receiving bank, account number if you have it, wire confirmation number, and contact details of the scammer.',
+     w:'FBI involvement can sometimes result in fund recovery or account freezes before scammers withdraw — but only if filed immediately.'},
+    {u:'urgent', t:'File a CFPB complaint',
+     a:'Go to consumerfinance.gov/complaint and file against your bank for the fraudulent transfer.',
+     h:'Even if your bank initiated the wire at your request, a CFPB complaint triggers a mandatory formal review. Banks have been required to refund fraudulent wires in cases where they failed to flag suspicious activity or warn you adequately. This is a separate process from the bank\'s internal dispute.',
+     w:'CFPB complaints have resulted in wire refunds even when banks initially refused.'},
+    {u:'soon', t:'Consult an attorney for significant losses',
+     a:'For losses over $5,000, a consultation with a fraud attorney can reveal options your bank won\'t mention.',
+     h:'Wire fraud attorneys can pursue civil action against scammers, negotiate directly with banks, and identify third-party liability (such as platforms that facilitated the scam). Many work on contingency for large cases.',sp:{name:'LegalShield',url:'https://www.legalshield.com',label:'Attorney access, flat monthly fee — no hourly billing'},
+     w:'Banks and insurers respond differently when an attorney is involved on your behalf.'}
+  ],
+  zelle: [
+    {u:'urgent', t:'Call your bank — not Zelle',
+     a:'Call your bank\'s fraud line and say: "I was deceived into sending money via Zelle — I need to report authorized push payment fraud."',
+     h:'Do not call Zelle directly. Zelle\'s liability falls to the bank that issued your account. Use these exact words: "authorized push payment fraud" — this is the legal classification that triggers bank fraud policies. Chase, Bank of America, Wells Fargo, and Citi have all created Zelle fraud refund policies under pressure from regulators. Ask to speak with the fraud department specifically, not general support.',
+     w:'Major banks have reversed Zelle transactions when customers use the correct legal language and fraud classification.'},
+    {u:'urgent', t:'File a CFPB complaint immediately',
+     a:'Go to consumerfinance.gov/complaint and file against your bank for the Zelle transaction.',
+     h:'CFPB complaints about Zelle fraud have been extremely effective. The CFPB has been pressuring banks on Zelle fraud specifically, and a complaint puts your case in front of the agency actively investigating this issue. File even if your bank says no — many refusals are reversed after CFPB contact.',
+     w:'The CFPB has publicly called out banks for their Zelle fraud policies. Your complaint adds weight to ongoing regulatory pressure.'},
+    {u:'urgent', t:'Report to the FTC',
+     a:'File at reportfraud.ftc.gov to create a federal record.',
+     h:'Complete the report at reportfraud.ftc.gov with all available details about the scammer — username, phone number, platform where you met them, and the amount transferred. Save your confirmation number. This report supports your bank\'s investigation and CFPB complaint.',
+     w:'FTC reports are shared with law enforcement and financial regulators.'},
+    {u:'soon', t:'Report to your state Attorney General',
+     a:'File at naag.org/find-my-ag — state AGs have been actively pursuing Zelle fraud cases.',
+     h:'Several state attorneys general have opened investigations into bank Zelle fraud policies. A complaint to your state AG adds your case to an active investigation and sometimes results in direct bank contact on your behalf.',
+     w:'State AG pressure has resulted in banks creating Zelle refund policies that didn\'t previously exist.'}
+  ],
+  p2p: [
+    {u:'urgent', t:'Open a dispute with the platform immediately',
+     a:'File a dispute directly inside the app — PayPal, Cash App, or Venmo each have fraud reporting within their apps.',
+     h:'PayPal: Go to Resolution Center → Report a Problem → I have a problem with a purchase. You must have paid using Goods & Services (not Friends & Family) to be covered by Purchase Protection. You have 180 days. Cash App: Profile → Support → Report a Payment Issue → Call 1-800-969-1940 for live support. Venmo: Go to the transaction → Need Help → Report an Issue, or call 1-855-812-4430. Act immediately — the sooner you file, the higher the chance of recovery.',
+     w:'PayPal\'s Purchase Protection is one of the strongest in consumer payments — but only applies to Goods & Services transactions.'},
+    {u:'urgent', t:'Report to the FTC',
+     a:'File at reportfraud.ftc.gov — P2P payment fraud is a tracked priority.',
+     h:'Go to reportfraud.ftc.gov and file a detailed report. Include the scammer\'s username, email, phone number, and the exact platform and transaction ID. The FTC shares this data with state regulators and the platforms themselves.',
+     w:'Platforms like PayPal respond faster to fraud reports that already have FTC case numbers attached.'},
+    {u:'soon', t:'File a CFPB complaint if the platform refuses',
+     a:'If the platform denies your dispute, file at consumerfinance.gov/complaint against them.',
+     h:'PayPal, Cash App, and Venmo are all subject to CFPB oversight. A CFPB complaint triggers a mandatory formal response within 15 days and often prompts a second review of denied disputes.',
+     w:'CFPB complaints against payment apps have a strong track record of producing refunds after initial denials.'},
+    {u:'standard', t:'Change your account password and enable 2FA',
+     a:'If the scammer had access to your account, change your password immediately and enable two-factor authentication.',
+     h:'Go to your account settings and change your password to something unique — not used on any other account. Enable two-factor authentication using an authenticator app (not SMS if possible). Check your linked bank accounts for any unauthorized access.',
+     w:'Scammers who gain platform access sometimes make additional transfers or sell account access.'}
+  ],
+  crypto: [
+    {u:'urgent', t:'Report to your US exchange immediately',
+     a:'If you used a US-based exchange (Coinbase, Kraken, Gemini, Binance.US), call their fraud line and request an account freeze on the destination.',
+     h:'US exchanges have anti-money-laundering obligations and can freeze accounts suspected of fraud. If you transferred to a wallet on the same exchange, there is a small chance they can freeze it before withdrawal. Coinbase: 1-888-908-7930. Kraken: support.kraken.com. Gemini: support.gemini.com. Provide the receiving wallet address and transaction hash.',
+     w:'Exchange-level freezes are rare but do happen — especially if you act within the first hour.'},
+    {u:'urgent', t:'File with the FBI at ic3.gov',
+     a:'Go to ic3.gov and file an Internet Crime Complaint — crypto fraud is a top FBI priority.',
+     h:'The FBI\'s IC3 has a dedicated crypto fraud team. Provide the scammer\'s wallet address, transaction hashes, the platform where you met them, and all communications. For losses over $10,000, the FBI\'s Virtual Assets Unit has successfully traced and recovered funds in some cases — but only with early, detailed reports.',
+     w:'IC3 reports are the starting point for any federal crypto fraud investigation.'},
+    {u:'urgent', t:'Report to the FTC',
+     a:'File at reportfraud.ftc.gov — include wallet addresses and platform details.',
+     h:'Go to reportfraud.ftc.gov and file under investment fraud or the appropriate scam category. The FTC specifically tracks crypto fraud and shares data with the FBI, SEC, and CFTC. Include: the scammer\'s name/username, wallet address, website URL, and how you were contacted.',
+     w:'The FTC has sued and seized assets from crypto scam operations using complaint data.'},
+    {u:'urgent', t:'Preserve all evidence immediately',
+     a:'Screenshot everything — conversations, websites, wallet addresses, transaction records — before the scammer disappears.',
+     h:'Preserve: all messages (text, email, social media, app), the platform or website URL, the scammer\'s profile or phone number, wallet addresses, and transaction confirmation screens. Save copies to your email or cloud storage. This evidence is critical for any investigation or legal action.',
+     w:'Scam platforms often disappear within days. Evidence captured now may be the only record.'},
+    {u:'soon', t:'Consult a crypto fraud attorney for large losses',
+     a:'For losses over $10,000, an attorney who specializes in crypto fraud can identify recovery options.',
+     h:'Blockchain forensics firms can trace crypto movement and sometimes identify where funds landed — including exchanges that can be compelled to cooperate. Attorneys can also pursue civil suits against platforms that facilitated the scam.',sp:{name:'LegalShield',url:'https://www.legalshield.com',label:'Attorney consultations, flat monthly fee'},
+     w:'Blockchain is pseudonymous — not anonymous. Funds can sometimes be traced even after multiple wallet transfers.'}
+  ],
+  giftcard: [
+    {u:'urgent', t:'Call every gift card issuer right now',
+     a:'Call the issuer of each card and say: "I was scammed into purchasing these gift cards — I need to report fraud and request a freeze before the funds are withdrawn."',
+     h:'Amazon: 1-888-280-4331 (available 24/7). Google Play: 1-855-466-4438. Apple: 1-800-275-2273. Target: 1-800-544-2943. Walmart: 1-888-537-5503. eBay gift cards: 1-888-749-3229. For each call, have the card number and PIN ready. Ask them to check whether the card has been redeemed. If it hasn\'t, they can freeze it. If only partially redeemed, the remaining balance may be recoverable.',
+     w:'Gift card fraud is extremely time-sensitive. Scammers redeem cards within minutes — but many victims call before this happens and get full refunds.'},
+    {u:'urgent', t:'Report to the FTC at reportfraud.ftc.gov',
+     a:'File a detailed report — gift card fraud is a specific FTC tracking category.',
+     h:'Go to reportfraud.ftc.gov and select "Gift Card" as your payment method. The FTC has enforcement actions against scammers who use gift cards and tracks issuers\' fraud response rates. Your report directly feeds into these investigations. Save your confirmation number.',
+     w:'The FTC has sued major retailers for inadequate gift card fraud prevention. Your report adds to this record.'},
+    {u:'soon', t:'File a police report',
+     a:'File a report with your local police department — this is required for insurance claims and may assist investigations.',
+     h:'Bring: the gift card receipts, the PIN numbers, a record of who asked you to buy them and how, and any communications with the scammer. Ask for a police report number — not just a complaint. Some jurisdictions have dedicated fraud units that actively investigate gift card scams.',
+     w:'A police report number is required for most insurance claims and strengthens FTC reports.'},
+    {u:'standard', t:'Dispute the purchase with your bank or card',
+     a:'If you bought the gift cards with a credit or debit card, dispute the purchase as a fraudulent transaction.',
+     h:'Contact your card issuer and explain you were scammed into purchasing gift cards. Frame it as fraud — you were deceived. Some issuers will credit the purchase amount even though the gift cards themselves may be spent. This is separate from the gift card issuer and worth pursuing in parallel.',
+     w:'Card-level disputes for gift card purchases have a lower success rate but are worth attempting — especially for recent purchases.'}
+  ],
+  check: [
+    {u:'urgent', t:'Contact your bank to stop payment immediately',
+     a:'Call your bank and say: "I need to place a stop payment on a check that was obtained through fraud."',
+     h:'If the check hasn\'t cleared yet, a stop payment order prevents it from being processed. This typically costs $25–35 but is worth it. If you received and deposited a fraudulent check (overpayment scam), tell your bank immediately — you may be able to reverse the deposit before the funds are released. Get a stop payment confirmation number.',
+     w:'Stop payments must be placed before the check clears — usually within 24–48 hours of issuance.'},
+    {u:'urgent', t:'File a police report',
+     a:'Go to your local police department and file a check fraud report — bring all documentation.',
+     h:'Bring: the check (or copy), any communications with the scammer, receipts, and your bank statements. Ask for a police report number — not just a complaint number. For business check fraud, also contact your state\'s Financial Crimes unit. A police report is required for most bank investigations and insurance claims.',
+     w:'Banks process check fraud claims faster when a police report is already on file.'},
+    {u:'urgent', t:'For money orders — contact the issuer',
+     a:'USPS money orders: 1-800-275-8777. Western Union: 1-800-448-1492. MoneyGram: 1-800-666-3947.',
+     h:'Money order issuers can sometimes place a hold if you report quickly. You\'ll need the money order serial number, purchase date, and purchase amount. For USPS money orders, you can request a replacement if the money order hasn\'t been cashed — bring your receipt to a post office. Western Union and MoneyGram have fraud investigation teams.',
+     w:'Unredeemed money orders can sometimes be replaced or refunded — especially USPS money orders with purchase receipts.'},
+    {u:'soon', t:'Report to the FTC',
+     a:'File at reportfraud.ftc.gov — include details of the scam and the check or money order information.',
+     h:'Complete the FTC report with the scammer\'s contact information, how you were approached, and the amount. If you were victimized by an overpayment scam (you deposited a check and sent money back), note that specifically — the FTC tracks this pattern closely.',
+     w:'FTC reports are shared with state law enforcement and consumer protection agencies.'}
+  ],
+  nopay: [
+    {u:'urgent', t:'Freeze your credit at all three bureaus now',
+     a:'Go to each bureau\'s website and place a free credit freeze — this takes about 5 minutes per bureau.',
+     h:'Equifax: equifax.com/personal/credit-report-services → Place a Security Freeze. Experian: experian.com/freeze → Add a Security Freeze. TransUnion: transunion.com/credit-freeze → Place a Freeze. Each freeze is free under federal law. A freeze prevents anyone from opening new credit accounts in your name. You can lift it temporarily anytime you need to apply for credit.',
+     w:'Identity thieves typically attempt to open credit accounts within 24–72 hours of obtaining personal data. A freeze stops this before it starts.'},
+    {u:'urgent', t:'File an Identity Theft Report at IdentityTheft.gov',
+     a:'Go to identitytheft.gov and file a report — the FTC creates a personalized recovery plan for identity theft specifically.',
+     h:'IdentityTheft.gov will ask you what information was exposed and generate a customized recovery plan with pre-filled dispute letters for credit bureaus and businesses. It also generates an Identity Theft Affidavit, which is a legal document you can use with creditors and banks. Save the report and all documents it generates.',
+     w:'An FTC Identity Theft Report is a legal document. Creditors and credit bureaus are required to respond to it.'},
+    {u:'urgent', t:'Change all compromised passwords immediately',
+     a:'For every account where you used the compromised password or email, change the password now.',
+     h:'Start with your email account — it\'s the key to everything else. Then your banking and financial accounts. Use a unique password for each account — a password manager like 1Password generates and remembers these automatically. Enable two-factor authentication on every important account, starting with email and banking.',
+     w:'Email account access gives attackers the ability to reset every other password. Secure it first.'},
+    {u:'urgent', t:'Report to the FTC',
+     a:'File at reportfraud.ftc.gov in addition to IdentityTheft.gov — they feed different databases.',
+     h:'Both reports are important. reportfraud.ftc.gov goes into the Consumer Sentinel Network used by law enforcement. identitytheft.gov generates your personal recovery documents. File both. Save both confirmation numbers.',
+     w:'Dual filing ensures your case is tracked in both enforcement and victim support systems.'},
+    {u:'soon', t:'Monitor your credit for new accounts',
+     a:'Pull your free credit report at annualcreditreport.com and look for any accounts or inquiries you don\'t recognize.',
+     h:'You\'re entitled to a free report from each bureau weekly at annualcreditreport.com. Look for: new accounts you didn\'t open, hard inquiries from lenders you didn\'t approach, changes to personal information like address. If you see anything unfamiliar, file a dispute with that bureau immediately.',sp:{name:'Experian IdentityWorks',url:'https://www.experian.com/consumer-products/identity-theft-protection.html',label:'Automatic alerts when new accounts are opened — free plan'},
+     w:'New fraudulent accounts often appear within 1–4 weeks of data theft. Early detection prevents credit damage.'}
+  ]
+};
+
+// ── PERSONAL INFO BOLT-ON STEPS ───────────────────────────
+const INFO_STEPS = {
+  ssn: {u:'urgent', t:'Freeze your credit — SSN was exposed',
+    a:'Freeze your credit at all three bureaus immediately at equifax.com, experian.com/freeze, and transunion.com/credit-freeze.',
+    h:'A credit freeze is free, instant, and the single most effective protection against identity theft. It blocks any new credit applications in your name. Do all three bureaus — freezing one does not automatically freeze the others. Also file at IdentityTheft.gov for an official FTC Identity Theft Report.',sp:{name:'Experian IdentityWorks',url:'https://www.experian.com/consumer-products/identity-theft-protection.html',label:'Free credit monitoring — catch new accounts instantly'},
+    w:'SSN exposure is the most serious identity risk. Fraudsters can open credit cards, take out loans, and file fraudulent tax returns using your SSN. A freeze stops most of this.'},
+  bank: {u:'urgent', t:'Contact your bank to secure your accounts',
+    a:'Call your bank\'s fraud line and ask them to monitor your account for unusual activity and consider issuing new account numbers.',
+    h:'Tell your bank your account or routing numbers were exposed to a scammer. Ask them to: add a fraud alert to your account, set up transaction alerts for all amounts, and consider issuing new account numbers if you believe the exposure was direct. Also change your online banking password and enable two-factor authentication immediately.',
+    w:'Account numbers in the wrong hands can be used for ACH fraud — withdrawals that clear before you notice.'},
+  cardnum: {u:'urgent', t:'Request new card numbers immediately',
+    a:'Call your card issuer and ask for a new card number — say your number was exposed in a scam.',
+    h:'You don\'t need to wait for a fraudulent charge to appear. Call each card issuer whose number was exposed and request a replacement card with a new number. This is different from disputing a charge — it\'s a proactive security measure. Also update any autopay services linked to the old card number.',
+    w:'Card numbers start being tested with small charges within hours of theft. A new number closes this window completely.'},
+  pwd: {u:'urgent', t:'Change compromised passwords across all accounts',
+    a:'Change your password immediately on every account that used the exposed password or is linked to the exposed email.',
+    h:'Priority order: 1) Email account (controls password resets for everything else). 2) Banking and financial accounts. 3) Social media and shopping accounts. Use a unique password for every account — never reuse passwords. Enable two-factor authentication using an authenticator app, not SMS.',sp:{name:'1Password',url:'https://1password.com',label:'Password manager — free 14-day trial'},
+    w:'A single exposed password can compromise dozens of accounts. Email access is the master key — secure it first.'},
+  id: {u:'urgent', t:'File an identity theft report — government ID was exposed',
+    a:'File at IdentityTheft.gov immediately. If a passport was involved, contact the State Department\'s passport fraud line.',
+    h:'A government ID in a scammer\'s hands can be used to open bank accounts, obtain loans, and commit crimes in your name. File at identitytheft.gov for a personal recovery plan. For driver\'s license: contact your state DMV fraud division. For passport: call the State Department at 1-877-487-2778 and report a potentially compromised passport. For SSN on the ID: freeze your credit immediately.',
+    w:'Government ID fraud often surfaces weeks or months later — early reporting creates the paper trail you\'ll need to dispute it.'}
+};
+
+// ── SCAM-SPECIFIC WARNINGS ────────────────────────────────
+const WARNINGS = {
+  romance:    "Romance scam victims are specifically re-targeted by 'recovery services' that claim to retrieve lost funds or identify the scammer. They do not exist — the same operators run both scams. Anyone contacting you offering to find the person who scammed you, or to recover your money, is running a second scam. No legitimate service charges upfront fees for recovery.",
+  tech:       "Tech support scammers frequently call victims back posing as 'refund processors' or government fraud units who say they can help you recover your money. Legitimate Microsoft, Apple, and antivirus companies will never call you unsolicited. Hang up immediately on any such call and do not allow anyone remote access to your device.",
+  investment: "After investment scams, victims are often contacted by 'fund recovery specialists' or 'blockchain investigators' who claim to be able to trace and retrieve your cryptocurrency or investment funds. These are the same criminal networks. They will ask for upfront fees, taxes, or insurance payments to release funds — there are no funds to release.",
+  impersonator:"Government agencies — including the IRS, Social Security Administration, and FBI — never call demanding payment or threatening immediate arrest. If anyone contacts you claiming to help you report the original scam or receive compensation, that is also a scam. Report it to reportfraud.ftc.gov.",
+  shopping:   "After reporting a fake store, scammers sometimes contact victims posing as the 'fraud investigation team' of the platform or payment provider, asking for more personal information to 'process your refund.' Legitimate companies contact you through official channels, not unsolicited phone calls or emails.",
+  job:        "Fake job offer victims are often re-approached with offers from 'labor attorneys' or 'employment fraud specialists' who promise to recover lost funds or equipment costs. These are follow-on scams. The FTC and your state AG handle employment fraud at no cost to you.",
+  lottery:    "After a lottery or prize scam, victims frequently receive calls from 'prize recovery units' or 'consumer protection agencies' offering to help claim the original prize or recover fees paid. These do not exist. Real government consumer protection agencies — the FTC, state AGs — never charge fees for their services.",
+  rental:     "After a rental scam, 'housing fraud investigators' or 'real estate attorneys' may contact you offering to help track down the scammer and recover your deposit. These are secondary scams targeting people who are already in housing distress. Pursue recovery through your credit card company, bank, and the FTC.",
+  family:     "Family emergency scam victims are sometimes re-contacted by people claiming to be 'victim advocates' or 'senior fraud specialists' who offer to help recover gift cards or cash sent. They are not. The FTC, CFPB, and your local police department handle fraud recovery at no charge.",
+  phishing:   "After clicking a phishing link, you may receive follow-up emails from 'security teams' or 'account protection services' asking you to verify your information to undo the damage. These are second-stage phishing attacks. Change your passwords and do not click any links in unsolicited emails for at least 30 days.",
+  marketplace:"Marketplace scam victims are frequently re-targeted on the same platform or via the phone number used in the original scam. Legitimate buyers and sellers do not ask to move payment off-platform or offer overpayment scenarios. Block and report all contact from the scammer.",
+  other:      "Scam victims in general are prime targets for 'recovery scams' — operations that pose as recovery specialists, law firms, or government agencies and charge upfront fees to retrieve lost money. No legitimate recovery service charges fees before results. The FTC, CFPB, and your state AG provide free assistance."
+};
+
+// ── DRAFT LETTERS — per payment method ───────────────────
+const LETTERS = {
+  credit: {
+    title: 'Credit Card Chargeback Dispute Letter',
+    content: `[DATE]
+
+[YOUR FULL NAME]
+[YOUR ADDRESS]
+[YOUR CITY, STATE ZIP]
+
+[CARD ISSUER NAME] — Fraud & Disputes Department
+[CARD ISSUER ADDRESS]
+
+RE: Formal Dispute — Fraudulent Charge — Account Ending [XXXX]
+
+Dear Disputes Department,
+
+I am writing to formally dispute a charge on my account and request a chargeback under my rights pursuant to the Fair Credit Billing Act (FCBA), 15 U.S.C. § 1643.
+
+TRANSACTION DETAILS:
+  Date of transaction: [DATE]
+  Merchant name: [MERCHANT NAME]
+  Amount: $[AMOUNT]
+  Transaction ID (if available): [ID]
+
+BASIS FOR DISPUTE:
+I was deceived into making this payment through fraudulent misrepresentation. The merchant/payee represented themselves as [describe briefly — e.g., "a legitimate online retailer / government agency / tech support provider"] and induced me to make this payment under false pretenses. The goods or services represented were not provided, and the transaction was obtained through fraud.
+
+This constitutes an unauthorized transaction under the FCBA. I did not knowingly authorize a fraudulent transaction, and I have a right to dispute this charge and receive a provisional credit during your investigation.
+
+REQUEST:
+I request that you: (1) issue a provisional credit for $[AMOUNT] to my account immediately; (2) initiate a chargeback investigation; and (3) issue a new card number to prevent additional fraudulent charges.
+
+I have also filed a report with the Federal Trade Commission (Confirmation #: [FTC REPORT NUMBER]).
+
+I am available at [YOUR PHONE] or [YOUR EMAIL] if you require additional information.
+
+Sincerely,
+[YOUR SIGNATURE]
+[YOUR PRINTED NAME]`
+  },
+  debit: {
+    title: 'Debit Card Fraud Dispute Letter',
+    content: `[DATE]
+
+[YOUR FULL NAME]
+[YOUR ADDRESS]
+[YOUR CITY, STATE ZIP]
+
+[BANK NAME] — Fraud Investigations Department
+[BANK ADDRESS]
+
+RE: Fraudulent Debit Card Transaction — Account Ending [XXXX]
+
+Dear Fraud Investigations Department,
+
+I am writing to formally dispute a debit card transaction pursuant to my rights under the Electronic Fund Transfer Act (EFTA), 15 U.S.C. § 1693, and Regulation E.
+
+TRANSACTION DETAILS:
+  Date: [DATE]
+  Amount: $[AMOUNT]
+  Payee/Merchant: [NAME]
+  Transaction ID: [ID IF AVAILABLE]
+
+BASIS FOR DISPUTE:
+I was induced by fraud to authorize this transaction. The payee misrepresented themselves as [describe — e.g., "a legitimate business / government agency"] and I transferred funds based on this fraudulent misrepresentation. Under Regulation E, transactions obtained through fraud or misrepresentation are considered unauthorized transfers, and I am entitled to a full refund.
+
+Under EFTA, I understand that I have protection for unauthorized transactions reported within 60 days of the statement date. I am reporting this within that timeframe.
+
+REQUEST:
+Please: (1) reverse the transaction and credit my account for $[AMOUNT]; (2) conduct a fraud investigation; and (3) place fraud monitoring on my account.
+
+I have filed a report with the Federal Trade Commission (Confirmation #: [FTC REPORT NUMBER]) and the Consumer Financial Protection Bureau.
+
+Please respond in writing within 10 business days per EFTA requirements.
+
+Sincerely,
+[YOUR SIGNATURE]
+[YOUR PRINTED NAME]
+[YOUR PHONE]`
+  },
+  wire: {
+    title: 'Wire Transfer Recall / Fraud Notification Letter',
+    content: `[DATE]
+
+[YOUR FULL NAME]
+[YOUR ADDRESS]
+
+[YOUR BANK NAME] — Wire Transfer & Fraud Department
+[BANK ADDRESS]
+
+RE: Urgent — Fraudulent Wire Transfer Recall Request
+
+Dear Wire Transfer and Fraud Department,
+
+I am writing to formally report a fraudulent wire transfer and request an immediate recall and return of funds.
+
+WIRE DETAILS:
+  Date of transfer: [DATE]
+  Amount: $[AMOUNT]
+  Receiving bank: [RECEIVING BANK NAME]
+  Receiving account number: [ACCOUNT NUMBER IF KNOWN]
+  Wire reference/confirmation number: [YOUR WIRE REFERENCE]
+
+CIRCUMSTANCES:
+This wire was initiated based on fraudulent misrepresentation. I was deceived by an individual posing as [describe — e.g., "a representative of my bank's fraud department / a real estate agent / an investment advisor"] who induced me to transfer funds under false pretenses. I did not willingly transfer funds to a scammer — I was deceived.
+
+IMMEDIATE REQUEST:
+I request that you: (1) initiate an immediate SWIFT recall message to [receiving bank]; (2) contact the receiving bank's fraud department to request a hold on the funds; (3) escalate this to your wire fraud team immediately.
+
+I have also filed reports with:
+  — Federal Trade Commission: reportfraud.ftc.gov (Confirmation #: [FTC NUMBER])
+  — FBI Internet Crime Complaint Center: ic3.gov (Confirmation #: [IC3 NUMBER])
+  — Consumer Financial Protection Bureau: consumerfinance.gov/complaint
+
+Time is critical. Please treat this as an urgent fraud matter.
+
+Sincerely,
+[YOUR SIGNATURE]
+[YOUR PRINTED NAME]
+[YOUR PHONE — available 24/7 for this matter]`
+  },
+  zelle: {
+    title: 'Zelle Fraud Dispute — Bank Letter',
+    content: `[DATE]
+
+[YOUR FULL NAME]
+[YOUR ADDRESS]
+
+[YOUR BANK NAME] — Fraud Department
+[BANK ADDRESS]
+
+RE: Authorized Push Payment Fraud — Zelle Transaction
+
+Dear Fraud Department,
+
+I am writing to formally report authorized push payment fraud involving a Zelle transaction on my account and to request a full refund under your fraud policy.
+
+TRANSACTION DETAILS:
+  Date: [DATE]
+  Amount: $[AMOUNT]
+  Zelle recipient: [NAME OR PHONE/EMAIL USED]
+  Transaction ID: [ID IF AVAILABLE]
+
+CIRCUMSTANCES — AUTHORIZED PUSH PAYMENT FRAUD:
+I was deliberately deceived into sending this Zelle payment through social engineering. The recipient misrepresented themselves as [describe — e.g., "a seller on Facebook Marketplace / a government official / a person I trusted"] and induced me to transfer funds under false pretenses. This is classified as "authorized push payment fraud" — a recognized fraud category in which victims are manipulated into authorizing transfers they would not have made absent the deception.
+
+I did not freely and knowingly authorize a fraudulent transaction. I was manipulated.
+
+Under your Zelle fraud policy, and consistent with pressure from the Consumer Financial Protection Bureau, I request a full refund of $[AMOUNT].
+
+I have filed complaints with:
+  — FTC: reportfraud.ftc.gov (Ref #: [NUMBER])
+  — CFPB: consumerfinance.gov/complaint (Ref #: [NUMBER])
+
+If this request is denied, I will escalate to the CFPB and my state Attorney General.
+
+Sincerely,
+[YOUR SIGNATURE]
+[YOUR PRINTED NAME]
+[YOUR PHONE]`
+  },
+  p2p: {
+    title: 'P2P Platform Fraud Dispute (PayPal / Cash App / Venmo)',
+    content: `[DATE]
+
+[YOUR FULL NAME]
+[YOUR EMAIL — account email]
+
+[PLATFORM NAME] — Fraud & Disputes Team
+
+RE: Fraud Dispute — Transaction ID [TRANSACTION ID]
+
+Dear Disputes Team,
+
+I am writing to formally dispute a transaction on my account as fraud and request a full refund.
+
+TRANSACTION DETAILS:
+  Date: [DATE]
+  Amount: $[AMOUNT]
+  Recipient: [NAME / USERNAME]
+  Transaction ID: [ID]
+  Payment type: [Goods & Services / Friends & Family]
+
+BASIS FOR DISPUTE:
+[FOR PAYPAL GOODS & SERVICES:]
+I made this payment for a purchase that was never delivered / the item was significantly not as described / the seller misrepresented themselves. This transaction is covered under PayPal Purchase Protection and I am requesting a refund under those terms. I am filing this dispute within the 180-day protection window.
+
+[FOR FRIENDS & FAMILY / CASH APP / VENMO:]
+I was deceived into sending this payment through fraudulent misrepresentation. The recipient posed as [describe] and induced me to send funds based on false pretenses. This constitutes fraud. I am requesting that you investigate this transaction, recover the funds if possible, and refund my account.
+
+I have also filed reports with the FTC (reportfraud.ftc.gov) and the CFPB (consumerfinance.gov/complaint).
+
+Please confirm receipt of this dispute and provide a case reference number.
+
+Sincerely,
+[YOUR FULL NAME]
+[YOUR PHONE]`
+  },
+  crypto: {
+    title: 'Crypto Fraud Report — Exchange & IC3 Template',
+    content: `FBI IC3 COMPLAINT — CRYPTOCURRENCY FRAUD
+(File at ic3.gov — copy the information below into their complaint form)
+
+DATE OF INCIDENT: [DATE]
+AMOUNT LOST: $[AMOUNT] / [CRYPTO AMOUNT] [COIN TYPE]
+
+HOW I WAS CONTACTED:
+[Describe: e.g., "Through Instagram / a dating app / a LinkedIn message / a WhatsApp group"]
+
+SCAM TYPE:
+[e.g., Fake investment platform / Pig butchering scam / Fake romance leading to investment / Fake crypto giveaway]
+
+PLATFORM USED:
+Website URL: [URL IF KNOWN]
+Platform name: [NAME]
+Scammer's name/username: [NAME]
+Scammer's contact (phone/email): [CONTACT]
+
+WALLET ADDRESSES INVOLVED:
+My sending wallet: [YOUR WALLET ADDRESS]
+Receiving wallet (scammer's): [SCAMMER WALLET ADDRESS]
+Transaction hash(es): [TX HASH — found in your wallet transaction history]
+
+EXCHANGES USED:
+Exchange where you purchased crypto: [NAME]
+Exchange where you sent it: [NAME IF DIFFERENT]
+
+NARRATIVE:
+[In 2–3 sentences: How did the scam unfold? How were you convinced to send crypto? What happened when you tried to withdraw?]
+
+---
+ALSO SEND THIS INFORMATION TO YOUR EXCHANGE:
+[Exchange Name] Fraud Team — fraud@[exchange].com
+
+Subject: Urgent Fraud Report — Wallet [SCAMMER WALLET ADDRESS]
+
+I am a victim of a cryptocurrency fraud scheme. I request that you immediately freeze any accounts associated with the receiving wallet address [SCAMMER WALLET ADDRESS]. I have filed an IC3 complaint (Ref: [IC3 NUMBER]) and can provide full documentation. Please contact me at [YOUR EMAIL/PHONE].`
+  },
+  giftcard: {
+    title: 'Gift Card Fraud — Issuer Call Script',
+    content: `CALL SCRIPT — Use this on the phone with each gift card issuer.
+
+Say exactly:
+"Hello, I need to report gift card fraud. I was scammed into purchasing [NUMBER] gift card(s) with a total value of $[AMOUNT]. I need to report this as fraud and ask you to check whether the cards have been redeemed and whether a refund or freeze is possible."
+
+HAVE READY FOR EACH CALL:
+— Card number(s): [CARD NUMBER]
+— PIN(s): [PIN]
+— Date of purchase: [DATE]
+— Store where purchased: [STORE NAME]
+— Receipt (if you have it)
+
+ISSUER PHONE NUMBERS:
+Amazon gift cards:  1-888-280-4331
+Google Play cards:  1-855-466-4438
+Apple / iTunes:     1-800-275-2273
+Target gift cards:  1-800-544-2943
+Walmart gift cards: 1-888-537-5503
+Steam gift cards:   steampowered.com/fraudreport
+eBay gift cards:    1-888-749-3229
+
+IF THEY SAY THE CARD IS REDEEMED:
+"I understand. I'd like to formally report this as fraud and receive a case number. Can you tell me what documentation I need to submit for a fraud investigation? I have filed a report with the FTC at reportfraud.ftc.gov."
+
+IF THEY SAY THE CARD IS NOT REDEEMED:
+"I need you to freeze or disable this card immediately before it is redeemed. This card was purchased fraudulently. I will email you the FTC report confirmation. Please confirm the freeze in writing."
+
+FOLLOW UP IN WRITING:
+Email fraud@[issuer].com after each call with:
+— Your full name and contact information
+— The card number and PIN
+— Date purchased and store location
+— A copy of your FTC report confirmation`
+  },
+  check: {
+    title: 'Check Fraud — Bank Fraud Letter',
+    content: `[DATE]
+
+[YOUR FULL NAME]
+[YOUR ADDRESS]
+
+[BANK NAME] — Fraud Department
+[BANK ADDRESS]
+
+RE: Check Fraud Report — Account Ending [XXXX]
+
+Dear Fraud Department,
+
+I am writing to formally report check fraud involving my account and to request a full investigation and reversal of funds.
+
+DETAILS:
+  Check amount: $[AMOUNT]
+  Check number: [CHECK NUMBER]
+  Date issued/deposited: [DATE]
+  Payee/payor name: [NAME]
+
+DESCRIPTION OF FRAUD:
+[Choose the applicable scenario:]
+
+SCENARIO A — I sent a check that was obtained through fraud:
+I was deceived by an individual posing as [describe] into issuing a check for $[AMOUNT]. The payment was obtained through fraudulent misrepresentation. I am requesting a stop payment if the check has not yet cleared, and a full investigation into this transaction.
+
+SCENARIO B — I received and deposited a fraudulent check (overpayment scam):
+I deposited a check for $[AMOUNT] that was given to me as [describe — e.g., "payment for goods I sold / advance for a job"]. I was then asked to return a portion by [wire/Zelle/gift cards]. I now believe the deposited check was fraudulent. I am requesting that you reverse any funds I transferred out and investigate the fraudulent check.
+
+REQUEST:
+Please: (1) place a stop payment if applicable; (2) reverse any outgoing transfers made in connection with this fraud; (3) investigate the source of the fraudulent check; (4) document this as a fraud case on my account record.
+
+I have also filed a police report (Case #: [POLICE REPORT NUMBER]) and an FTC report (Ref #: [FTC NUMBER]).
+
+Sincerely,
+[YOUR SIGNATURE]
+[YOUR PRINTED NAME]
+[YOUR PHONE]`
+  },
+  nopay: {
+    title: 'Identity Theft — FTC Report & Credit Bureau Dispute',
+    content: `STEP 1 — FILE AT IdentityTheft.gov
+Go to identitytheft.gov and complete the identity theft report.
+This generates a personalized recovery plan and a legal Identity Theft Affidavit.
+Save all documents. You will need them for the steps below.
+
+---
+STEP 2 — CREDIT FREEZE REQUEST LETTER (send to each bureau)
+
+[DATE]
+[YOUR FULL NAME]
+[YOUR ADDRESS]
+[YOUR DOB]
+[YOUR SSN LAST 4]
+
+[BUREAU NAME] Security Freeze Department
+[BUREAU ADDRESS]
+
+RE: Request for Security Freeze
+
+Pursuant to 15 U.S.C. § 1681c-1, I request that you place a security freeze on my credit file immediately. My personal information was exposed in a scam on [DATE] and I am at risk of identity theft.
+
+Please confirm in writing that the freeze has been placed.
+
+Equifax:     equifax.com/personal/credit-report-services or 1-888-298-0045
+Experian:    experian.com/freeze or 1-888-397-3742
+TransUnion:  transunion.com/credit-freeze or 1-800-916-8800
+
+---
+STEP 3 — IF FRAUDULENT ACCOUNTS APPEAR
+
+Use your FTC Identity Theft Affidavit (from identitytheft.gov) plus the letter below:
+
+[DATE]
+[CREDITOR NAME]
+[CREDITOR ADDRESS]
+
+RE: Fraudulent Account — Identity Theft Affidavit Enclosed
+
+I am writing to dispute a fraudulent account opened in my name without my knowledge or consent. Enclosed is my FTC Identity Theft Affidavit (Case #: [FTC NUMBER]) and a copy of my government-issued ID.
+
+Account in dispute: [ACCOUNT NUMBER / TYPE]
+Date opened: [DATE]
+
+Per the Fair Credit Reporting Act, I request that you: (1) close this account immediately; (2) remove it from my credit report; (3) provide written confirmation of the closure.
+
+[YOUR SIGNATURE AND CONTACT]`
+  }
+};
+
+// ── TIMING LOGIC ──────────────────────────────────────────
+function getProb(pay, when){
+  const p = PROB[pay];
+  if(!p) return {level:'Medium', cls:'pm', icon:'🟡', exp:'Recovery depends on acting quickly.'};
+  let level, cls, icon, exp;
+  if(pay==='crypto'||pay==='nopay'){
+    level=pay==='crypto'?'Very Low':'N/A';
+    cls=pay==='crypto'?'pvl':'ph';
+    icon=pay==='crypto'?'🔴':'🟢';
+    exp=p.high_txt;
+  } else if(p.high.includes(when)){
+    level='High'; cls='ph'; icon='🟢'; exp=p.high_txt;
+  } else if(p.med.includes(when)){
+    level='Medium'; cls='pm'; icon='🟡'; exp=p.med_txt;
+  } else {
+    level='Low'; cls='pl'; icon='🔴'; exp=p.low_txt;
+  }
+  return {level, cls, icon, exp};
+}
+
+function isUrgentTiming(when){
+  return ['hour','today'].includes(when);
+}
+
+// ═══════════════════════════════════════════════════════════
+// GENERATE — 5-second analyzing screen → streaming results
+// ═══════════════════════════════════════════════════════════
+function generate(){
+  if(!S.scam || !S.pay || !S.when){
+    const e=document.getElementById('errMsg');
+    e.textContent='Please select your scam type, payment method, and when it happened.';
+    e.classList.add('show');
+    e.scrollIntoView({behavior:'smooth',block:'nearest'});
+    return;
+  }
+  document.getElementById('errMsg').classList.remove('show');
+  S.amount = document.getElementById('inAmt').value;
+
+  // Build plan data
+  const prob    = getProb(S.pay, S.when);
+  const opening = OPENINGS[S.scam] || OPENINGS.other;
+  const steps   = [...(STEPS[S.pay] || [])];
+  const warning = WARNINGS[S.scam] || WARNINGS.other;
+  const letter  = LETTERS[S.pay];
+  const urgent  = isUrgentTiming(S.when);
+
+  const infoKeys = ['ssn','bank','cardnum','pwd','id'];
+  const addedInfoSteps = [];
+  infoKeys.forEach(k=>{
+    if(S.info.includes(k) && INFO_STEPS[k]){
+      if(S.pay!=='nopay' || k==='id') addedInfoSteps.push(INFO_STEPS[k]);
+    }
+  });
+
+  const allSteps = [...steps, ...addedInfoSteps].slice(0,8);
+  allSteps.forEach((s,i)=>s._n=i+1);
+
+  const amtText = S.amount && parseFloat(S.amount)>0
+    ? ` totaling $${parseFloat(S.amount).toLocaleString()}`
+    : '';
+
+  const planData = {opening, prob, steps:allSteps, letter, warning, urgent, amtText};
+
+  // Show analyzing screen
+  go('scrAnalyzing');
+
+  // Animate the tick items with stagger
+  const ticks = document.querySelectorAll('#anaTicks .ana-tick');
+  ticks.forEach(t => { t.classList.remove('show','done'); });
+  const tickDelays = [600, 1400, 2200, 3100];
+  ticks.forEach((t,i) => {
+    setTimeout(() => t.classList.add('show'), tickDelays[i]);
+  });
+  // Mark each as done slightly before next appears
+  const doneDelays = [1200, 2000, 2900, 4600];
+  ticks.forEach((t,i) => {
+    setTimeout(() => t.classList.add('done'), doneDelays[i]);
+  });
+
+  // After 5 seconds, go to results and stream
+  setTimeout(() => {
+    render(planData);
+    go('scrResults');
+    startStreaming();
+  }, 5000);
+}
+
+// ═══════════════════════════════════════════════════════════
+// RENDER — builds skeleton HTML (all hidden), streaming fills it in
+// ═══════════════════════════════════════════════════════════
+function render({opening, prob, steps, letter, warning, urgent, amtText}){
+
+  // Build step cards skeleton — text left empty, filled by streamer
+  const stepsHtml = steps.map(step=>{
+    const u  = step.u==='urgent', s = step.u==='soon';
+    return `<div class="step-card${u?' urg':''}" id="stepcard-${step._n}">
+      <div class="step-top">
+        <div class="step-num">${step._n}</div>
+        <div class="step-body">
+          <div class="step-hrow">
+            <span class="step-title" id="stitle-${step._n}"></span>
+            ${u?'<span class="urg-tag">⚡ Do Now</span>':''}
+            ${s?'<span class="soon-tag">📅 This Week</span>':''}
+          </div>
+          <div class="step-act stream-section" id="sact-${step._n}"></div>
+          <div class="step-how stream-section" id="show-${step._n}"></div>
+          ${step.w?`<div class="step-why stream-section" id="swhy-${step._n}"></div>`:''}
+          ${step.sp?`<div class="step-spon stream-section" id="sspon-${step._n}"><span class="spon-tag">Sponsored ·</span> <a href="${step.sp.url}" target="_blank" rel="noopener sponsored">${step.sp.name}</a> <span>· ${step.sp.label}</span></div>`:''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const letterHtml = letter ? `
+  <div class="sec-label stream-section" id="sec-letter" style="margin-top:40px">Draft Letter / Script</div>
+  <div class="doc-card stream-section" id="sec-doccard">
+    <div class="doc-hd" onclick="toggleDoc()">
+      <span class="doc-ht">📄 ${esc(letter.title)}</span>
+      <span class="doc-tog" id="dt0">Show ▾</span>
+    </div>
+    <div class="doc-bd" id="db0">
+      <div class="doc-txt" id="dx0">${esc(letter.content)}</div>
+      <button class="btn-copy" id="btn-copy-0" onclick="copyDoc()">Copy to Clipboard</button>
+    </div>
+  </div>` : '';
+
+  const sponsorsHtml = renderSponsors(S.scam, S.pay, S.info);
+
+  document.getElementById('resContent').innerHTML = `
+    <div class="opening stream-section" id="sec-opening"></div>
+
+    <div class="stream-section" id="sec-prob" style="margin-bottom:28px">
+      <div class="prob-pill ${prob.cls}">${prob.icon} Recovery probability: ${prob.level}</div><br>
+      <span class="prob-exp" id="probexp-txt"></span>
+    </div>
+
+    ${urgent?'<div class="urgent-banner stream-section" id="sec-urgent">⚡ <strong>Time-sensitive steps below.</strong> Complete every "Do Now" step before anything else — every hour counts.</div>':''}
+
+    <div class="sec-label stream-section" id="sec-steps-label">Your Personalized Action Plan</div>
+    ${stepsHtml}
+    ${letterHtml}
+    <div class="stream-section" id="sec-sponsors">${sponsorsHtml}</div>
+
+    <div style="margin-top:16px">
+      <div class="warn-card stream-section" id="sec-warn">
+        <div class="warn-t">⚠️ Critical: Watch Out for Recovery Scams</div>
+        <div class="warn-txt" id="warn-txt"></div>
+      </div>
+      <div class="em-note stream-section" id="sec-emnote">
+        "You took the right step by looking for help immediately. The people who fall hardest are the ones who wait — you didn't. Follow these steps in order and you give yourself the best possible chance."
+      </div>
+    </div>`;
+
+  // Store plan data for streaming engine
+  window._streamPlan = {opening, prob, steps, letter, warning, urgent, amtText};
+  _planText = buildPlainText({opening, prob, steps, letter, warning});
+}
+
+// ═══════════════════════════════════════════════════════════
+// STREAMING ENGINE — word-by-word, Claude-style
+// ═══════════════════════════════════════════════════════════
+function startStreaming(){
+  const plan = window._streamPlan;
+  if(!plan) return;
+
+  // Queue of tasks: {type, el, text, speed, delay}
+  const Q = [];
+
+  // Helper: push a text stream task
+  function qText(elId, text, speed=18, revealFirst=false){
+    Q.push({type:'text', elId, text, speed, revealFirst});
+  }
+  function qReveal(elId, delay=0){
+    Q.push({type:'reveal', elId, delay});
+  }
+  function qWait(ms){
+    Q.push({type:'wait', ms});
+  }
+
+  // Opening paragraph
+  const openText = plan.opening + (plan.amtText ? ' Amount involved: '+plan.amtText+'.' : '');
+  qReveal('sec-opening');
+  qText('sec-opening', openText, 14);
+  qWait(180);
+
+  // Probability
+  qReveal('sec-prob');
+  qText('probexp-txt', plan.prob.exp, 16);
+  qWait(150);
+
+  // Urgent banner
+  if(plan.urgent && document.getElementById('sec-urgent')){
+    qReveal('sec-urgent');
+    qWait(120);
+  }
+
+  // Steps label
+  qReveal('sec-steps-label');
+  qWait(100);
+
+  // Each step cascades in
+  plan.steps.forEach((step, i) => {
+    const n = step._n;
+    Q.push({type:'revealCard', elId:`stepcard-${n}`, delay: i===0 ? 80 : 120});
+    qText(`stitle-${n}`, step.t, 22);
+    qReveal(`sact-${n}`);
+    qText(`sact-${n}`, step.a, 17);
+    qReveal(`show-${n}`);
+    qText(`show-${n}`, step.h, 14);
+    if(step.w && document.getElementById(`swhy-${n}`)){
+      qReveal(`swhy-${n}`);
+      qText(`swhy-${n}`, step.w, 18);
+    }
+    if(step.sp && document.getElementById(`sspon-${n}`)){
+      qReveal(`sspon-${n}`);
+    }
+    qWait(100);
+  });
+
+  // Letter section
+  if(document.getElementById('sec-letter')){
+    qReveal('sec-letter');
+    qReveal('sec-doccard');
+    qWait(100);
+  }
+
+  // Sponsors
+  qReveal('sec-sponsors');
+  qWait(120);
+
+  // Warning
+  qReveal('sec-warn');
+  qText('warn-txt', plan.warning, 16);
+  qWait(120);
+
+  // Emotional note
+  qReveal('sec-emnote');
+
+  // Run the queue
+  runQueue(Q);
+}
+
+function runQueue(Q){
+  if(!Q.length) return;
+  const task = Q.shift();
+
+  if(task.type === 'wait'){
+    setTimeout(()=>runQueue(Q), task.ms);
+
+  } else if(task.type === 'reveal'){
+    const el = document.getElementById(task.elId);
+    if(el) el.classList.add('revealed');
+    setTimeout(()=>runQueue(Q), task.delay||0);
+
+  } else if(task.type === 'revealCard'){
+    const el = document.getElementById(task.elId);
+    if(el) el.classList.add('revealed');
+    setTimeout(()=>runQueue(Q), task.delay||80);
+
+  } else if(task.type === 'text'){
+    const el = document.getElementById(task.elId);
+    if(!el){ runQueue(Q); return; }
+    // Ensure visible
+    el.classList.add('revealed');
+    streamText(el, task.text, task.speed, ()=>runQueue(Q));
+  }
+}
+
+// Stream text word-by-word with blinking cursor
+function streamText(el, text, speed, onDone){
+  const words = text.split(' ');
+  let idx = 0;
+  el.innerHTML = '';
+
+  // Cursor element
+  const cursor = document.createElement('span');
+  cursor.className = 'stream-cursor';
+  el.appendChild(cursor);
+
+  function next(){
+    if(idx >= words.length){
+      // Remove cursor when done
+      if(cursor.parentNode) cursor.parentNode.removeChild(cursor);
+      if(onDone) onDone();
+      return;
+    }
+    // Insert word before cursor
+    const word = document.createTextNode((idx===0?'':' ') + words[idx]);
+    el.insertBefore(word, cursor);
+    idx++;
+    // Vary speed slightly for natural feel
+    const jitter = Math.random() * (speed * 0.4);
+    setTimeout(next, speed + jitter);
+  }
+  next();
+}
+
+function esc(s){
+  if(!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+}
+
+function toggleDoc(){
+  const bd=document.getElementById('db0');
+  const tg=document.getElementById('dt0');
+  tg.textContent=bd.classList.toggle('open')?'Hide ▴':'Show ▾';
+}
+async function copyDoc(){
+  const txt=document.getElementById('dx0')?.innerText||'';
+  try{await navigator.clipboard.writeText(txt);}catch(e){}
+  const btn=document.getElementById('btn-copy-0');
+  if(!btn)return;
+  const orig=btn.textContent;
+  btn.textContent='✓ Copied!';btn.classList.add('done');
+  setTimeout(()=>{btn.textContent=orig;btn.classList.remove('done');},2200);
+}
+
+// ═══════════════════════════════════════════════════════════
+// SPONSORS
+// ═══════════════════════════════════════════════════════════
+const SPONSOR_DB={
+  aura:{name:'Aura Identity Protection',tag:'14-Day Free Trial',tagCls:'sp-tag-trial',desc:'All-in-one protection: dark web monitoring, SSN alerts, credit monitoring, $1M identity theft insurance, and 24/7 fraud specialists.',why:'Monitors whether your stolen data is already being used against you.',cta:'Start Free 14-Day Trial',href:'https://www.aura.com'},
+  lifelock:{name:'LifeLock by Norton',tag:'30-Day Free Trial',tagCls:'sp-tag-trial',desc:'Scans millions of data points for threats to your identity. Specialists help restore your identity if stolen.',why:'SSN and government ID exposure requires ongoing monitoring across all three credit bureaus.',cta:'Try Free for 30 Days',href:'https://www.lifelock.com'},
+  experian:{name:'Experian IdentityWorks',tag:'Free Plan Available',tagCls:'sp-tag-free',desc:'Free credit monitoring from the largest US credit bureau. Instant alerts if anyone opens accounts in your name.',why:'Essential first step to catch fraudulent accounts being opened with your information.',cta:'Get Free Credit Monitoring',href:'https://www.experian.com/consumer-products/identity-theft-protection.html'},
+  credit_freeze:{name:'Freeze Your Credit (Free)',tag:'Free',tagCls:'sp-tag-free',desc:'Freeze your credit at Equifax, Experian, and TransUnion for free. Stops anyone from opening accounts in your name.',why:'The single most effective action after SSN or personal data exposure. Takes 5 minutes.',cta:'How to Freeze Your Credit →',href:'https://consumer.ftc.gov/articles/what-know-about-credit-freezes-fraud-alerts'},
+  malwarebytes:{name:'Malwarebytes Premium',tag:'Free Trial',tagCls:'sp-tag-trial',desc:'Removes malware, spyware, and remote-access tools that tech support scammers commonly install. Real-time protection included.',why:'Tech support scammers often leave software running after you hang up — scan your device now.',cta:'Scan Your Device Free',href:'https://www.malwarebytes.com'},
+  nordvpn:{name:'NordVPN',tag:'68% Off Today',tagCls:'sp-tag-deal',desc:'Encrypts your internet connection, masks your IP address, and blocks malicious sites before you land on them.',why:'After phishing exposure, your browsing may be monitored — a VPN cuts that connection off.',cta:'Get NordVPN Discount',href:'https://nordvpn.com'},
+  onepassword:{name:'1Password',tag:'14-Day Free Trial',tagCls:'sp-tag-trial',desc:'Generates and stores unique strong passwords for every account. Alerts you if any saved passwords appear in known data breaches.',why:'Stolen passwords are reused across accounts within hours — a manager stops this permanently.',cta:'Try 1Password Free',href:'https://1password.com'},
+  legalshield:{name:'LegalShield',tag:'Low Monthly Fee',tagCls:'sp-tag-deal',desc:'Access real attorneys for fraud consultations, demand letters, and legal options — flat monthly fee, no surprise hourly billing.',why:'For significant losses, attorneys can pursue options your bank won\'t mention — including civil action.',cta:'Talk to a Real Attorney',href:'https://www.legalshield.com'}
+};
+
+function getSponsors(scam,pay,info){
+  const p=new Set();
+  if(info.includes('ssn')||info.includes('id')||info.includes('dob')){p.add('credit_freeze');p.add('lifelock');p.add('aura');}
+  if(info.includes('bank')||info.includes('cardnum')){p.add('experian');p.add('aura');}
+  if(info.includes('pwd')){p.add('onepassword');p.add('aura');}
+  if(info.includes('addr')||info.includes('contact')){p.add('aura');p.add('experian');}
+  if(scam==='tech'){p.add('malwarebytes');p.add('nordvpn');p.add('onepassword');}
+  if(scam==='phishing'){p.add('nordvpn');p.add('onepassword');p.add('malwarebytes');}
+  if(scam==='investment'||scam==='romance'){p.add('legalshield');p.add('aura');}
+  if(scam==='impersonator'){p.add('credit_freeze');p.add('lifelock');p.add('aura');}
+  if(scam==='job'){p.add('credit_freeze');p.add('experian');p.add('onepassword');}
+  if(scam==='rental'){p.add('credit_freeze');p.add('aura');p.add('legalshield');}
+  if(scam==='family'||scam==='lottery'){p.add('aura');p.add('experian');}
+  if(scam==='shopping'||scam==='marketplace'){p.add('experian');p.add('aura');p.add('onepassword');}
+  if(pay==='nopay'){p.add('credit_freeze');p.add('lifelock');p.add('aura');p.add('experian');}
+  if(pay==='wire'||pay==='crypto'){p.add('legalshield');p.add('aura');}
+  if(pay==='debit'||pay==='check'){p.add('experian');p.add('aura');}
+  if(pay==='zelle'||pay==='p2p'){p.add('aura');p.add('experian');}
+  p.add('aura');
+  const ORDER=['credit_freeze','malwarebytes','onepassword','lifelock','aura','experian','nordvpn','legalshield'];
+  return ORDER.filter(k=>p.has(k)).slice(0,4);
+}
+
+function renderSponsors(scam,pay,info){
+  const keys=getSponsors(scam,pay,info);
+  if(!keys.length)return'';
+  const cards=keys.map(key=>{
+    const s=SPONSOR_DB[key];if(!s)return'';
+    return`<a class="sponsor-card" href="${s.href}" target="_blank" rel="noopener sponsored"><div class="sp-top"><span class="sp-name">${s.name}</span><span class="sp-tag-pill ${s.tagCls}">${s.tag}</span></div><div class="sp-desc">${s.desc}</div><div class="sp-why">💡 ${s.why}</div><div class="sp-cta">${s.cta} →</div></a>`;
+  }).join('');
+  return`<div class="sponsors-section"><div class="sponsors-label">Recommended Resources <span>Sponsored Partners</span></div><div class="sponsor-grid">${cards}</div><p class="sp-disc">Some links are paid partner links. SCAMSOS only shows services relevant to your specific situation. We may receive a commission if you sign up — at no extra cost to you. This keeps SCAMSOS free for everyone.</p></div>`;
+}
+
+// ═══════════════════════════════════════════════════════════
+// PLAIN TEXT FOR EMAIL
+// ═══════════════════════════════════════════════════════════
+function buildPlainText({opening,prob,steps,letter,warning}){
+  const lines=['YOUR SCAMSOS RECOVERY PLAN','==========================','',opening,'','Recovery probability: '+prob.level,prob.exp,'','ACTION STEPS','------------'];
+  steps.forEach(s=>{
+    const tag=s.u==='urgent'?' [DO NOW]':s.u==='soon'?' [THIS WEEK]':'';
+    lines.push(`${s._n}. ${s.t}${tag}`,s.a,s.h,'');
+  });
+  if(letter){lines.push('DRAFT LETTER','------------',letter.title,letter.content,'');}
+  lines.push('⚠ WATCH FOR RECOVERY SCAMS',warning,'','---','Generated free by SCAMSOS.com');
+  return lines.join('\n');
+}
+
+// ═══════════════════════════════════════════════════════════
+// RESTART
+// ═══════════════════════════════════════════════════════════
+function restart(){
+  S.scam=null;S.pay=null;S.when=null;S.info=[];S.amount='';_planText='';
+  document.querySelectorAll('.opt-card.sel').forEach(c=>c.classList.remove('sel'));
+  document.querySelectorAll('.chk-item.on').forEach(c=>c.classList.remove('on'));
+  document.getElementById('inAmt').value='';
+  const e=document.getElementById('errMsg');
+  e.classList.remove('show');
+  e.textContent='Please select your scam type, payment method, and when it happened.';
+  go('scrWelcome');
+}
+
+// ═══════════════════════════════════════════════════════════
+// EMAIL MODAL
+// ═══════════════════════════════════════════════════════════
+function openEmailModal(){
+  document.getElementById('emailModal').classList.add('open');
+  setTimeout(()=>document.getElementById('emailInput').focus(),100);
+}
+function closeEmailModal(e){
+  if(e&&e.target!==document.getElementById('emailModal'))return;
+  document.getElementById('emailModal').classList.remove('open');
+  document.getElementById('emailStep1').style.display='';
+  document.getElementById('emailStep2').style.display='none';
+  document.getElementById('emailInput').value='';
+  document.getElementById('emailConsent').checked=false;
+  document.getElementById('emailErr').textContent='';
+  const btn=document.getElementById('emailSubmitBtn');
+  if(btn){btn.disabled=false;btn.textContent='Send My Recovery Plan →';}
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('emailModal').classList.remove('open');});
+async function submitEmail(){
+  const email=document.getElementById('emailInput').value.trim();
+  const consent=document.getElementById('emailConsent').checked;
+  const errEl=document.getElementById('emailErr');
+  const btn=document.getElementById('emailSubmitBtn');
+  errEl.textContent='';
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){errEl.textContent='Please enter a valid email address.';return;}
+  if(!consent){errEl.textContent='Please check the consent box to continue.';return;}
+  btn.disabled=true;btn.textContent='Sending…';
+  try{
+    const resp=await fetch('/.netlify/functions/email-subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,scam:S.scam||'unknown',pay:S.pay||'unknown',when:S.when||'unknown',amount:S.amount||'',plan:_planText})});
+    if(!resp.ok){const er=await resp.json().catch(()=>({}));throw new Error(er.error||'Could not send.');}
+    document.getElementById('emailStep1').style.display='none';
+    document.getElementById('emailStep2').style.display='';
+  }catch(err){
+    errEl.textContent='⚠️ '+(err.message||'Something went wrong. Please try again.');
+    btn.disabled=false;btn.textContent='Send My Recovery Plan →';
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// SLIDESHOW
+// ═══════════════════════════════════════════════════════════
+(function(){
+  const cards=Array.from(document.querySelectorAll('.scenario-card'));
+  const dotsEl=document.getElementById('scDots');
+  const pauseBtn=document.getElementById('scPause');
+  let cur=0,paused=false,timer=null;
+  const DELAY=4200;
+  cards.forEach((_,i)=>{
+    const d=document.createElement('button');
+    d.className='sc-dot'+(i===0?' on':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.onclick=()=>{showSlide(i);resetTimer();};
+    dotsEl.appendChild(d);
+  });
+  function showSlide(n){
+    cards.forEach(c=>c.classList.remove('active'));
+    document.querySelectorAll('.sc-dot').forEach(d=>d.classList.remove('on'));
+    cur=(n+cards.length)%cards.length;
+    cards[cur].classList.add('active');
+    document.querySelectorAll('.sc-dot')[cur].classList.add('on');
+  }
+  function resetTimer(){clearInterval(timer);if(!paused)timer=setInterval(()=>showSlide(cur+1),DELAY);}
+  function togglePause(){
+    paused=!paused;
+    clearInterval(timer);  // always clear first
+    if(paused){
+      pauseBtn.innerHTML='▶&nbsp;Resume';
+      pauseBtn.setAttribute('aria-label','Resume slideshow');
+      pauseBtn.classList.add('paused');
+      // timer stays cleared — fully paused
+    } else {
+      pauseBtn.innerHTML='⏸&nbsp;Pause';
+      pauseBtn.setAttribute('aria-label','Pause slideshow');
+      pauseBtn.classList.remove('paused');
+      timer=setInterval(()=>showSlide(cur+1),DELAY);
+    }
+  }
+  window.togglePause=togglePause;
+
+  // Swipe support on mobile
+  const track=document.getElementById('scenTrack');
+  let tx=0;
+  track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-tx;
+    if(Math.abs(dx)>40){showSlide(dx<0?cur+1:cur-1);}
+    // Don't reset timer on swipe — preserve pause state
+  },{passive:true});
+
+  // Hover: pause while reading, resume after (but respect manual pause)
+  track.addEventListener('mouseenter',()=>clearInterval(timer));
+  track.addEventListener('mouseleave',()=>{
+    if(!paused) timer=setInterval(()=>showSlide(cur+1),DELAY);
+  });
+
+  showSlide(0);
+  timer=setInterval(()=>showSlide(cur+1),DELAY);
+})();
+</script>
+</body>
+</html>
