@@ -353,7 +353,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <!-- SCREEN 1: WELCOME -->
 <div class="scr on" id="scrWelcome">
 <nav class="top-nav">
-  <div class="nav-logo">SCAM<em>SOS</em></div>
+  <div class="nav-logo" onclick="go('scrWelcome')" style="cursor:pointer">SCAM<em>SOS</em></div>
   <button class="nav-cta" onclick="go('scrIntake')">
     <span class="nav-cta-full">Get My Free Recovery Plan →</span>
     <span class="nav-cta-short" style="display:none">Get My Plan →</span>
@@ -544,11 +544,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 <!-- SITE FOOTER -->
 <footer class="site-footer">
-  <div class="footer-logo">SCAM<em>SOS</em></div>
+  <div class="footer-logo" onclick="go('scrWelcome')" style="cursor:pointer">SCAM<em>SOS</em></div>
   <div class="footer-tagline">Free scam recovery guidance for US consumers</div>
   <div class="footer-links">
-    <a href="#" onclick="goPage('scrAbout');return false">About</a>
-    <a href="#" onclick="goPage('scrPrivacy');return false">Privacy Policy</a>
+    <a href="#" onclick="go('scrAbout');return false">About</a>
+    <a href="#" onclick="go('scrPrivacy');return false">Privacy Policy</a>
     <a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener">FTC Report Fraud</a>
     <a href="https://ic3.gov" target="_blank" rel="noopener">FBI IC3</a>
     <a href="https://consumer.ftc.gov" target="_blank" rel="noopener">Consumer Protection</a>
@@ -563,7 +563,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="scr" id="scrAbout">
 <div class="wrap">
 <div class="page-wrap">
-  <button class="page-back" onclick="history.back()">← Back</button>
+  <button class="page-back" onclick="go('scrWelcome')">← Back to Home</button>
   <div class="page-h1">About SCAMSOS</div>
   <div class="page-sub">Last updated: April 2026</div>
 
@@ -612,7 +612,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="scr" id="scrPrivacy">
 <div class="wrap">
 <div class="page-wrap">
-  <button class="page-back" onclick="history.back()">← Back</button>
+  <button class="page-back" onclick="go('scrWelcome')">← Back to Home</button>
   <div class="page-h1">Privacy Policy</div>
   <div class="page-sub">Effective date: April 1, 2026 &middot; Last updated: April 2026</div>
 
