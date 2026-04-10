@@ -183,10 +183,8 @@ function buildEmailHtml(scamLabel, payLabel, amountText, planText){
 
   const planHtml = (planText || '')
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/
-{2,}/g,'</p><p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.75">')
-    .replace(/
-/g,'<br>');
+    .replace(/\n{2,}/g,'</p><p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.75">')
+    .replace(/\n/g,'<br>');
 
   const amtNote = amountText !== 'not specified'
     ? `, with <strong>${amountText}</strong> at stake`
