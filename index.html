@@ -44,7 +44,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .top-nav{position:sticky;top:0;z-index:50;background:rgba(4,13,26,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:var(--font-d);font-size:1.7rem;font-weight:700;letter-spacing:-0.02em;color:var(--text)}
 .nav-logo em{color:var(--blue);font-style:normal}
-.nav-cta{background:linear-gradient(135deg,#3B82F6,#1D4ED8);color:#fff;border:none;border-radius:9px;padding:12px 26px;font-family:var(--font-b);font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s;box-shadow:0 0 24px var(--blue-glow);white-space:nowrap}.nav-blog{color:rgba(255,255,255,0.75);text-decoration:none;font-family:var(--font-b);font-size:0.82rem;font-weight:600;letter-spacing:0.03em;padding:7px 14px;border-radius:7px;border:1px solid rgba(59,130,246,0.35);background:rgba(59,130,246,0.08);margin-right:10px;transition:all 0.2s;white-space:nowrap}.nav-blog:hover{background:rgba(59,130,246,0.18);border-color:rgba(59,130,246,0.6);color:#fff}
+.nav-cta{background:linear-gradient(135deg,#3B82F6,#1D4ED8);color:#fff;border:none;border-radius:9px;padding:12px 26px;font-family:var(--font-b);font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s;box-shadow:0 0 24px var(--blue-glow);white-space:nowrap}
 .nav-cta:hover{background:var(--blue-dark);transform:translateY(-1px)}
 
 /* BUTTONS */
@@ -354,7 +354,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="scr on" id="scrWelcome">
 <nav class="top-nav">
   <div class="nav-logo" onclick="go('scrWelcome')" style="cursor:pointer">SCAM<em>SOS</em></div>
-  <a href="/blog/" class="nav-blog">📰 Blog</a><button class="nav-cta" data-has-blog="true" onclick="go('scrIntake')">
+  <button class="nav-cta" data-has-blog="true" onclick="go('scrIntake')">
     <span class="nav-cta-full">Get My Free Recovery Plan →</span>
     <span class="nav-cta-short" style="display:none">Get My Plan →</span>
   </button>
@@ -408,6 +408,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     <p>Your personalized recovery plan appears instantly.<br>Free, private, and built for your exact situation.</p>
     <button class="btn-big" onclick="go('scrIntake')" style="margin:0 auto">Get My Free Recovery Plan →</button>
     <div style="margin-top:12px;font-size:0.75rem;color:var(--text-dim)">No signup · Nothing stored · Completely free</div>
+    <div style="margin-top:16px;font-size:0.8rem;color:var(--text-muted)">
+      📰 Read our <a href="/blog/" style="color:var(--blue);text-decoration:none;font-weight:600">Scam Recovery Blog</a> for detailed guides on every scam type
+    </div>
   </div>
 </div>
 </div>
@@ -548,6 +551,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   <div class="footer-tagline">Free scam recovery guidance for US consumers</div>
   <div class="footer-links">
     <a href="#" onclick="go('scrAbout');return false">About</a>
+    <a href="/blog/">Blog</a>
     <a href="#" onclick="go('scrPrivacy');return false">Privacy Policy</a>
     <a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener">FTC Report Fraud</a>
     <a href="https://ic3.gov" target="_blank" rel="noopener">FBI IC3</a>
